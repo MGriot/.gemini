@@ -1,5 +1,0 @@
-{
-  "artifactType": "ARTIFACT_TYPE_WALKTHROUGH",
-  "summary": "Walkthrough of the steps taken to verify the OpenLedger web application status.\nIncludes Docker service checks, startup commands, and HTTP connectivity verification.\nNotes the environment error preventing automated browser interaction.",
-  "updatedAt": "2026-01-25T12:59:36.741654800Z"
-}

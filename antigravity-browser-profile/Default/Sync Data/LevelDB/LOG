@@ -1,6 +1,0 @@
-2025/12/21-20:24:08.316 5340 Reusing MANIFEST C:\Users\Admin\.gemini\antigravity-browser-profile\Default\Sync Data\LevelDB/MANIFEST-000001
-2025/12/21-20:24:08.331 5340 Recovering log #3
-2025/12/21-20:24:08.336 5340 Reusing old log C:\Users\Admin\.gemini\antigravity-browser-profile\Default\Sync Data\LevelDB/000003.log 
-2025/12/21-20:24:21.650 1fb4 Level-0 table #5: started
-2025/12/21-20:24:21.698 1fb4 Level-0 table #5: 154417 bytes OK
-2025/12/21-20:24:21.703 1fb4 Delete type=0 #3

@@ -1,9 +1,0 @@
-# Run and Verify Application
-
-- [x] Start Backend Server <!-- id: 0 -->
-- [x] Start Frontend Application <!-- id: 1 -->
-- [ ] Verify Application Functionality <!-- id: 2 -->
-- [x] Debug Multimodal Extraction <!-- id: 3 -->
-- [x] Fix Missing Model Error <!-- id: 4 -->
-- [x] Switch to Qwen Model <!-- id: 5 -->
-- [x] Switch to Qwen 3B Model <!-- id: 6 -->

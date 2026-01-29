@@ -1,8 +1,0 @@
-# Task: Fix Login and Registration Issues
-
-- [ ] Investigate backend auth routes [backend/routers/auth.py](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/routers/auth.py) <!-- id: 0 -->
-- [ ] Investigate user registration and password hashing in [backend/utils/auth_utils.py](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/utils/auth_utils.py) <!-- id: 1 -->
-- [ ] Check database connection and user creation logic <!-- id: 2 -->
-- [ ] Verify frontend login/register forms and API calls <!-- id: 3 -->
-- [ ] Debug "Incorrect username or password" error message source <!-- id: 4 -->
-- [ ] Implement fix and verify <!-- id: 5 -->
