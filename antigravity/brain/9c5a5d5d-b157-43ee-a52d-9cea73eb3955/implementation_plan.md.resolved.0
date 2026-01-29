@@ -1,0 +1,36 @@
+# Implementation Plan: History & Advanced Params
+
+## Goal Description
+Integrate the real History API to replace mock data in [HistoryView](file:///c:/Users/Admin/Documents/Coding/QualiaQC/web-gui/src/features/history/HistoryView.tsx#18-98) and expose advanced analysis parameters in [AnalysisView](file:///c:/Users/Admin/Documents/Coding/QualiaQC/web-gui/src/features/analysis/AnalysisView.tsx#11-294) to achieve feature parity with the legacy Tkinter GUI.
+
+## User Review Required
+> [!IMPORTANT]
+> This requires backend changes to ensure [src/server.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/server.py) (or equivalent) accepts the new parameters and correctly serves history data.
+
+## Proposed Changes
+
+### Backend (`QualiaQC/src`)
+#### [MODIFY] [server.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/server.py) (assuming location)
+- Ensure `GET /api/history` scans `output/` and returns structured data matching the legacy logic.
+- Ensure `POST /api/analysis/run` accepts: `symmetry`, `blur`, `aggregate`, `agg_kernel_size`, `agg_min_area`, `blur_kernel_size`, `shadow_removal_method`.
+
+### Frontend ([QualiaQC/web-gui](file:///c:/Users/Admin/Documents/Coding/QualiaQC/web-gui))
+#### [MODIFY] [HistoryView.tsx](file:///c:/Users/Admin/Documents/Coding/QualiaQC/web-gui/src/features/history/HistoryView.tsx)
+- Replace `MOCK_HISTORY` with `useQuery` hooking into `/api/history`.
+- Implement "Regenerate" button logic (likely a new API endpoint or re-triggering analysis).
+
+#### [MODIFY] [AnalysisView.tsx](file:///c:/Users/Admin/Documents/Coding/QualiaQC/web-gui/src/features/analysis/AnalysisView.tsx)
+- Add "Advanced Settings" collapsible section.
+- Add inputs for:
+    - **Toggles**: `Symmetry`, `Blur`, `Aggregate`.
+    - **Numeric**: `Blur Kernel` (int), `Agg Kernel` (int), `Agg Min Area` (float).
+    - **Select**: `Shadow Removal` (CLAHE, etc.).
+- Update `analysisMutation` to send these fields.
+
+## Verification Plan
+### Automated Tests
+- None planned for this phase.
+
+### Manual Verification
+1.  **History**: Open "History" tab, verify real `.gri` files from `output/` are listed.
+2.  **Analysis**: Run analysis with non-default "Advanced Settings" (e.g., disable Blur) and verify the visual output changes (or logs reflect the params).

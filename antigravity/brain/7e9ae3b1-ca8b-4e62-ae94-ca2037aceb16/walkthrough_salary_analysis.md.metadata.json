@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary": "Implemented a new \"Salary Insights\" page in the Frontend.\nAdded SalaryAnalytics component with:\n- KPI Cards (Total Net, Avg Monthly, Total Hours, Avg Tax Rate)\n- Income Trend Area Chart\n- Gross vs Deductions Bar Chart\n- Work Hours Bar Chart\nIntegrated into the main sidebar navigation.",
+  "updatedAt": "2026-01-25T13:05:22.387960100Z"
+}

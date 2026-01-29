@@ -1,0 +1,28 @@
+- [ ] **Fix Dataset Layout**
+    - [ ] Investigate and fix width constraints in [DatasetView.tsx](file:///c:/Users/Admin/Documents/Coding/QualiaQC/web-gui/src/features/dataset/DatasetView.tsx) / [PointSelector.tsx](file:///c:/Users/Admin/Documents/Coding/QualiaQC/web-gui/src/features/dataset/PointSelector.tsx)
+- [ ] **Implement Dataset Tool Parity**
+    - [ ] Analyze [dataset_gui.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/gui/dataset_gui.py) for "Cluster" and "Get Colors" logic
+    - [ ] Update [PointSelector.tsx](file:///c:/Users/Admin/Documents/Coding/QualiaQC/web-gui/src/features/dataset/PointSelector.tsx) UI:
+        - [ ] Add "Sampling Mode" radio group/toolbar (Add, Delete, Cluster, Fast Color)
+        - [ ] Add "Num Clusters" input
+        - [ ] Add "Clear Points" button
+    - [ ] Implement "Cluster" logic (Frontend or Backend?)
+    - [ ] Implement "Get Colors (Fast)" logic
+    - [ ] Rebuild Docker
+- [x] **Debug Dataset Image Rendering**
+    - [x] Locate [DatasetView](file:///c:/Users/Admin/Documents/Coding/QualiaQC/web-gui/src/features/dataset/DatasetView.tsx#9-84) component
+    - [x] Investigate image URL construction in frontend
+    - [x] Verify static file serving in [server.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/server.py)
+    - [x] Fix path issues (Windows/Linux mix) if found
+    - [x] Rebuild Docker and verify
+- [x] **Refine Shadow Removal UI**
+- [x] **Relocate Shadow Removal UI**
+- [x] **Group Advanced Config UI**
+- [x] **Refine Masking Options UI**
+- [x] **UI Parity & Reorganization**
+- [x] **Refine Analysis UI**
+- [x] **Docker Build & Verification**
+- [x] **Color Checker Upload (User Request)**
+- [x] **History API Integration**
+- [x] **Advanced Analysis Parameters**
+- [x] Analyze & Verify Features

@@ -1,0 +1,14 @@
+# Task: Generic Docker Fixes
+
+- [x] Analyze project structure and existing Docker configuration <!-- id: 0 -->
+- [x] Fix Backend Dockerfile casing issue <!-- id: 1 -->
+- [x] Fix Frontend build error (unused `useEffect`) <!-- id: 2 -->
+- [x] Verify `docker-compose` configuration <!-- id: 3 -->
+- [x] Attempt local verification of fixes <!-- id: 4 -->
+- [x] Build Docker images <!-- id: 5 -->
+- [x] Launch application (Backend & Frontend) <!-- id: 6 -->
+- [x] Launch application (Backend & Frontend) <!-- id: 6 -->
+- [x] Fix Alembic path/venv issue <!-- id: 8 -->
+- [x] Fix Alembic relative import error <!-- id: 9 -->
+- [ ] Fix SMTP configuration error <!-- id: 10 -->
+- [ ] Verify running application in browser <!-- id: 7 -->

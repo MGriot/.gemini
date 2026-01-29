@@ -1,0 +1,21 @@
+- [ ] **Debug Dataset Image Rendering**
+    - [ ] Locate [DatasetView](file:///c:/Users/Admin/Documents/Coding/QualiaQC/web-gui/src/features/dataset/DatasetView.tsx#9-84) component
+    - [ ] Investigate image URL construction in frontend
+    - [ ] Verify static file serving in [server.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/server.py)
+    - [ ] Fix path issues (Windows/Linux mix) if found
+    - [ ] Rebuild Docker and verify
+- [x] **Refine Shadow Removal UI**
+    - [x] Set default `shadowRemoval` to `'none'` in [AnalysisView.tsx](file:///c:/Users/Admin/Documents/Coding/QualiaQC/web-gui/src/features/analysis/AnalysisView.tsx)
+    - [x] Unroll Alignment map loop
+    - [x] Nest Shadow Removal under Object Alignment (conditional & styling)
+    - [x] Rebuild Docker
+- [x] **Relocate Shadow Removal UI**
+- [x] **Group Advanced Config UI**
+- [x] **Refine Masking Options UI**
+- [x] **UI Parity & Reorganization**
+- [x] **Refine Analysis UI**
+- [x] **Docker Build & Verification**
+- [x] **Color Checker Upload (User Request)**
+- [x] **History API Integration**
+- [x] **Advanced Analysis Parameters**
+- [x] Analyze & Verify Features

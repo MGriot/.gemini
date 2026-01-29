@@ -1,0 +1,15 @@
+# Task Breakdown
+
+- [/] Prepare testing environment (start backend and frontend)
+- [ ] Test Project Creation
+    - [ ] Create a new project with owner/promoter selection
+    - [ ] Verify project appears in dashboard/list
+- [ ] Test Task Creation
+    - [ ] Create a new task within the project
+    - [ ] Assign users to the task
+    - [ ] Verify task appears in Kanban/list
+- [ ] Test Subtask Creation
+    - [ ] Add subtasks to an existing task
+    - [ ] Test nested subtasks (subtasks of subtasks)
+    - [ ] Verify subtask display and hierarchy
+- [ ] Document findings and report bugs

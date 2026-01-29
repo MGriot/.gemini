@@ -1,0 +1,52 @@
+# Project Detail Page & Form Enhancements
+
+## Overview
+This update addresses the "Whitescreen" crash on the Project Detail Page and enhances the Project and Task creation forms to support comprehensive data entry (Dates, Status).
+
+## Changes
+
+### 1. Fix Blank Screen (Project Detail Page)
+- **Root Cause**: The application was crashing due to `RangeError: Invalid time value` when attempting to format `null` or invalid date strings using `date-fns` in the Project Stats grid.
+- **Fix**: Implemented a [safeFormat](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/frontend/src/pages/projectDetailPage.tsx#35-40) helper function in `ProjectDetailPage.tsx`.
+- **Logic**:
+  ```typescript
+  const safeFormat = (dateStr: string | undefined, fmt: string) => {
+    if (!dateStr) return 'Not set';
+    const d = new Date(dateStr);
+    return isValid(d) ? format(d, fmt) : 'Invalid Date';
+  };
+  ```
+- **Result**: Page now renders robustly even with missing data.
+
+### 2. Enhanced Creation & Editing Forms
+- **Goal**: Allow users to input and modify Start Date, End Date, and Status.
+- **Components Updated/Created**:
+  - [CreateProjectModal.tsx](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/frontend/src/components/projects/CreateProjectModal.tsx) / [EditProjectModal.tsx](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/frontend/src/components/projects/EditProjectModal.tsx)
+  - [CreateTaskModal.tsx](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/frontend/src/components/tasks/CreateTaskModal.tsx) / [EditTaskModal.tsx](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/frontend/src/components/tasks/EditTaskModal.tsx)
+- **Features**:
+  - Added native Date Pickers (styled with MUI).
+  - Added Status Dropdown (Not Started, In Progress, Completed, On Hold).
+  - Wired "Edit" buttons in Project Header and Task List to open pre-filled modals.
+
+### 3. Subtask Management & Date Sync
+- **Goal**: Allow adding/modifying subtasks and syncing parent task dates.
+- **Components Updated**:
+  - [EditTaskModal.tsx](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/frontend/src/components/tasks/EditTaskModal.tsx)
+  - [services/subtasks.ts](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/frontend/src/services/subtasks.ts)
+- **Features**:
+  - **Subtask List**: View, Add, and Delete subtasks within the "Edit Task" modal.
+  - **Smart Date Logic**: Suggestions for parent task Start/End dates are calculated based on the min/max of subtasks.
+  - **Sync Button**: Users can one-click apply the suggested date range or manually override.
+
+## Verification
+
+### Project Detail Page & Edit
+The page now loads correctly. Users can click the "Edit" (pencil) icon to modify details.
+
+### Creation & Subtasks
+The modals allow detailed data entry, including subtask management.
+
+![Edit Task with Subtasks](/C:/Users/Admin/.gemini/antigravity/brain/660c2ee2-0d80-4312-af51-a9f3a1b016c8/edit_task_modal_final_1765748375178.png)
+
+## Next Steps
+- Consider adding [Priority](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/frontend/src/components/kanban/TaskCard.tsx#31-39) field to Task Schema (currently excluded as requested).

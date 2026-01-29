@@ -1,0 +1,7 @@
+- [ ] Locate `QualiaAC` (check inside `QualiaQC` or `SynapsePlan` or ask user)
+- [ ] Read `QualiaQC/ROADMAP.md`
+- [ ] Read `QualiaQC/TODO.md`
+- [ ] Analyze `QualiaQC/src/gui` to understand features
+- [/] Analyze `QualiaAC` structure (Frontend/Backend/Docker) <!-- id: 1 -->
+- [ ] Compare `QualiaAC` features against `QualiaQC` features
+- [ ] Create verification report/plan

@@ -1,0 +1,44 @@
+{
+   "action": {
+      "default_icon": "icons/icon_inactive.png",
+      "default_popup": "html/popup.html",
+      "default_title": "Video Downloader Plus"
+   },
+   "background": {
+      "service_worker": "js/background.js"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "js/jquery-3.1.1.min.js", "js/common.js", "js/contentscript.js" ],
+      "matches": [ "*://*/*" ],
+      "run_at": "document_end"
+   } ],
+   "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self';"
+   },
+   "default_locale": "en_US",
+   "description": "__MSG_desc__",
+   "host_permissions": [ "\u003Call_urls>" ],
+   "icons": {
+      "128": "icons/128.png",
+      "16": "icons/16.png",
+      "19": "icons/19.png",
+      "38": "icons/38.png",
+      "48": "icons/48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhTyej56/48JkRUuCjY7ISsYAAlHd5l7qyemBCKg6jAUIHOrdaIfj4h7g7pkPpmBjadtaNUd+u4WNn8GPFTTsHABOdk5KZ5EiUyWLNgIrnPtn4vCVpYLfXUMMgICQbPRAMTLgiLutokOPt0F6riSle3WuSdqiHKQu/hH2m/89Uymn4t1Yh/6jPAyX2Fn3RAMgnvg2UC0Fmev82Ke+4nn4xElJYsJqJ0dt2RuwNkOWwc3m3x97aj9ApI44L6HlA1r7ox6558xWEo9vt5ugeAn/tM8E3cS4b1YbXrzjegJHy1W5Uy59cdz1sAF9O+AbFXfR1ySI7iaE2sDP/8kcy7tGaQIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_name__",
+   "options_ui": {
+      "open_in_tab": true,
+      "page": "html/options.html"
+   },
+   "permissions": [ "tabs", "webRequest", "declarativeNetRequest", "cookies", "storage" ],
+   "short_name": "__MSG_name__",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "3.0.2",
+   "web_accessible_resources": [ {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "*" ]
+   } ]
+}

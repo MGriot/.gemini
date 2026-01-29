@@ -1,0 +1,39 @@
+¾# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+docker-compose.yml
+
+# IDE/Editor
+.idea
+.vscode
+*.swp
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+env/
+venv/
+
+# Node
+**/node_modules/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build artifacts
+dist/
+build/
+.next/
+
+# Other
+.env
+.env.*
+!/.env.example
+*.local
+*.log
+uploads/
+README.md¾"(895d416ae94c3d3f1d10e837bfe2ecc0bfb695382Afile:///c:/Users/Admin/Documents/Coding/SynapsePlan/.dockerignore:3file:///c:/Users/Admin/Documents/Coding/SynapsePlan

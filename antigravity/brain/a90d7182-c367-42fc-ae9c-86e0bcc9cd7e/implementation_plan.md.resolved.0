@@ -1,0 +1,32 @@
+# Fix Upload Failure and Asset 404s
+
+## Problem Description
+1. **Upload Failure (422 Error)**: When uploading a colorchecker or other assets, the API returns a 422 error. This is likely due to the global `Content-Type: application/json` header in the axios `apiClient` interfering with `multipart/form-data` uploads.
+2. **Asset 404s**: Project assets (drawing layers, reference images) fail to load because the generated URLs include the internal container path prefix (`/app/`) which is not part of the web-accessible mount points.
+
+## Proposed Changes
+
+### Backend
+
+#### [MODIFY] [server.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/server.py)
+- Update [get_project_files](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/server.py#103-179) to use [to_web_url](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/server.py#59-87) for generating web-accessible URLs for all assets, ensuring they don't include internal path prefixes like `/app/`.
+- (Optional but recommended) Refactor [api_upload_project_file](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/server.py#264-284) parameters to use standard FastAPI `Form` factory if `Annotated` is causing issues (though less likely than the header issue).
+
+### Frontend
+
+#### [MODIFY] [client.ts](file:///c:/Users/Admin/Documents/Coding/QualiaQC/web-gui/src/api/client.ts)
+- Remove the global `Content-Type: application/json` header. Axios will correctly set the `Content-Type` based on the request body (JSON by default, `multipart/form-data` for `FormData`).
+
+#### [MODIFY] [FilePlacer.tsx](file:///c:/Users/Admin/Documents/Coding/QualiaQC/web-gui/src/features/dataset/FilePlacer.tsx)
+- Ensure [getFullUrl](file:///c:/Users/Admin/Documents/Coding/QualiaQC/web-gui/src/features/dataset/FilePlacer.tsx#135-144) handles paths correctly and doesn't double-prefix or miss necessary slashes.
+
+## Verification Plan
+
+### Automated Tests
+- I will check if there are existing tests for the upload API and run them.
+- I will create a small script to test the upload endpoint with `multipart/form-data` using `curl` or a python script to verify the backend fix independently of the frontend.
+
+### Manual Verification
+- Since I cannot interact with the GUI directly, I will ask the user to:
+    1. Refresh the web GUI and check if the "Standard Project References" images are now loading (no more 404s).
+    2. Try uploading a colorchecker again via the "REGISTER NEW PHOTO" button and verify it succeeds.

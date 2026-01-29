@@ -1,0 +1,10 @@
+- [ ] Investigate DB initialization and seeding <!-- id: 0 -->
+    - [ ] Read [backend/init_admin.py](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/init_admin.py) <!-- id: 1 -->
+    - [ ] Read [backend/main.py](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/main.py) <!-- id: 2 -->
+    - [ ] Read [docker-compose.yml](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/docker-compose.yml) <!-- id: 3 -->
+- [ ] Verify User Creation Logic <!-- id: 4 -->
+    - [ ] Check how passwords are hashed in [init_admin.py](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/init_admin.py) <!-- id: 5 -->
+    - [ ] Check how passwords are verified in the login flow <!-- id: 6 -->
+- [ ] Debug Login Failure <!-- id: 7 -->
+    - [ ] Check logs if possible (via `docker logs` if I can run commands, or user feedback) <!-- id: 8 -->
+    - [ ] Propose a fix <!-- id: 9 -->

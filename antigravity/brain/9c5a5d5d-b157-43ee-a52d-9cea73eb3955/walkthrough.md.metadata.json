@@ -1,0 +1,6 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary":  "I've achieved full cross-GUI parity for project data management by centralizing project creation and scaffolding in `ProjectManager` and updating both the Web and Tkinter interfaces to support the new database-backed managed storage model. Legacy filesystem projects are now consistently synchronized, and both GUIs feature database-driven history views and faithful report regeneration, making the legacy `data/projects` directory officially redundant across the entire system.",
+  "updatedAt":  "2025-12-28T17:36:16.285391900Z",
+  "version":  "15"
+}

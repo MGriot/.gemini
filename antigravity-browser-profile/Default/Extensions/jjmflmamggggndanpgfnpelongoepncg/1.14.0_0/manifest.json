@@ -1,0 +1,23 @@
+{
+   "action": {
+      "default_icon": "images/iconbar.png",
+      "default_popup": "index.html",
+      "default_title": "Extensity"
+   },
+   "background": {
+      "service_worker": "js/migration.js"
+   },
+   "description": "Quickly enable/disable Google Chrome extensions",
+   "icons": {
+      "128": "images/icon128.png",
+      "16": "images/icon16.png",
+      "48": "images/icon48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCyqYstHi7qjA8UtmzwJWlOHTloifmnA41+oZxBsodcJxIPQ9P4DIDI49aFSkEjEwchfb49Omish6J2ipzybLSu+qZZvgpxu1Nf9wbMRE6M/xTKLF7Ol7O1gfGix9mo1IrQJHwyt6rGSiuxOzXhf+ry4PuVc0ScMtbCwzWKUtjJIwIDAQAB",
+   "manifest_version": 3,
+   "name": "Extensity",
+   "options_page": "options.html",
+   "permissions": [ "management", "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.14.0"
+}

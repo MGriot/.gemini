@@ -1,0 +1,26 @@
+# Fix Pipeline Path Corrosion
+
+## Problem Description
+The pipeline is failing because technical drawing paths (masking layers) are being corrupted. When a project is "healed" or synced from a Windows environment into a Linux container (Docker), Windows-style absolute paths (e.g., `C:\Users\...`) are being incorrectly processed. 
+
+Specifically:
+1. `os.path.basename` on Linux does not recognize `\` as a separator, so it fails to extract the filename from a Windows path.
+2. `Path(v).is_absolute()` on Linux returns `False` for Windows paths, causing `manager.py` to prepend the container's project root, resulting in a "double" corrupted path.
+
+## Proposed Changes
+
+### Backend
+
+#### [MODIFY] [manager.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/project_management/manager.py)
+- **Robust Path Splitting**: Replace platform-dependent `os.path.basename` with a helper that handles both `/` and `\`.
+- **Improved Healing**: Update `_handle_data_migration` to store relative paths (e.g., `drawing_layers/layer1.png`) in the project configuration instead of absolute container paths. This makes the database more portable.
+- **Robust Path Retrieval**: Update `get_project_file_paths` to check if a path looks like a Windows absolute path (e.g., starts with `C:`) and treat it accordingly (strip prefix or force re-resolution).
+
+## Verification Plan
+
+### Automated Tests
+- I will create a small Python script to test the new path normalization logic with various Windows and Linux path inputs.
+- I will mock a project configuration with corrupted paths and verify that the "healing" logic corrects them.
+
+### Manual Verification
+- I will ask the user to re-run the analysis. If the fix is successful, the pipeline should proceed past the masking stage and complete the analysis.

@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Implementation plan for the Payroll Data Extraction application, covering backend (FastAPI) and frontend (React) structure.",
+  "updatedAt": "2025-11-26T21:21:24.985897300Z"
+}

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Keepa – Welcome</title>
+    <link rel="icon" href="icons/i48.png">
+    <style>
+        :root { --bg:#0f1115; --card:#171a21; --muted:#9aa3ad; --fg:#e7eef7; --accent:#ff7a45; --tip:#53737f; }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0; font: 16px/1.45 -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+            color: var(--fg); background: radial-gradient(1200px 800px at 20% -10%, #1d2330 0%, #0d0f13 60%), var(--bg);
+        }
+        .wrap { max-width: 880px; margin: 1vh auto; padding: 16px; }
+        .card { background: var(--card); border-radius: 14px; padding: 28px; box-shadow: 0 10px 30px rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.03); }
+        header { display:flex; align-items:center; gap:16px; margin-bottom: 12px; }
+        header img { width:44px; height:44px; border-radius: 10px; }
+        h1 { font-size: 24px; margin: 0; }
+        .muted { color: var(--muted); }
+        ul.steps { list-style: none; padding: 0; margin: 18px 0 10px; }
+        ul.steps li { display:flex; gap:10px; align-items:flex-start; padding:10px 12px; border-radius:10px; background: rgba(255,255,255,.03); margin: 10px 0; }
+        ul.steps.tips { margin-top: 8px; }
+        ul.steps.tips li {
+            background: rgba(255,255,255,.06);
+            border-left: 3px solid var(--tip);
+            padding-left: 9px;
+        }
+        #t_tip_head {
+            display: inline-block;
+            font-weight: 600;
+        }
+        .k-badge { display:inline-block; padding:4px 10px; border-radius:999px; background: rgba(255,255,255,.06); margin: 8px 6px 0 0; font-size: 13px; }
+        .cta { display:inline-block; margin-top: 14px; padding: 12px 18px; border-radius: 10px; text-decoration:none; background: linear-gradient(180deg, #ff8e5f, #ff6a3a); color: #081018; font-weight: 600; border: none; }
+        .cta-row { display: flex; gap: 12px; margin-top: 14px; flex-wrap: wrap; }
+        .cta-row .cta { margin-top: 0; }
+        .cta--close { background: linear-gradient(180deg, #e2e2e2, #bdbdbd); color: #111; }
+        .cta--primary {}
+        .cta--refresh { background: linear-gradient(180deg, #9fd4ff, #5aa7ff); color: #081018; }
+
+        .grid { display:grid; grid-template-columns: 1fr; gap:16px; }
+        @media (min-width: 760px) { .grid { grid-template-columns: 3fr 2fr; } }
+
+        .pill-row { margin-top: 6px; }
+        footer { margin-top: 18px; font-size: 13px; color: var(--muted); }
+        .small { font-size: 13px; }
+        .check { width:20px; height:20px; flex:0 0 20px; margin-top: 2px; }
+                /* Tip icon styling */
+        .tip-icon { width:20px; height:20px; flex:0 0 20px; margin-top: 2px; }
+        .tip-icon path { fill: #ddce82 }
+
+        /* --- Supported sites block (collapsible) --- */
+        .supported { margin-top: 4px; }
+        .supported details {
+            background: rgba(255,255,255,.03);
+            border-radius: 10px;
+            padding: 10px 12px;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,.03);
+        }
+        .supported summary {
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .supported summary::-webkit-details-marker { display: none; }
+        .supported details summary::after {
+            content: "▸";
+            margin-left: auto;
+            transform: translateY(-1px);
+            opacity: .8;
+        }
+        .supported details[open] summary::after { content: "▾"; }
+        /* Make the block span full width on desktop, and sit after Tips */
+        @media (min-width: 760px) {
+            .grid > .supported { grid-column: 1 / -1; }
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="card">
+        <header>
+            <img src="icons/i48.png" alt="Keepa" />
+            <div>
+                <h1 id="t_title">Keepa is ready</h1>
+                <div class="muted small" id="t_sub">Price history right on Amazon product pages.</div>
+            </div>
+        </header>
+
+        <div class="grid">
+            <!-- Main content -->
+            <section>
+                <ul class="steps" id="steps"></ul>
+
+                <div class="cta-row">
+                    <a id="openAmazon" class="cta cta--primary" href="https://www.amazon.com" rel="noopener">Open Amazon</a>
+                    <button id="refreshTabs" class="cta cta--refresh" type="button">Refresh open Amazon tabs</button>
+                </div>
+            </section>
+
+            <!-- Tips -->
+            <aside>
+                <div class="muted small" id="t_tip_head">Tip</div>
+                <ul class="steps tips">
+                    <li>
+                        <svg class="tip-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-4.9 12A3.5 3.5 0 0 0 9 16.9V17a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-.1a3.5 3.5 0 0 0 1.9-2.9A7 7 0 0 0 12 2Zm-3 15h6v1H9v-1Z"/></svg>
+                        <div id="t_tip_1">If an Amazon page was open during install, reload it to activate Keepa.</div>
+                    </li>
+                    <li>
+                        <svg class="tip-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-4.9 12A3.5 3.5 0 0 0 9 16.9V17a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-.1a3.5 3.5 0 0 0 1.9-2.9A7 7 0 0 0 12 2Zm-3 15h6v1H9v-1Z"/></svg>
+                        <div id="t_tip_2">On mobile/compact layouts the graph is a bit further down - scroll to see it.</div>
+                    </li>
+                    <li>
+                        <svg class="tip-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-4.9 12A3.5 3.5 0 0 0 9 16.9V17a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-.1a3.5 3.5 0 0 0 1.9-2.9A7 7 0 0 0 12 2Zm-3 15h6v1H9v-1Z"/></svg>
+                        <div id="t_tip_3">No need to click the toolbar icon - the Keepa box appears automatically.</div>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Supported sites (moved to the end + collapsible) -->
+            <section class="supported">
+                <details id="supportedDetails">
+                    <summary id="t_supported_label" class="muted small">Supported sites:</summary>
+                    <div class="pill-row" id="domains"></div>
+                </details>
+            </section>
+
+
+            <footer id="t_footer" class="muted">
+                You can configure all options inside the Keepa box on any Amazon product page.
+            </footer>
+        </div>
+    </div>
+</div>
+
+<script src="welcome.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+# Implement PDF Report Download
+
+## Problem Description
+The web GUI currently executes the analysis pipeline but doesn't provide a way to download the generated PDF report. While the backend has the capability to generate these reports, the PDF paths are not being bubbled up to the API response, and the frontend lacks the UI to trigger a download.
+
+## Proposed Changes
+
+### Backend
+
+#### [MODIFY] [generator.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/reporting/generator.py)
+- Update [generate_from_archived_data](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/reporting/generator.py#879-911) to return the absolute `pdf_path` of the generated report.
+- Update [generate_report](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/reporting/generator.py#762-878) to include this `pdf_path` (transformed to a web URL) in the returned report data.
+
+#### [MODIFY] [pipeline.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/pipeline.py)
+- Store the result of [generate_report()](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/reporting/generator.py#762-878) (the report metadata/paths) in a new `self.report_data` attribute so it can be accessed after the pipeline run.
+
+#### [MODIFY] [server.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/server.py)
+- Update [api_run_analysis](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/server.py#422-494) to extract the `pdf_report_url` from the pipeline's report data and include it in the JSON response.
+
+### Frontend
+
+#### [MODIFY] [AnalysisView.tsx](file:///c:/Users/Admin/Documents/Coding/QualiaQC/web-gui/src/features/analysis/AnalysisView.tsx)
+- Add a "DOWNLOAD PDF REPORT" button that appears next to the success message after an analysis completes.
+- The button will open the `report_url` in a new tab or trigger a download.
+
+## Verification Plan
+
+### Automated Tests
+- I will verify that the `/api/analysis/run` response now contains a valid `report_url`.
+- I will verify that the file at `report_url` exists and is a valid PDF.
+
+### Manual Verification
+- Run a full analysis and click the "DOWNLOAD PDF REPORT" button.
+- Confirm the PDF opens correctly and contains the expected analysis data (matched percentage, images, etc.).

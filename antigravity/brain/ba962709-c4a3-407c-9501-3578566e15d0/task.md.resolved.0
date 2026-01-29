@@ -1,0 +1,7 @@
+# Task: Generic Docker Fixes
+
+- [ ] Analyze project structure and existing Docker configuration <!-- id: 0 -->
+- [ ] Fix Backend Dockerfile casing issue <!-- id: 1 -->
+- [ ] Fix Frontend build error (unused `useEffect`) <!-- id: 2 -->
+- [ ] Verify `docker-compose` configuration <!-- id: 3 -->
+- [ ] Attempt local verification of fixes <!-- id: 4 -->

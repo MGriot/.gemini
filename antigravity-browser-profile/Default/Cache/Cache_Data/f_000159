@@ -1,0 +1,2006 @@
+{
+  "pageConfig": {
+    "1brd.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "1password.com": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "active.socialstudies.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "activeclassroom.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "adobeaemcloud.com": {
+      "enabled": true,
+      "matchSubdomains": true,
+      "minFieldHeight": 15,
+      "minFieldWidth": 100
+    },
+    "advancement.buffalo.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "agilezen.com": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "airbnb.com": {
+      "enabled": true,
+      "pages": {
+        ".*/payments": {
+          "enabled": false
+        }
+      }
+    },
+    "airstory.co": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "anagram.grammarly.io": {
+      "enabled": false
+    },
+    "api.mtsobek.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "apogeerockets.com": {
+      "enabled": true,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true,
+      "pages": {
+        ".*/newsletter": {
+          "enabled": false
+        },
+        ".*/newsletter/autoresponders-edit": {
+          "enabled": false
+        },
+        ".*/newsletter/create": {
+          "enabled": false
+        },
+        ".*/newsletter/edit-list": {
+          "enabled": false
+        },
+        ".*/newsletter/edit-template": {
+          "enabled": false
+        }
+      }
+    },
+    "app.asana.com": {
+      "enabled": false,
+      "version": "8.638"
+    },
+    "app.classeur.io": {
+      "enabled": false
+    },
+    "app.contentfries.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "app.datapeople.io": {
+      "enabled": false,
+      "matchSubdomains": false
+    },
+    "app.frontspin.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "app.fuseworksmedia.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "app.grammarly.com": {
+      "enabled": false,
+      "pages": {
+        ".*/extension-test": {
+          "enabled": true
+        }
+      }
+    },
+    "app.hatchbuck.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "app.hubspot.com": {
+      "enabled": true,
+      "pages": {
+        ".*/compose": {
+          "enabled": false
+        }
+      }
+    },
+    "app.landinglion.com": {
+      "enabled": false
+    },
+    "app.maventus.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "app.napkin.ai": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "app.ppgr.io": {
+      "enabled": false,
+      "grammarlyEditor": true,
+      "matchSubdomains": true
+    },
+    "app.pure360.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "app.qagr.io": {
+      "enabled": false,
+      "grammarlyEditor": true,
+      "matchSubdomains": true
+    },
+    "app.referralrock.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "app.salesforceiq.com": {
+      "enabled": false,
+      "matchInclusions": true,
+      "matchPartOfUrl": true
+    },
+    "app.staging-rr.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "app.suitedash.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "app.taprecruit.co": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "app.teachermade.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "app.zaius.com": {
+      "enabled": false
+    },
+    "app.zala.net": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "apperio.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "applepiecapital.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "applet-bundles.grammarly.net": {
+      "enabled": false
+    },
+    "appng.frontspin.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "assess.cocubes.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "assessmentintelligence.co.uk": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "atlassian.com": {
+      "enabled": true,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true,
+      "minFieldHeight": 35,
+      "minFieldWidth": 300,
+      "pages": {
+        ".*/RapidBoard.*": {
+          "enabled": false
+        },
+        ".*/projects/.*": {
+          "enabled": false
+        },
+        ".*/wiki/display": {
+          "enabled": false
+        },
+        ".*/wiki/spaces/.*": {
+          "enabled": true
+        }
+      },
+      "version": "8.708.596"
+    },
+    "atlassian.net": {
+      "enabled": true,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true,
+      "minFieldHeight": 35,
+      "minFieldWidth": 300,
+      "pages": {
+        ".*/RapidBoard.*": {
+          "enabled": false
+        },
+        ".*/projects/.*": {
+          "enabled": false
+        },
+        ".*/wiki/display": {
+          "enabled": false
+        },
+        ".*/wiki/spaces/.*": {
+          "enabled": true
+        }
+      },
+      "version": "8.708.596"
+    },
+    "atticus.io": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "authorreach.com": {
+      "enabled": false,
+      "matchInclusions": true,
+      "matchSubdomains": true
+    },
+    "autopilothq.com": {
+      "enabled": true,
+      "matchSubdomains": true
+    },
+    "aweber.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "b2b.epicentrk.ua": {
+      "enabled": false,
+      "matchSubdomains": false
+    },
+    "bb3.topechelon.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "bear.bytedance.net": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "bedheadstyling.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "bells.ai": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "bertie.forbes.com": {
+      "enabled": false,
+      "matchSubdomains": false
+    },
+    "bidorbuy.co.za": {
+      "enabled": false,
+      "matchSubdomains": false
+    },
+    "bidpal.net": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "bigbiller.topechelon.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "blue.bbb.org": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "bluebbb.org": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "bold.io": {
+      "enabled": false
+    },
+    "bookmark.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "bostonlogic.com": {
+      "enabled": false,
+      "matchInclusions": true,
+      "matchSubdomains": true
+    },
+    "bowwe.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "bubble.is": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "buckeyeinternational.com": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "burlington.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "bydzyne.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "calltrackingmetrics.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "campus.usd437.net": {
+      "enabled": true,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true,
+      "pages": {
+        ".*/campus/auburnwashburn.jsp": {
+          "enabled": false
+        }
+      }
+    },
+    "casper.novatechset.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "ce.eleyo.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "celtx.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "chrome.google.com": {
+      "enabled": false
+    },
+    "claude.ai": {
+      "enabled": true,
+      "matchSubdomains": true,
+      "minFieldHeight": 20
+    },
+    "clearbookings.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "client-bank.privatbank.ua": {
+      "enabled": false
+    },
+    "clk9.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "clr.events": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "clubhouse.io": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "coda.grammarly.com": {
+      "enabled": true,
+      "matchSubdomains": true,
+      "pages": {
+        ".*/d/*": {
+          "enabled": false,
+          "grammarlyEditor": true
+        },
+        ".*/importdoc/*": {
+          "enabled": false,
+          "grammarlyEditor": true
+        },
+        ".*/newdoc": {
+          "enabled": false,
+          "grammarlyEditor": true
+        },
+        ".*/revisions/*": {
+          "enabled": false,
+          "grammarlyEditor": true
+        }
+      }
+    },
+    "coda.io": {
+      "disabledBrowsers": [
+        "firefox",
+        "safari"
+      ],
+      "enabled": true,
+      "matchSubdomains": true
+    },
+    "coda.ppgr.io": {
+      "enabled": true,
+      "matchSubdomains": true,
+      "pages": {
+        ".*/d/*": {
+          "enabled": false,
+          "grammarlyEditor": true
+        },
+        ".*/importdoc/*": {
+          "enabled": false,
+          "grammarlyEditor": true
+        },
+        ".*/newdoc": {
+          "enabled": false,
+          "grammarlyEditor": true
+        },
+        ".*/revisions/*": {
+          "enabled": false,
+          "grammarlyEditor": true
+        }
+      }
+    },
+    "coda.qagr.io": {
+      "enabled": true,
+      "matchSubdomains": true,
+      "pages": {
+        ".*/d/*": {
+          "enabled": false,
+          "grammarlyEditor": true
+        },
+        ".*/importdoc/*": {
+          "enabled": false,
+          "grammarlyEditor": true
+        },
+        ".*/newdoc": {
+          "enabled": false,
+          "grammarlyEditor": true
+        },
+        ".*/revisions/*": {
+          "enabled": false,
+          "grammarlyEditor": true
+        }
+      }
+    },
+    "codequest.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "coderpad.io": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "codesandbox.io": {
+      "enabled": false
+    },
+    "communities.fullerton.edu": {
+      "enabled": true,
+      "matchSubdomains": true,
+      "pages": {
+        ".*/mod/forum/post.php": {
+          "enabled": false
+        }
+      }
+    },
+    "confluence.selectel.org": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "connect.childrenshospital.org": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "console.aws.amazon.com": {
+      "enabled": true,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true,
+      "pages": {
+        ".*/support": {
+          "enabled": false
+        },
+        ".*/support/cases": {
+          "enabled": false
+        }
+      }
+    },
+    "convertpages.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "counterworks.atlassian.net": {
+      "enabled": true,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true,
+      "minFieldHeight": 35,
+      "minFieldWidth": 300,
+      "pages": {
+        ".*/wiki/display": {
+          "enabled": false
+        },
+        ".*/wiki/pages": {
+          "enabled": false
+        }
+      },
+      "version": "8.708.596"
+    },
+    "curro.myrecruit.co.za": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "d16dnhlej6sizh.cloudfront.net": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "daknoadmin.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "daphnis.wbnusystem.net": {
+      "enabled": false
+    },
+    "dashboard.doppler.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "dbushell.com": {
+      "enabled": false
+    },
+    "demo-dfin-sledgehammer.devbstaging.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "demo.grammarly.com": {
+      "enabled": false,
+      "matchSubdomains": false
+    },
+    "denali-fb.grammarly.com": {
+      "enabled": false,
+      "grammarlyEditor": true,
+      "matchSubdomains": true
+    },
+    "denali-local.grammarly.com": {
+      "enabled": false,
+      "grammarlyEditor": true
+    },
+    "denali-local.ppgr.io": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "denali-local.qagr.io": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "dentist.toothpic.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "destinationski.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "dev-dfin-sledgehammer.devbstaging.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "dev-mailing-online.click2mail.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "dev.maventus.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "developer.grammarly.com": {
+      "enabled": false
+    },
+    "developer.ppgr.io": {
+      "enabled": false
+    },
+    "developer.qagr.io": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "developerhub.dev": {
+      "enabled": true,
+      "matchSubdomains": true
+    },
+    "developerhub.io": {
+      "enabled": true,
+      "matchSubdomains": true
+    },
+    "deviantart.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "dhiwise.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "direct.pearson.com": {
+      "enabled": false
+    },
+    "discordapp.com": {
+      "enabled": false,
+      "matchInclusions": true,
+      "matchSubdomains": true
+    },
+    "docs-local.ppgr.io": {
+      "enabled": false,
+      "grammarlyEditor": true,
+      "matchSubdomains": true
+    },
+    "docs-local.qagr.io": {
+      "enabled": false,
+      "grammarlyEditor": true,
+      "matchSubdomains": true
+    },
+    "docs.bytedance.net": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "docs.com": {
+      "enabled": false
+    },
+    "docs.google.com": {
+      "enabled": true,
+      "matchInclusions": false,
+      "matchSubdomains": false,
+      "pages": {
+        ".*/document": {
+          "enabled": true,
+          "matchPartOfUrl": true,
+          "minFieldHeight": 0,
+          "minFieldWidth": 0
+        },
+        ".*/presentation": {
+          "enabled": false
+        },
+        ".*/spreadsheets": {
+          "enabled": false
+        }
+      },
+      "track": true
+    },
+    "docs.grammarly.com": {
+      "enabled": false,
+      "grammarlyEditor": true,
+      "matchSubdomains": true
+    },
+    "docs.ppgr.io": {
+      "enabled": false,
+      "grammarlyEditor": true,
+      "matchSubdomains": true
+    },
+    "docs.qagr.io": {
+      "enabled": false,
+      "grammarlyEditor": true,
+      "matchSubdomains": true
+    },
+    "dovetailapp.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "drive.google.com": {
+      "enabled": false,
+      "track": true
+    },
+    "easysendy.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "ebay.com": {
+      "enabled": true,
+      "pages": {
+        ".*/contact/sendmsg": {
+          "enabled": false
+        }
+      }
+    },
+    "ebvaluate.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "ed.grammarly.com": {
+      "enabled": false
+    },
+    "editgenie.novatechset.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "edoctrina.org": {
+      "enabled": true,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true,
+      "pages": {
+        ".*/v2/take-online-test.html": {
+          "enabled": false
+        }
+      }
+    },
+    "eg2.novatechset.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "eleadcrm.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "email.losasso.com": {
+      "enabled": false
+    },
+    "emailoctopus.com": {
+      "enabled": false
+    },
+    "emaze.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "endue.me": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "energytoolbase.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "englishtest.duolingo.cn": {
+      "enabled": false,
+      "matchSubdomains": false
+    },
+    "englishtest.duolingo.com": {
+      "enabled": false,
+      "matchSubdomains": false
+    },
+    "exam.esatqualifications.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "exam.fpl.edu.vn": {
+      "enabled": false
+    },
+    "exam.fpt.edu.vn": {
+      "enabled": false
+    },
+    "excel.cloud.microsoft": {
+      "enabled": false
+    },
+    "facebook.com": {
+      "enabled": true,
+      "minFieldHeight": 0,
+      "minFieldWidth": 300,
+      "pages": {
+        ".*/notes": {
+          "enabled": false
+        }
+      }
+    },
+    "feedblitz.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "fetchsome.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "flashyapp.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "flowchat.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "forddirectcrm.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "foundersuite.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "fundmetric.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "gamma.app": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "get.activedisclosure.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "gnar.grammarly.io": {
+      "enabled": false
+    },
+    "gnar2.grammarly.io": {
+      "enabled": false
+    },
+    "goldnhothair.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "goletrax.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "google.com": {
+      "enabled": true,
+      "matchSubdomains": true,
+      "pages": {
+        ".*/flights": {
+          "enabled": false
+        }
+      }
+    },
+    "goriv.co": {
+      "enabled": true,
+      "matchSubdomains": true,
+      "minFieldHeight": 0,
+      "minFieldWidth": 150
+    },
+    "grammarly.com": {
+      "enabled": true,
+      "pages": {
+        ".*/boomerang": {
+          "enabled": false
+        },
+        ".*/character-counter": {
+          "enabled": false
+        },
+        ".*/grammar-check": {
+          "enabled": false
+        },
+        ".*/paragraph-counter": {
+          "enabled": false
+        },
+        ".*/passive-voice-checker": {
+          "enabled": false
+        },
+        ".*/sentence-counter": {
+          "enabled": false
+        },
+        ".*/word-counter": {
+          "enabled": false
+        },
+        "/$": {
+          "enabled": false
+        },
+        "/a$": {
+          "enabled": false
+        }
+      }
+    },
+    "greenhouse.io": {
+      "enabled": true,
+      "matchSubdomains": true,
+      "pages": {
+        ".*/people/.*": {
+          "enabled": false
+        }
+      }
+    },
+    "greenvelope.com": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "grid.is": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "groovyconsole.dev": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "heymarvin.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "highfieldcore.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "homerun.co": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "htmltohaml.com": {
+      "enabled": false
+    },
+    "https://mvcc-crm--dev.custhelp.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "https://mvcc-crm--tst2.custhelp.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "hydroflask.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "impact.tulane.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "impact.virginia.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "imperavi.com": {
+      "enabled": false
+    },
+    "inbox.google.com": {
+      "enabled": true,
+      "minFieldHeight": 15
+    },
+    "interim.maventus.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "interviewme.pl": {
+      "enabled": false
+    },
+    "investor.vanguard.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "invisionapp.com": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "itsorealestate.ca": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "jangomail.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "jira.kmiservicehub.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "jira.proact.net": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "jsbin.com": {
+      "enabled": false
+    },
+    "jsfiddle.net": {
+      "enabled": false
+    },
+    "juro.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "juro.io": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "kaiten.io": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "keyboardingonline.com": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "kriyadocs.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "krypton.io": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "ks1101.kenshoo.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "lamplight.online": {
+      "enabled": false
+    },
+    "lastpass.com": {
+      "enabled": false,
+      "matchInclusions": true,
+      "matchSubdomains": true
+    },
+    "ldjam.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "learnship.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "lexicabulary.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "linkedin.com": {
+      "enabled": true,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true,
+      "pages": {
+        ".*/help": {
+          "enabled": false
+        }
+      }
+    },
+    "loom.com": {
+      "enabled": false
+    },
+    "maharm-uat.tacto.in": {
+      "enabled": true,
+      "minFieldHeight": 15
+    },
+    "mail.live.com": {
+      "enabled": true
+    },
+    "mailing02.xpressbetonline.com": {
+      "enabled": false
+    },
+    "manuscripts.ai": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "marketintelligence.spglobal.com": {
+      "enabled": true,
+      "matchSubdomains": true,
+      "minFieldHeight": 15
+    },
+    "melia.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "messenger.com": {
+      "disabledBrowsers": [
+        "edge"
+      ],
+      "enabled": true,
+      "matchSubdomains": true,
+      "minFieldHeight": 15
+    },
+    "minutes.tools.sap": {
+      "enabled": false,
+      "matchSubdomains": false
+    },
+    "miro.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mixpanel.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "monkeytype.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "moodle-2017-2018.fullerton.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "moodle-2018-2019.fullerton.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "moodle-2019-2020.fullerton.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mulesoft.org": {
+      "enabled": true,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true,
+      "pages": {
+        ".*/jira": {
+          "enabled": false
+        }
+      }
+    },
+    "my.connect.aws": {
+      "enabled": true,
+      "matchInclusions": true,
+      "matchSubdomains": true,
+      "minFieldHeight": 15
+    },
+    "my.cvonline.me": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "my.onlineresume.us": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "my.pandle.co.uk": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "myant.org": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "myconnectwise.net": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "mycouncil.mvcc.vic.gov.au": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "myguestlist.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "myguestlist.com.au": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "myimpact.bc.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "myimpact.kgi.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "myimpact.law.virginia.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "myimpact.msu.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "myimpact.mtech.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "myimpact.ncsu.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "myimpact.oglebayfoundation.org": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "myimpact.osu.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "myimpact.susqu.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "myimpact.ucdavis.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mynewsletterbuilder.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "myphilanthropy.tcu.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mypinpointe.com": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "mysite.admin.bcm.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mysite.albany.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mysite.bucknell.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mysite.buffalo.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mysite.childrenshospital.org": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mysite.chop.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mysite.dickinson.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mysite.earthjustice.org": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mysite.emory.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mysite.evms.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mysite.lehigh.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mysite.mdanderson.org": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mysite.misericordia.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mysite.msu.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mysite.nku.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mysite.ovrture.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mysite.psu.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mysite.stanford.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mysite.ucsf.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mysite.usna.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mysite.wellesley.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "myskillsolutions.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "mysoledu.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "nationalcapital.co.nz": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "navvyeducation.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "news.miamidadearts.org": {
+      "enabled": false
+    },
+    "news.promega.com": {
+      "enabled": false
+    },
+    "ngnexttest.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "nikonmetrology.pptsend01.com": {
+      "enabled": false
+    },
+    "noisli.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "novatechset.com": {
+      "enabled": false
+    },
+    "nucleuslabs.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "ocdlab.co": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "office.com": {
+      "enabled": true,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true,
+      "pages": {
+        ".*/calendar": {
+          "enabled": true
+        },
+        ".*/excel": {
+          "enabled": false
+        },
+        ".*/mail": {
+          "enabled": true
+        },
+        ".*/outlook": {
+          "enabled": true
+        },
+        ".*/people": {
+          "enabled": true
+        },
+        ".*/powerpoint": {
+          "enabled": false
+        },
+        ".*/tasks": {
+          "enabled": true
+        },
+        ".*/word": {
+          "enabled": false
+        }
+      }
+    },
+    "office365.com": {
+      "enabled": true,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true,
+      "pages": {
+        ".*/calendar": {
+          "enabled": true
+        },
+        ".*/excel": {
+          "enabled": false
+        },
+        ".*/mail": {
+          "enabled": true
+        },
+        ".*/outlook": {
+          "enabled": true
+        },
+        ".*/people": {
+          "enabled": true
+        },
+        ".*/powerpoint": {
+          "enabled": false
+        },
+        ".*/tasks": {
+          "enabled": true
+        },
+        ".*/word": {
+          "enabled": false
+        }
+      }
+    },
+    "okprintthanks.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "okprintthx.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "one.ovrture.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "onecause.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "onecause.net": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "onedrive.live.com": {
+      "enabled": false
+    },
+    "ovrture.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "oxo.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "pagalguy.com": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "paper.dropbox.com": {
+      "disabledBrowsers": [
+        "firefox",
+        "safari",
+        "edge"
+      ],
+      "enabled": false
+    },
+    "paper.id": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "patreon.com": {
+      "disabledBrowsers": [
+        "firefox"
+      ],
+      "enabled": true,
+      "matchSubdomains": true
+    },
+    "paystand.co": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "paystand.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "penbay.ovrture.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "percolate.com": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "phabricator.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "phacility.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "philanthropy.vcu.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "pidoco.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "playbookteam.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "plickers-beta.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "plickers-dev.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "plickers-staging.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "plickers.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "plus.google.com": {
+      "enabled": false,
+      "version": "8.612"
+    },
+    "portal.mainehealth.org": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "portfoliobox.net": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "ppgr.io": {
+      "enabled": true,
+      "pages": {
+        ".*/boomerang": {
+          "enabled": false
+        },
+        ".*/character-counter": {
+          "enabled": false
+        },
+        ".*/grammar-check": {
+          "enabled": false
+        },
+        ".*/paragraph-counter": {
+          "enabled": false
+        },
+        ".*/passive-voice-checker": {
+          "enabled": false
+        },
+        ".*/sentence-counter": {
+          "enabled": false
+        },
+        ".*/word-counter": {
+          "enabled": false
+        }
+      }
+    },
+    "predemo-dfin-sledgehammer.devbstaging.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "preprod-dfin-sledgehammer.devbstaging.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "protect.staging.sp0n.io": {
+      "enabled": true,
+      "minFieldHeight": 0,
+      "minFieldWidth": 0
+    },
+    "prtg.paessler.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "psys.trinetsolutions.com": {
+      "enabled": false
+    },
+    "qa-dfin-sledgehammer.devbstaging.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "qagr.io": {
+      "enabled": true,
+      "pages": {
+        ".*/boomerang": {
+          "enabled": false
+        },
+        ".*/character-counter": {
+          "enabled": false
+        },
+        ".*/grammar-check": {
+          "enabled": false
+        },
+        ".*/paragraph-counter": {
+          "enabled": false
+        },
+        ".*/passive-voice-checker": {
+          "enabled": false
+        },
+        ".*/sentence-counter": {
+          "enabled": false
+        },
+        ".*/word-counter": {
+          "enabled": false
+        }
+      }
+    },
+    "qeios.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "quill.org": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "quora.com": {
+      "enabled": true,
+      "matchSubdomains": true
+    },
+    "qutee.com": {
+      "enabled": false,
+      "matchInclusions": true,
+      "matchSubdomains": true
+    },
+    "rds.tourcube.net": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "referralrock.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "reg.eleyo.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "remind.com": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "researchgate.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "resend.io": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "revlonhairtools.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "riffreporter.de": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "rolo.chat": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "roompact.com": {
+      "enabled": false,
+      "matchInclusions": true,
+      "matchSubdomains": true
+    },
+    "s4tgroup.com": {
+      "enabled": false
+    },
+    "samegoal.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "sasustainability.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "screenloop.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "searchassociates.com": {
+      "enabled": true,
+      "pages": {
+        ".*/Candidate/MyProfile.aspx": {
+          "enabled": false
+        },
+        ".*/Candidates/CompleteEval.aspx": {
+          "enabled": false
+        }
+      }
+    },
+    "secure-dock.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "send.advisorhubinc.com": {
+      "enabled": false
+    },
+    "send.dwo.org": {
+      "enabled": false
+    },
+    "send.kmimedia.ca": {
+      "enabled": false
+    },
+    "send.livingwaters.com": {
+      "enabled": false
+    },
+    "send.marylandlocaldeals.com": {
+      "enabled": false
+    },
+    "sendsonar.com": {
+      "enabled": false
+    },
+    "sendy.co": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "sharepoint.com": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "showingdesk.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "showingtime.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "siro.netscan.cc": {
+      "enabled": false
+    },
+    "sitefinity.com": {
+      "enabled": false
+    },
+    "slack.com": {
+      "enabled": true,
+      "matchSubdomains": true
+    },
+    "sonia.pep.navitas.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "sp.docs.com": {
+      "enabled": false
+    },
+    "spanishdict.com": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "speedwrite.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "stage-app.grammarly.com": {
+      "enabled": false
+    },
+    "staging-rr.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "staging.tapwage.com": {
+      "enabled": false,
+      "matchSubdomains": false
+    },
+    "store.google.com": {
+      "enabled": false
+    },
+    "stripe.com": {
+      "enabled": false
+    },
+    "studiosity.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "studystack.com": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "success.planview.com": {
+      "enabled": false
+    },
+    "switter.at/admin": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "synergy.clackesd.k12.or.us": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "taichungdesigner.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "talk-me.ru": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "teehag.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "test-app.taprecruit.co": {
+      "enabled": false,
+      "matchSubdomains": false
+    },
+    "tests.gracor.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "tests.gracor.us": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "tettra.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "texteditor.nsspot.net": {
+      "enabled": false
+    },
+    "thequill.io": {
+      "enabled": false
+    },
+    "thrivetrm.com": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "tools.picsart.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "travefy.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "trax-qa.verbit.co": {
+      "enabled": false,
+      "matchSubdomains": false
+    },
+    "trax.verbit.co": {
+      "enabled": false,
+      "matchSubdomains": false
+    },
+    "treb.clareityiam.net": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "tripoto.com": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "ttnn-exam.fpt.edu.vn": {
+      "enabled": false
+    },
+    "typeset.io": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "ui.proofit.grammarly.com": {
+      "enabled": false
+    },
+    "ui.proofit.grammarly.io": {
+      "enabled": false
+    },
+    "ui.proofit.ppgr.io": {
+      "enabled": false
+    },
+    "ui.proofit.qagr.io": {
+      "enabled": false
+    },
+    "ultracamp.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "uptowork.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "use.ob3.io": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "usecanvas.com": {
+      "enabled": false
+    },
+    "usps.com": {
+      "disabledBrowsers": [
+        "firefox",
+        "safari",
+        "edge"
+      ],
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "venue360.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "venue360.me": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "venue360saas.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "vernon.pptsend01.com": {
+      "enabled": false
+    },
+    "virdocs.com": {
+      "disabledBrowsers": [
+        "safari"
+      ],
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "walgreens.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "wearedeveloper.ml": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "web.tourcube.net": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "web.whatsapp.com": {
+      "enabled": true,
+      "minFieldHeight": 15
+    },
+    "webtexts.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "wikipedia.org": {
+      "enabled": true,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true,
+      "pages": {
+        ".*/Special:ContentTranslation": {
+          "enabled": false
+        }
+      }
+    },
+    "wisconsintitlegroup-portal.paystand.com/wisconsintitlegroup": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "word.cloud.microsoft": {
+      "enabled": false
+    },
+    "writeandimprove.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "writerduet.com": {
+      "enabled": false,
+      "matchInclusions": true,
+      "matchSubdomains": true
+    },
+    "writersolo.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "writesaver.co": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "wyborcza.pl": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "xmcircle.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "xmpiecloud.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "yandex-team.ru": {
+      "enabled": false,
+      "matchPartOfUrl": true,
+      "matchSubdomains": true
+    },
+    "yoursite.pacific.edu": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "yourtutor.com.au": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "youtube.com": {
+      "enabled": true,
+      "minFieldHeight": 15
+    },
+    "z1-a.le.liveperson.net": {
+      "enabled": true
+    },
+    "zala.net": {
+      "enabled": false,
+      "matchSubdomains": true
+    },
+    "zenali.grammarly.io": {
+      "enabled": false
+    },
+    "zety.com": {
+      "enabled": false,
+      "matchSubdomains": true
+    }
+  },
+  "protocolVersion": "1.0",
+  "version": "0.0.393"
+}

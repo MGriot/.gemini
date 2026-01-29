@@ -1,0 +1,9 @@
+# Task: Debugging Upload Failure
+
+- [/] Investigate 422 error in file upload <!-- id: 0 -->
+    - [x] Identify API endpoint in [server.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/server.py) <!-- id: 1 -->
+    - [x] Identify frontend code in [FilePlacer.tsx](file:///c:/Users/Admin/Documents/Coding/QualiaQC/web-gui/src/features/dataset/FilePlacer.tsx) <!-- id: 2 -->
+    - [/] Analyze `ProjectManager.update_project_asset` implementation <!-- id: 3 -->
+    - [ ] Check for missing data or validation mismatches <!-- id: 4 -->
+- [ ] Implement fix for upload failure <!-- id: 5 -->
+- [ ] Verify fix <!-- id: 6 -->

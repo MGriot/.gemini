@@ -1,0 +1,19 @@
+[
+  {
+    "id": "AUTH-01",
+    "title": "Create Login Schema",
+    "description": "Define Pydantic model for login credentials.",
+    "status": "todo",
+    "linked_req": "Authentication",
+    "target_files": [
+      "schemas/auth.py",
+      "tests/test_schemas.py"
+    ],
+    "verification_method": "pytest tests/test_schemas.py",
+    "acceptance_criteria": [
+      "Valid email regex",
+      "Password min length 8"
+    ],
+    "updated_at": "2023-01-01T00:00:00Z"
+  }
+]

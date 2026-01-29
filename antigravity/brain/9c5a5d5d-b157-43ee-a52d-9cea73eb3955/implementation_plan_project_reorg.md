@@ -1,0 +1,47 @@
+# Implementation Plan: Project Data Reorganization (DB-Backed)
+
+## Goal
+Transition from a filesystem-heavy project structure to a database-centric one. This will make the system more resilient to user error and provide a more professional architecture.
+
+## Proposed Changes
+
+### 1. Database Schema Enhancements
+#### [MODIFY] [models.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/db/models.py)
+- **NEW**: Add `AnalysisProject` model to store project metadata and configurations (`project_config.json`, `dataset_item_processing_config.json`).
+- **MODIFY**: Update `ProjectAsset` to include a `project_id` foreign key.
+- **MODIFY**: Update `AnalysisSession` to include a `project_id` foreign key (optional but recommended for integrity).
+
+### 2. Database Manager Refinement
+#### [MODIFY] [manager.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/db/manager.py)
+- Add CRUD methods for `AnalysisProject`.
+- Implement a `sync_projects_from_disk()` utility to import existing `data/projects/` folders into the database.
+
+### 3. Project Manager Refactoring
+#### [MODIFY] [manager.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/project_management/manager.py)
+- Refactor `list_projects` to query the `AnalysisProject` table.
+- Refactor `_get_project_config` and `_get_dataset_item_processing_config` to fetch data from the database.
+- Refactor `get_project_file_paths` to resolve paths through `ProjectAsset` database records.
+- Ensure that newly created projects are stored in a managed directory (e.g., `data/projects/[project_id]/`) and tracked in the DB.
+
+### 4. Pipeline & Reporting Updates
+#### [MODIFY] [pipeline.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/pipeline.py)
+- Update `Pipeline` to use project information from the DB.
+#### [MODIFY] [pipeline.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/reporting/pipeline.py)
+- Update reporting logic to fetch project-level metadata from the DB.
+
+### 5. Frontend & API Bridge
+#### [MODIFY] [server.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/server.py)
+- Update API endpoints to deal with Project IDs.
+- Ensure the project creation/update flow properly populates the DB.
+
+---
+
+## Verification Plan
+
+### Automated Tests
+- Run a migration script that imports existing projects and verify they appear in the Web GUI.
+- Run an analysis and verify it correctly uses the DB-resolved paths for color checkers and drawing layers.
+
+### Manual Verification
+- Verify that deleting or moving files manually in `data/projects/` (the "exposed" part) has clear consequences or is mitigated by the DB records.
+- Check that the Web GUI correctly displays project details fetched from the DB.

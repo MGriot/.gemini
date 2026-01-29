@@ -1,0 +1,31 @@
+# Docker Fixes & Authentication Debugging Walkthrough
+
+I have successfully fixed the Docker build and startup issues, and resolved the authentication failure.
+
+## Fixes Applied
+
+### Backend
+1.  **Dockerfile Casing**: Fixed `FROM ... as builder` to `AS builder`.
+2.  **Virtual Environment**: Updated Dockerfile to build venv in `/opt/venv` to fix path issues.
+3.  **Import Errors**: Fixed widespread `ImportError` issues by converting relative imports (e.g., `from ..database`) to absolute imports (`from database`).
+4.  **Configuration**: Updated [.env](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/.env) with a valid `SMTP_PORT` (587).
+5.  **Database Schema**: Found missing database tables. Generated and applied initial Alembic migration (`1325bf383954_initial_migration.py`) to create schema.
+6.  **ORM Mapping (CRITICAL)**: Fixed `sqlalchemy.exc.InvalidRequestError` by adding explicit `foreign_keys` to [User](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/models/user.py#6-21) model relationships (`tasks_owned`, `tasks_promoted`) to resolve ambiguity with multiple foreign keys in [Task](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/models/task.py#6-30) model.
+
+### Frontend
+1.  **Build Error**: Removed unused `useEffect` in [projectListPage.tsx](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/frontend/src/pages/projectListPage.tsx).
+2.  **API Configuration (CRITICAL)**: Updated [api.ts](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/frontend/src/services/api.ts) to use `/api` as the `baseURL` (instead of `http://localhost:8000`), ensuring requests go through the Nginx proxy and reach the backend.
+
+### Nginx
+1.  **Configuration**: Removed duplicate global directives in [nginx.conf](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/nginx.conf).
+2.  **Permissions**: Updated Dockerfile to allow non-root `nginx` user to write to `/var/run/nginx.pid`.
+
+## Verification
+
+### Authentication
+- **Registration**: Request flow verified. Frontend now correctly calls `/api/auth/register` -> Nginx -> Backend.
+- **Login**: Verified request flow.
+
+### Verification Evidence
+![Auth Success](file:///C:/Users/Admin/.gemini/antigravity/brain/ba962709-c4a3-407c-9501-3578566e15d0/auth_success_1765640913459.png)
+*(Note: Screenshot captures state after successful login with `newuser`)*

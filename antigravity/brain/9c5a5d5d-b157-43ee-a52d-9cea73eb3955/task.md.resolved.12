@@ -1,0 +1,21 @@
+- [ ] **Refine Analysis UI**
+    - [ ] Move main image upload to "Project Selection" card
+    - [ ] Style main image upload to match compact file input
+    - [ ] Remove old large upload box
+    - [ ] Rebuild Docker
+- [x] **Docker Build & Verification**
+    - [x] Review [docker-compose.yml](file:///c:/Users/Admin/Documents/Coding/QualiaQC/docker-compose.yml), [Dockerfile.backend](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/Dockerfile.backend), [Dockerfile.frontend](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/Dockerfile.frontend)
+    - [x] Build and start Docker services
+    - [x] Create [.dockerignore](file:///c:/Users/Admin/Documents/Coding/QualiaQC/.dockerignore) to optimize build
+    - [x] Verify Frontend accessibility (Browser/Curl)
+    - [x] Verify Backend connectivity (Analysis endpoint reached)
+    - [x] Fix [ColorAnalysisResult](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/config.py#115-128) attribute error in [server.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/server.py)
+    - [x] Rebuild and Restart Docker
+    - [x] Run a complete analysis workflow (simulated via Curl)
+- [x] **Color Checker Upload (User Request)**
+    - [x] Update `POST /api/analysis/run` to accept optional [color_checker](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/gui/app.py#139-142) file
+    - [x] Update [AnalysisView.tsx](file:///c:/Users/Admin/Documents/Coding/QualiaQC/web-gui/src/features/analysis/AnalysisView.tsx) to add file input for Color Checker
+    - [x] Verify integration
+- [x] **History API Integration**
+- [x] **Advanced Analysis Parameters**
+- [x] Analyze & Verify Features

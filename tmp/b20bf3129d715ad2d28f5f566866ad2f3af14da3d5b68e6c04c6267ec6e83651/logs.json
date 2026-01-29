@@ -1,0 +1,65 @@
+[
+  {
+    "sessionId": "c9d20dec-0105-488c-99d8-2e5d3977879c",
+    "messageId": 0,
+    "type": "user",
+    "message": "i want that you run a little script for take out from all the subfolders the contents and remove the empyt subfolder and folder",
+    "timestamp": "2025-09-27T19:57:25.688Z"
+  },
+  {
+    "sessionId": "c9d20dec-0105-488c-99d8-2e5d3977879c",
+    "messageId": 1,
+    "type": "user",
+    "message": "i want that you run a little script for take out from all the subfolders the contents and remove the empyt subfolder and folder",
+    "timestamp": "2025-09-27T19:57:29.175Z"
+  },
+  {
+    "sessionId": "c9d20dec-0105-488c-99d8-2e5d3977879c",
+    "messageId": 2,
+    "type": "user",
+    "message": "yes",
+    "timestamp": "2025-09-27T19:57:41.812Z"
+  },
+  {
+    "sessionId": "c9d20dec-0105-488c-99d8-2e5d3977879c",
+    "messageId": 3,
+    "type": "user",
+    "message": "yes",
+    "timestamp": "2025-09-27T19:57:53.868Z"
+  },
+  {
+    "sessionId": "c9d20dec-0105-488c-99d8-2e5d3977879c",
+    "messageId": 4,
+    "type": "user",
+    "message": "1 C:\\Users\\Admin\\Documents\\Coding\\Obsidian\\Scientia\\Notion\\My links 2 C:\\Users\\Admin\\Documents\\Coding\\Obsidian\\Scientia\\Notion\\My links\\ 3 keep both 4 tes",
+    "timestamp": "2025-09-27T19:58:56.433Z"
+  },
+  {
+    "sessionId": "c9d20dec-0105-488c-99d8-2e5d3977879c",
+    "messageId": 5,
+    "type": "user",
+    "message": "please go",
+    "timestamp": "2025-09-27T19:59:19.707Z"
+  },
+  {
+    "sessionId": "c9d20dec-0105-488c-99d8-2e5d3977879c",
+    "messageId": 6,
+    "type": "user",
+    "message": "go",
+    "timestamp": "2025-09-27T19:59:49.571Z"
+  },
+  {
+    "sessionId": "c9d20dec-0105-488c-99d8-2e5d3977879c",
+    "messageId": 7,
+    "type": "user",
+    "message": "save the script in a file if is a modul or something very adaptive",
+    "timestamp": "2025-09-27T20:03:44.168Z"
+  },
+  {
+    "sessionId": "c9d20dec-0105-488c-99d8-2e5d3977879c",
+    "messageId": 8,
+    "type": "user",
+    "message": "add also this istruction as comment in the file",
+    "timestamp": "2025-09-27T20:04:27.490Z"
+  }
+]

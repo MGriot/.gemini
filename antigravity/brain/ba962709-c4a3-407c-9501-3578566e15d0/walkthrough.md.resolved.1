@@ -1,0 +1,25 @@
+# Docker Fixes Walkthrough
+
+I have successfully fixed the Docker build and startup issues. The application is now running locally.
+
+## Fixes Applied
+
+### Backend
+1.  **Dockerfile Casing**: Fixed `FROM ... as builder` to `AS builder`.
+2.  **Virtual Environment**: Updated Dockerfile to build venv in `/opt/venv` to fix path issues.
+3.  **Import Errors**: Fixed widespread `ImportError` issues by converting relative imports (e.g., `from ..database`) to absolute imports (`from database`) across the codebase.
+4.  **Configuration**: Updated [.env](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/.env) with a valid `SMTP_PORT` (587) to fix Pydantic validation errors.
+
+### Frontend
+1.  **Build Error**: Removed unused `useEffect` in [projectListPage.tsx](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/frontend/src/pages/projectListPage.tsx).
+
+### Nginx
+1.  **Configuration**: Removed duplicate global directives in [nginx.conf](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/nginx.conf) that were causing startup crashes.
+2.  **Permissions**: Updated Dockerfile to allow non-root `nginx` user to write to `/var/run/nginx.pid`.
+
+## Verification
+
+The application stacks builds and runs successfully.
+
+### Application Homepage
+![SynapsePlan Homepage](file:///C:/Users/Admin/.gemini/antigravity/brain/ba962709-c4a3-407c-9501-3578566e15d0/synapse_homepage_success_1765640215463.png)

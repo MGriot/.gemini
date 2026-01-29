@@ -1,0 +1,5 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary":  "Implementation plan to bring the Tkinter GUI and core project creation logic into parity with the new database-backed managed storage system. This involves refactoring `create_project` to use `DatabaseManager`, updating the Tkinter `HistoryTab` to query SQLite, and ensuring that all components resolve assets through the database, allowing for the eventual removal of the legacy `data/projects` directory.",
+  "updatedAt":  "2025-12-28T17:33:21.899271400Z"
+}

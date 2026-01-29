@@ -1,0 +1,34 @@
+# Implementation Plan: Fix Migration Corruption
+
+## Goal Description
+Restore missing columns in the `projects` table definition within the initial migration file [1325bf383954_initial_migration.py](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/alembic/versions/1325bf383954_initial_migration.py). These columns were inadvertently removed during a previous update, causing Alembic to fail during startup and resulting in a 502 Bad Gateway error.
+
+## Proposed Changes
+
+### Database Migrations
+
+#### [MODIFY] [1325bf383954_initial_migration.py](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/alembic/versions/1325bf383954_initial_migration.py)
+Restore the following columns to the `projects` table:
+- `id`
+- `name`
+- `description`
+- `start_date`
+- `end_date`
+- `progress`
+- `status`
+- `created_at`
+- `updated_at`
+
+## Verification Plan
+
+### Automated Verification
+- Run `docker-compose down -v` to clear the corrupted database.
+- Run `docker-compose up --build -d` to rebuild and restart the environment.
+- Check `docker logs synapseplan-backend-1` to ensure migrations complete successfully.
+- Verify that the login page is reachable and backend docs are available at `http://localhost:8000/docs`.
+
+### Manual Verification
+- Log in as admin@synapseplan.com / admin.
+- Create a project and a task.
+- Update the task and verify changes persist.
+- Verify the "Admin" link is visible in the sidebar.

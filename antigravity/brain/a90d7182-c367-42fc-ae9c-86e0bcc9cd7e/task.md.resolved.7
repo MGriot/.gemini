@@ -1,0 +1,17 @@
+# Task: Debugging Pipeline Failure (Path Issue)
+
+- [x] Investigate pipeline failure log <!-- id: 10 -->
+    - [x] Analyze error message and incorrect path structure <!-- id: 11 -->
+    - [x] Trace path generation in [manager.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/project_management/manager.py) <!-- id: 12 -->
+    - [x] Identify platform-dependent bugs in [heal_dict](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/project_management/manager.py#97-130) and [get_project_file_paths](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/project_management/manager.py#409-502) <!-- id: 13 -->
+- [x] Implement robust path handling <!-- id: 14 -->
+    - [x] Fix `os.path.basename` usage for Windows paths on Linux <!-- id: 15 -->
+    - [x] Update [heal_dict](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/project_management/manager.py#97-130) to favor relative paths within project folders <!-- id: 16 -->
+    - [x] Fix `is_absolute` check in [get_project_file_paths](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/project_management/manager.py#409-502) for Windows paths <!-- id: 17 -->
+- [x] Verify fix and re-run analysis <!-- id: 18 -->
+- [x] Implement PDF report generation and download button <!-- id: 19 -->
+    - [x] Update [ReportGenerator](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/reporting/generator.py#39-914) to return PDF path <!-- id: 20 -->
+    - [x] Update [Pipeline](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/pipeline.py#38-454) to store report info <!-- id: 21 -->
+    - [x] Update [server.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/server.py) to expose report URL <!-- id: 22 -->
+    - [x] Add download button to [AnalysisView.tsx](file:///c:/Users/Admin/Documents/Coding/QualiaQC/web-gui/src/features/analysis/AnalysisView.tsx) <!-- id: 23 -->
+    - [x] **Hotfix**: Fix `AttributeError: DOCUMENT` in [Pipeline](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/pipeline.py#38-454) <!-- id: 24 -->

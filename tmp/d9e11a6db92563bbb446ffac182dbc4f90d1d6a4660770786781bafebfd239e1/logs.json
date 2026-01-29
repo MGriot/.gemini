@@ -1,0 +1,37 @@
+[
+  {
+    "sessionId": "d360cfb5-8983-4342-b1e5-7f05fadb227f",
+    "messageId": 0,
+    "type": "user",
+    "message": "im using obsidian for notetaking, rewrite this document (C:\\Users\\Admin\\Documents\\Coding\\Obsidian\\Scientia\\Notion\\Danger Zone\\[Pages]\\Statistics\\Media.md) in md format with this template (C:\\Users\\Admin\\Documents\\Coding\\Obsidian\\Scientia\\100. Template\\tpv2_atomic note.md) and place in this folder (C:\\Users\\Admin\\Documents\\Coding\\Obsidian\\Scientia\\010. Instruction\\Mathematics) or subfolder. after delete the original file. prefer a english title, both english and italian aliases and content text in italian",
+    "timestamp": "2025-09-27T18:50:07.832Z"
+  },
+  {
+    "sessionId": "d360cfb5-8983-4342-b1e5-7f05fadb227f",
+    "messageId": 1,
+    "type": "user",
+    "message": "perfect, now do the same thing for all the other notes in thsi path (C:\\Users\\Admin\\Documents\\Coding\\Obsidian\\Scientia\\Notion) and relocated in the correct subfolder starting from (C:\\Users\\Admin\\Documents\\Coding\\Obsidian\\Scientia\\010. Instruction), use the template and remove the old files. mantain the links betwen the media (like images)",
+    "timestamp": "2025-09-27T18:59:05.736Z"
+  },
+  {
+    "sessionId": "d360cfb5-8983-4342-b1e5-7f05fadb227f",
+    "messageId": 2,
+    "type": "user",
+    "message": "contunue in your task",
+    "timestamp": "2025-09-27T19:11:36.113Z"
+  },
+  {
+    "sessionId": "d360cfb5-8983-4342-b1e5-7f05fadb227f",
+    "messageId": 3,
+    "type": "user",
+    "message": "contunue in your task",
+    "timestamp": "2025-09-27T19:21:03.210Z"
+  },
+  {
+    "sessionId": "d360cfb5-8983-4342-b1e5-7f05fadb227f",
+    "messageId": 4,
+    "type": "user",
+    "message": "contunue in your task",
+    "timestamp": "2025-09-27T19:21:31.782Z"
+  }
+]

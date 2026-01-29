@@ -1,0 +1,1279 @@
+{
+  "agentDirectory_1759987529000": {
+    "urls": {
+      "agentSecurityUrl": "https://support.grammarly.com/hc/en-us/articles/40393024109837",
+      "agentSetupUrl": "https://coda.grammarly.com/brain/agent/setup/",
+      "agentStoreUrl": "https://superhuman.com/store/agents/",
+      "reportAnIssue": "https://support.grammarly.com/hc/en-us/requests/new#/privacy-and-security/report-an-issue-with-an-agent/"
+    }
+  },
+  "agentsMessageBusTelemetry_1760985664967": {
+    "intervalMinutes": 30,
+    "maxLogsCount": 100,
+    "samplingChance": 10
+  },
+  "agents_1760000000000": {
+    "blockList": [
+      {
+        "domain": "app.slack.com",
+        "kind": "byDomain",
+        "matchSubdomains": true
+      }
+    ]
+  },
+  "appActions_1702060787030": {
+    "disableByDomain": [
+      "facebook.com",
+      "web\\.whatsapp.com",
+      "discord.com"
+    ]
+  },
+  "autocorrect_1579700246281": {
+    "bannedCorrections": [
+      [
+        "resubscribe",
+        null
+      ],
+      [
+        "resubscribing",
+        null
+      ],
+      [
+        "resubscribed",
+        null
+      ],
+      [
+        "resubscribes",
+        null
+      ]
+    ],
+    "bannedDict": [
+      "Poopy",
+      "poopy",
+      "blacklist",
+      "whitelist"
+    ],
+    "disabled": false
+  },
+  "cheetah_1677709750926": {
+    "enableByBrowser": {
+      "chrome": true,
+      "edge": true,
+      "firefox": true,
+      "safari": true
+    }
+  },
+  "citationBuilder_1654621818572": {
+    "blockedDomains": [
+      "docs.google.com",
+      "mail.google.com",
+      "chatgpt.com",
+      "en.wikipedia.org"
+    ],
+    "disableByBrowser": {
+      "chrome": false,
+      "edge": false,
+      "firefox": false,
+      "safari": false
+    },
+    "disabled": false,
+    "sources": [
+      {
+        "domain": "springeropen\\.com$",
+        "name": "springeropen",
+        "pathname": "^\\/articles"
+      },
+      {
+        "domain": "^journals\\.plos\\.org$",
+        "name": "plosone",
+        "pathname": "^\\/plosone\\/article"
+      },
+      {
+        "domain": "^sciencedirect\\.com$",
+        "name": "sciencedirect",
+        "pathname": "^\\/science\\/article"
+      },
+      {
+        "domain": "^journals\\.sagepub\\.com$",
+        "name": "sagepub",
+        "pathname": "^\\/doi"
+      },
+      {
+        "domain": "^pmc\\.ncbi\\.nlm\\.nih\\.gov$",
+        "name": "pubmed",
+        "pathname": "^\\/articles"
+      },
+      {
+        "domain": "^doaj\\.org$",
+        "name": "doaj",
+        "pathname": "^\\/article"
+      },
+      {
+        "domain": "^arxiv\\.org$",
+        "name": "arxiv",
+        "pathname": "^\\/abs"
+      },
+      {
+        "domain": "^frontiersin\\.org$",
+        "name": "frontiers",
+        "pathname": ".*\\/articles\\/.+"
+      },
+      {
+        "domain": "^jstor\\.org$",
+        "name": "jstor",
+        "pathname": "^\\/stable",
+        "reparse": true
+      },
+      {
+        "domain": "^(\\w+\\.)?onlinelibrary\\.wiley\\.com$",
+        "name": "wiley",
+        "pathname": "^\\/doi"
+      },
+      {
+        "domain": "^journals\\.physiology\\.org$",
+        "name": "american_physiology_society",
+        "pathname": "^\\/doi"
+      },
+      {
+        "domain": "^science\\.org$",
+        "name": "science_org",
+        "pathname": "^\\/doi"
+      },
+      {
+        "domain": "^nature\\.com$",
+        "name": "nature",
+        "pathname": "^\\/articles"
+      },
+      {
+        "domain": "^pnas\\.org$",
+        "name": "pnas",
+        "pathname": "^\\/doi"
+      },
+      {
+        "domain": "^annualreviews\\.org$",
+        "name": "annualreviews",
+        "pathname": "^\\/doi"
+      },
+      {
+        "domain": "^pubs\\.asha\\.org$",
+        "name": "asha",
+        "pathname": "^\\/doi"
+      },
+      {
+        "domain": "^academic\\.oup\\.com$",
+        "name": "oxford_university_press",
+        "pathname": ".*\\/(?:doi|article|article-abstract)\\/.+"
+      },
+      {
+        "domain": "^mdpi\\.com$",
+        "name": "mdpi",
+        "pathname": "^\\/"
+      },
+      {
+        "domain": "^muse\\.jhu\\.edu$",
+        "name": "muse",
+        "pathname": "^\\/pub"
+      },
+      {
+        "domain": "^online\\.ucpress\\.edu$",
+        "name": "ucpress",
+        "pathname": "^\\/\\w+\\/article"
+      },
+      {
+        "domain": "^journals\\.uchicago\\.edu$",
+        "name": "uchicago",
+        "pathname": "^\\/doi"
+      }
+    ]
+  },
+  "consistencyCard_1623273583508": {
+    "disableByBrowser": {
+      "chrome": false,
+      "edge": false,
+      "firefox": false,
+      "safari": false
+    },
+    "disableByDomain": [
+      "^(\\S\\.)?coda\\.io$"
+    ],
+    "disabled": false
+  },
+  "crashRateReporting_1695869529413": {
+    "waitDocumentBodyReady": true
+  },
+  "draftAIUpsell_1627424945372": {
+    "triggerURLs": []
+  },
+  "ethicalAI_1627579461366": {
+    "enableByBrowser": {
+      "chrome": true,
+      "edge": true,
+      "firefox": true,
+      "safari": true
+    }
+  },
+  "fluidDisabledForFirefox_1567530773089": false,
+  "fluidDisabledForSafari_1567530773090": false,
+  "fullSentenceRewritesDisabled_1595353312714": false,
+  "gButton_1758111274454": {
+    "blockList": [
+      {
+        "domain": "chatgpt.com",
+        "kind": "byDomain"
+      }
+    ]
+  },
+  "gDocsCanvasConfig_1621558551011": {
+    "advancedMappingDebugReporting": {
+      "enabled": true,
+      "failurePercentage": {
+        "min": 100
+      },
+      "grammarlyEmployeeRule": {
+        "failurePercentage": {
+          "min": 50
+        },
+        "textLength": {
+          "max": 200
+        }
+      },
+      "mappings": {
+        "min": 10
+      },
+      "orAnyOf": [
+        {
+          "failurePercentage": {
+            "min": 100
+          },
+          "mappings": {
+            "min": 10
+          },
+          "textLength": {
+            "max": 100
+          }
+        },
+        {
+          "failurePercentage": {
+            "min": 90
+          },
+          "mappings": {
+            "min": 10
+          },
+          "tableMode": "singlePage",
+          "textLength": {
+            "max": 200
+          }
+        }
+      ],
+      "textLength": {
+        "max": 100
+      }
+    },
+    "advancedMappingRetryTimeout": 500,
+    "advancedMappingTimeout": 80,
+    "hideInlineCardWhenOverlappedWithSelectors": [
+      ".docs-linkbubble-bubble",
+      ".goog-menu"
+    ],
+    "highlightColors": [
+      "rgba(252,232,230,1)",
+      "rgba(232,240,254,1)"
+    ],
+    "textCoverageThreshold": 50,
+    "underlineColors": [
+      "rgba(221,0,0,1)",
+      "rgba(66,133,244,1)"
+    ]
+  },
+  "gapTransformCard_1618874880869": {
+    "disabled": false,
+    "disabledByDomainPattern": [
+      "wsu.instructure.com"
+    ]
+  },
+  "gmailSendEmailPopup_1588710046696": {
+    "enableByBrowser": {
+      "chrome": true,
+      "edge": true,
+      "firefox": true,
+      "safari": true
+    }
+  },
+  "highlightsBlendingEnabled_1620339604804": true,
+  "hwr_1725584396404": {
+    "blockedDomains": [
+      "www.googletagmanager.com",
+      "googletagmanager.com",
+      "accounts.google.com",
+      "ogs.google.com",
+      "www.claudeusercontent.com",
+      "claudeusercontent.com",
+      "yellowblue.io",
+      "cdn.cohesionapps.com",
+      "liadm.com",
+      "doubleclick.net",
+      "googleapis.com",
+      "amazon-adsystem.com",
+      "openx.net",
+      "gumgum.com",
+      "adtrafficquality.google",
+      "match.sharethrough.com",
+      "yieldmo.com",
+      "imrworldwide.com",
+      "gum.criteo.com",
+      "crb.kargo.com",
+      "eb2.3lift.com",
+      "pubmatic.com",
+      "kueezrtb.com",
+      "adnxs.com",
+      "rubiconproject.com",
+      "a-mo.net",
+      "tynt.com",
+      "googlesyndication.com",
+      "googleadservices.com",
+      "contextual.media.net",
+      "indexww.com",
+      "sdk.streamrail.com",
+      "w55c.net",
+      "jivox.com",
+      "cdn.flashtalking.com"
+    ],
+    "urls": {
+      "howItWorks": "https://support.grammarly.com/hc/en-us/articles/29548735595405-Introducing-Grammarly-Authorship",
+      "learnMoreControl": "https://support.grammarly.com/hc/en-us/articles/29548735595405-Introducing-Grammarly-Authorship#h_01J8JA7ZJ43YCTAZBYKTXGR72Z",
+      "learnMoreSafety": "https://support.grammarly.com/hc/en-us/articles/29548735595405-Introducing-Grammarly-Authorship#h_01J8JA7T9PF7DN65RK4PDGXTSC",
+      "learnMoreTransparency": "https://support.grammarly.com/hc/en-us/articles/29548735595405-Introducing-Grammarly-Authorship#h_01J8JA7KQSY8SSQNF6RKGN5KW3",
+      "reportAnIssue": "https://support.grammarly.com/hc/en-us"
+    }
+  },
+  "iframeIntegration_1593643390051": {
+    "disableByDomain": [
+      {
+        "domain": "preeminent-pegasus-885edd.netlify.app",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [],
+        "domain": "yashhv.com",
+        "matchSubdomains": true
+      }
+    ],
+    "enableByBrowser": {
+      "chrome": true,
+      "edge": true,
+      "firefox": true,
+      "safari": false
+    },
+    "enableByDomain": [
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*force\\.com$"
+        ],
+        "domain": "salesforce.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*salesforce\\.com$",
+          "^https?:\\/\\/([^\\.]+\\.)*force\\.com$",
+          "^https?:\\/\\/([^\\.]+\\.)*visualforce\\.com$"
+        ],
+        "domain": "lightning.force.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)+apps\\.zdusercontent\\.com$"
+        ],
+        "domain": "zendesk.com",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "facebook.com",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "evernote.com",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "squarespace.com",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "tiddlywiki.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*cdpn\\.io$"
+        ],
+        "domain": "codepen.io",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "service-now.com",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "wsib.on.ca",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "google.com",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "maps.google.com",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "enterprise.knak.io",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*csb\\.app$"
+        ],
+        "domain": "codesandbox.io",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*clickup\\.com$"
+        ],
+        "domain": "clickup.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*dynamics\\.com$",
+          "^https?:\\/\\/([^\\.]+\\.)*azureedge\\.net$"
+        ],
+        "domain": "dynamics.com",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "washingtonpost.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*hubspot\\.com$",
+          "^https?:\\/\\/([^\\.]+\\.)*hubspotpreview-[^\\.]+\\.com$"
+        ],
+        "domain": "hubspot.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*trello\\.com$",
+          "^https?:\\/\\/([^\\.]+\\.)*sendboard\\.com$"
+        ],
+        "domain": "trello.com",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "niceincontact.com",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "ciena.service-now.com",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "ciena.servicenow.com",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "emsmum.concentrix.com",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "uatgoldcrm.concentrix.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*google\\.com$"
+        ],
+        "domain": "mail.google.com",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "adobe.com",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "blackboard.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*pegacloud\\.io$"
+        ],
+        "domain": "pegacloud.io",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "brightspace.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*teleperformancedibs\\.com$"
+        ],
+        "domain": "teleperformancedibs.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/[^\\.]+\\.wordpress\\.com$"
+        ],
+        "domain": "wordpress.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https:\\/\\/smartassist\\.kore\\.ai$"
+        ],
+        "domain": "smartassist.kore.ai",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)+zoho\\.in$"
+        ],
+        "domain": "one.zoho.in",
+        "matchSubdomains": false
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)+zoho\\.eu$"
+        ],
+        "domain": "one.zoho.eu",
+        "matchSubdomains": false
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)+zoho\\.com$"
+        ],
+        "domain": "zoho.com",
+        "matchSubdomains": false
+      },
+      {
+        "domain": "teams.microsoft.com",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "teams.live.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https:\\/\\/vac\\.vap\\.expedia\\.com$",
+          "^https:\\/\\/cards\\.vap\\.expedia\\.com$"
+        ],
+        "domain": "agent.vap.expedia.com",
+        "matchSubdomains": false
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https:\\/\\/agent\\.vap\\.expedia\\.com$",
+          "^https:\\/\\/cards\\.vap\\.expedia\\.com$"
+        ],
+        "domain": "vac.vap.expedia.com",
+        "matchSubdomains": false
+      },
+      {
+        "domain": "blackboard.und.edu",
+        "matchSubdomains": false
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https:\\/\\/grammarly-test\\.web\\.app$"
+        ],
+        "domain": "grammarly-test.firebaseapp.com",
+        "matchSubdomains": false
+      },
+      {
+        "domain": "samples.extension.grammarlyaws.com",
+        "matchSubdomains": false
+      },
+      {
+        "domain": "carync.gov",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "adobeaemcloud.com",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "docs.bmc.com",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "86borders.com",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "tteccloud.com",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "newsnow.io",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "canva.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*box\\.com$",
+          "^https?:\\/\\/([^\\.]+\\.)*live\\.com$"
+        ],
+        "domain": "box.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https:\\/\\/docs\\.google\\.com$"
+        ],
+        "domain": "indeed.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*yahoosandbox\\.com$"
+        ],
+        "domain": "news.yahoo.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*yahoosandbox\\.com$"
+        ],
+        "domain": "finance.yahoo.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*coda\\.io$"
+        ],
+        "domain": "coda.io",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*athenahealth\\.com$"
+        ],
+        "domain": "athenahealth.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*mail\\.proton\\.me$"
+        ],
+        "domain": "mail.proton.me",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*app\\.spotnana\\.com$",
+          "^https?:\\/\\/([^\\.]+\\.)*flex\\.twilio\\.com$"
+        ],
+        "domain": "app.spotnana.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*pure\\.cloud$",
+          "^https?:\\/\\/([^\\.]+\\.)*us-gov-pure\\.cloud$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.com$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.ie$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.de$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.jp$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.com\\.au$"
+        ],
+        "domain": "us-gov-pure.cloud",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*pure\\.cloud$",
+          "^https?:\\/\\/([^\\.]+\\.)*us-gov-pure\\.cloud$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.com$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.ie$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.de$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.jp$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.com\\.au$"
+        ],
+        "domain": "pure.cloud",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*pure\\.cloud$",
+          "^https?:\\/\\/([^\\.]+\\.)*us-gov-pure\\.cloud$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.com$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.ie$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.de$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.jp$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.com\\.au$"
+        ],
+        "domain": "mypurecloud.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*pure\\.cloud$",
+          "^https?:\\/\\/([^\\.]+\\.)*us-gov-pure\\.cloud$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.com$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.ie$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.de$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.jp$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.com\\.au$"
+        ],
+        "domain": "mypurecloud.ie",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*pure\\.cloud$",
+          "^https?:\\/\\/([^\\.]+\\.)*us-gov-pure\\.cloud$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.com$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.ie$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.de$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.jp$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.com\\.au$"
+        ],
+        "domain": "mypurecloud.de",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*pure\\.cloud$",
+          "^https?:\\/\\/([^\\.]+\\.)*us-gov-pure\\.cloud$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.com$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.ie$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.de$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.jp$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.com\\.au$"
+        ],
+        "domain": "mypurecloud.jp",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*pure\\.cloud$",
+          "^https?:\\/\\/([^\\.]+\\.)*us-gov-pure\\.cloud$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.com$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.ie$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.de$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.jp$",
+          "^https?:\\/\\/([^\\.]+\\.)*mypurecloud\\.com\\.au$"
+        ],
+        "domain": "mypurecloud.com.au",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*edreams\\.appbase\\.com$"
+        ],
+        "domain": "edreams.appbase.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^.]+\\.)*cloudcannon\\.com$"
+        ],
+        "domain": "cloudcannon.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)+vetspace\\.cloud$"
+        ],
+        "domain": "vetspace.cloud",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)+pmhcc\\.org$"
+        ],
+        "domain": "pmhcc.org",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*reupsms\\.com$"
+        ],
+        "domain": "reup.lightning.force.com",
+        "matchSubdomains": true
+      },
+      {
+        "allowedOriginPatterns": [
+          "^https?:\\/\\/([^\\.]+\\.)*app.getbee\\.io$"
+        ],
+        "domain": "contactmonkey.com",
+        "matchSubdomains": true
+      }
+    ],
+    "enableGeneric": false
+  },
+  "ipmLlamaPreferredWebsites_1651609778904": {
+    "siteDomains": [
+      "web.whatsapp.com",
+      "evernote.com",
+      "linkedin.com",
+      "mail.yahoo.com",
+      "app.slack.com",
+      "youtube.com",
+      "fiverr.com",
+      "twitch.tv",
+      "discord.com",
+      "reddit.com",
+      "twitter.com"
+    ]
+  },
+  "iterable_1683683121357": {
+    "enableByBrowser": {
+      "chrome": true,
+      "edge": true,
+      "firefox": true,
+      "safari": true
+    }
+  },
+  "largeDocumentInactive_1703713393681": {
+    "enableByDomain": [
+      {
+        "domain": "atlassian.net",
+        "matchSubdomains": true,
+        "rules": {
+          "maxNumberOfNodes": 5000
+        }
+      }
+    ]
+  },
+  "llamaIntegration_1620108441433": {
+    "disabledByDomain": [
+      "docs.google.com"
+    ],
+    "enabled": true
+  },
+  "logger_1722005266": {
+    "rules": [
+      {
+        "domain": "newsnow.io",
+        "enableHistoryLogger": false,
+        "matchSubdomains": true
+      }
+    ]
+  },
+  "manakin_1694049018501": {
+    "fetchTreatmentsOnWakeUp": {
+      "clearCache": false,
+      "enabled": true
+    }
+  },
+  "newRichTextFieldsEnabled_1567530773088": true,
+  "oggy_1709838628311": {
+    "alertService": {
+      "applyAlertsDelayMs": 500,
+      "applyAlertsPerformBatchReplacementsTimeoutMs": 1000,
+      "applyAlertsWaitForTextMapContentChangesTimeoutMs": 1000
+    }
+  },
+  "preserveFormatting_1715185098649": {
+    "rules": [
+      {
+        "domain": "latticehq.com",
+        "matchSubdomains": true,
+        "rules": {
+          "forceUseBatchReplacementApproach": true
+        }
+      },
+      {
+        "domain": "editor.wix.com",
+        "matchSubdomains": true,
+        "rules": {
+          "forceUseBatchReplacementApproach": true
+        }
+      },
+      {
+        "domain": "chat.google.com",
+        "matchSubdomains": true,
+        "rules": {
+          "forceUseBatchReplacementApproach": true
+        }
+      },
+      {
+        "domain": "asana.com",
+        "matchSubdomains": true,
+        "rules": {
+          "forceUseBatchReplacementApproach": true
+        }
+      },
+      {
+        "domain": "reddit.com",
+        "matchSubdomains": true,
+        "rules": {
+          "forceUseBatchReplacementApproach": true
+        }
+      },
+      {
+        "domain": "facebook.com",
+        "matchSubdomains": true,
+        "rules": {
+          "forceUseBatchReplacementApproach": true
+        }
+      },
+      {
+        "domain": "discord.com",
+        "matchSubdomains": true,
+        "rules": {
+          "forceUseBatchReplacementApproach": true
+        }
+      },
+      {
+        "domain": "hubspot.com",
+        "matchSubdomains": true,
+        "rules": {
+          "forceUseBatchReplacementApproach": true
+        }
+      },
+      {
+        "domain": "atlassian.net",
+        "matchSubdomains": true,
+        "rules": {
+          "forceUseBatchReplacementApproach": true
+        }
+      },
+      {
+        "domain": "zendesk.com",
+        "matchSubdomains": true,
+        "rules": {
+          "forceUseBatchReplacementApproach": true
+        }
+      },
+      {
+        "domain": "mail.yahoo.com",
+        "matchSubdomains": true,
+        "rules": {
+          "forceUseBatchReplacementApproach": true
+        }
+      },
+      {
+        "domain": "canva.com",
+        "matchSubdomains": true,
+        "rules": {
+          "forceUseBatchReplacementApproach": true
+        }
+      },
+      {
+        "domain": "mail.google.com",
+        "matchSubdomains": true,
+        "rules": {
+          "forceUseBatchReplacementApproach": true
+        }
+      },
+      {
+        "domain": "notion.so",
+        "matchSubdomains": true,
+        "rules": {
+          "forceUseBatchReplacementApproach": true
+        }
+      }
+    ]
+  },
+  "proofit_1600711036876": {
+    "enableByBrowser": {
+      "chrome": false,
+      "edge": false,
+      "firefox": false,
+      "safari": false
+    },
+    "enableForGB": false,
+    "turnaroundTime": 60
+  },
+  "reader_1659566713539": {
+    "disableByBrowser": {
+      "chrome": false,
+      "edge": false,
+      "firefox": false,
+      "safari": false
+    },
+    "disableByDomain": [],
+    "disabled": true
+  },
+  "refreshExperimentsInterval_1601638971190": 4,
+  "requireAuthCookieAccess_1614620202105": true,
+  "safariAppExtensionMigration_1558396627629": {
+    "legacyStopWorkingDate": "2019-08-02"
+  },
+  "serviceAvailabilityMetrics_1728516999366": {
+    "domainAliasRules": [
+      {
+        "alias": "docs/document",
+        "pattern": "docs.google.com/document"
+      },
+      {
+        "alias": "docs/drivesharing",
+        "pattern": "docs.google.com/drivesharing"
+      },
+      {
+        "alias": "docs/spreadsheets",
+        "pattern": "docs.google.com/spreadsheets"
+      },
+      {
+        "alias": "docs/presentation",
+        "pattern": "docs.google.com/presentation"
+      },
+      {
+        "alias": "docs/videos",
+        "pattern": "docs.google.com/videos"
+      },
+      {
+        "alias": "docs/forms",
+        "pattern": "docs.google.com/forms"
+      }
+    ]
+  },
+  "sessionSamplingForMetrics_1717163654645": [
+    {
+      "byDomain": [
+        {
+          "domain": "docs.google.com",
+          "value": 0.01
+        }
+      ],
+      "metricName": "textInputLatencyV1",
+      "value": 0.05
+    },
+    {
+      "byDomain": [
+        {
+          "domain": "docs.google.com",
+          "value": 0.01
+        }
+      ],
+      "metricName": "resizeLatencyV1",
+      "value": 0.01
+    },
+    {
+      "byDomain": [
+        {
+          "domain": "docs.google.com",
+          "value": 0.01
+        }
+      ],
+      "metricName": "scrollLatencyV1",
+      "value": 0.05
+    },
+    {
+      "byDomain": [
+        {
+          "domain": "docs.google.com",
+          "value": 0.01
+        }
+      ],
+      "metricName": "inlineAlertApply",
+      "value": 0.05
+    },
+    {
+      "byDomain": [
+        {
+          "domain": "docs.google.com",
+          "value": 0.01
+        }
+      ],
+      "metricName": "inlineAlertDisplay",
+      "value": 0.05
+    },
+    {
+      "byDomain": [
+        {
+          "domain": "docs.google.com",
+          "value": 0.01
+        }
+      ],
+      "metricName": "highlightsDisplay",
+      "value": 0.05
+    },
+    {
+      "byDomain": [
+        {
+          "domain": "docs.google.com",
+          "value": 0.01
+        }
+      ],
+      "metricName": "gButtonTextCheck",
+      "value": 0.05
+    }
+  ],
+  "singleCardAssistant_1633644070595": {
+    "enableByBrowser": {
+      "chrome": true,
+      "edge": true,
+      "firefox": true,
+      "safari": true
+    }
+  },
+  "slatejs_1624453574243": {
+    "enabled": true,
+    "excludeClassNames": [
+      "ghq-fact-editor__editor"
+    ],
+    "excludeSelectors": []
+  },
+  "standWithUkraineBannerPopup_1646185960586": {
+    "popupBodyHTML": [
+      "As a company with a deep connection to Ukraine, we’ve updated our icon to reflect the colors in the Ukrainian flag to show our support for the people of Ukraine. We invite you to do the same."
+    ],
+    "popupHelpButtonLabelHTML": "How to help",
+    "popupHelpButtonLink": "https://www.grammarly.com/stand-with-ukraine",
+    "popupIconResetButtonLabelHTML": "Use default colors",
+    "popupTitleHTML": "Why did my Grammarly icon change to blue and yellow?"
+  },
+  "standWithUkraineGrammarlySuspendedPopup_1646163255357": {
+    "gButtonHoverTooltipText": "In response to Russia’s invasion of Ukraine, Grammarly has suspended service to accounts in Russia and Belarus.",
+    "popupBodyHTML": [
+      "In response to Russia’s invasion of Ukraine, we have suspended service to accounts in Russia and Belarus."
+    ],
+    "popupLearnMoreButtonLabelHTML": "Learn more",
+    "popupLearnMoreButtonLink": "https://redirect.grammarly.com/?standWithUkraine=1",
+    "popupTitleHTML": "Grammarly is unavailable in your country"
+  },
+  "supportUkraineCard_1646179710528": {
+    "enabled": true,
+    "maximumAppearances": 4
+  },
+  "toneAI_1622644675216": {
+    "enableByBrowser": {
+      "chrome": true,
+      "edge": true,
+      "firefox": true,
+      "safari": true
+    }
+  },
+  "touchTypist_1731429166097": {
+    "blockList": [
+      {
+        "domain": "accounts.emitrr.com",
+        "kind": "byDomain"
+      },
+      {
+        "integrationName": "iframe",
+        "kind": "byIntegrationName"
+      },
+      {
+        "domain": "instagram.com",
+        "kind": "byDomain",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "latticehq.com",
+        "kind": "byDomain",
+        "matchSubdomains": true
+      }
+    ]
+  },
+  "ungatingRenewalNotificationEnabled_1599074790962": true,
+  "vBars_1727999371574": {
+    "blockList": [
+      {
+        "integrationName": "ckeditor4",
+        "isRegex": true,
+        "kind": "byIntegrationName"
+      },
+      {
+        "domain": "wix.com",
+        "kind": "byDomain",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "instagram.com",
+        "kind": "byDomain",
+        "matchSubdomains": true,
+        "vBarTypes": [
+          "idle",
+          "pushed_content"
+        ]
+      },
+      {
+        "domain": "tumblr.com",
+        "kind": "byDomain",
+        "matchSubdomains": true,
+        "vBarTypes": [
+          "idle",
+          "pushed_content"
+        ]
+      },
+      {
+        "domain": "coda.io",
+        "kind": "byDomain"
+      },
+      {
+        "domain": "chatgpt.com",
+        "kind": "byDomain",
+        "vBarTypes": [
+          "idle",
+          "selection"
+        ]
+      },
+      {
+        "domain": "chat.openai.com",
+        "kind": "byDomain"
+      },
+      {
+        "domain": "openai.com",
+        "kind": "byDomain"
+      },
+      {
+        "domain": "canva.com",
+        "kind": "byDomain",
+        "vBarTypes": [
+          "idle",
+          "pushed_content"
+        ]
+      },
+      {
+        "domain": "notion.so",
+        "kind": "byDomain",
+        "vBarTypes": [
+          "idle",
+          "pushed_content"
+        ]
+      },
+      {
+        "domain": "latticehq.com",
+        "kind": "byDomain",
+        "matchSubdomains": true
+      },
+      {
+        "domain": "wordpress.com",
+        "kind": "byDomain",
+        "matchSubdomains": true
+      },
+      {
+        "integrationName": "WPEditorTitle",
+        "kind": "byIntegrationName"
+      },
+      {
+        "integrationName": "WPEditorEmbeddedTitle",
+        "kind": "byIntegrationName"
+      },
+      {
+        "integrationName": "WPEditorBody",
+        "kind": "byIntegrationName"
+      },
+      {
+        "integrationName": "PageAndPostEditorIframe",
+        "kind": "byIntegrationName"
+      }
+    ],
+    "rewriteLoadingTimeoutMs": 60000
+  },
+  "version": "285"
+}

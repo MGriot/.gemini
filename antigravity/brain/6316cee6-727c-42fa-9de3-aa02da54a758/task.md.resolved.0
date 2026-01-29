@@ -1,0 +1,8 @@
+# Task: Integrate Local Payslip Extractor
+
+- [ ] Explore existing backend services (`ocr_service.py`, `regex_parser.py`) <!-- id: 0 -->
+- [ ] Create `implementation_plan.md` <!-- id: 1 -->
+- [ ] Add dependencies (`pymupdf4llm`, `ollama`) to `requirements.txt` <!-- id: 2 -->
+- [ ] Implement `LocalPayslipExtractor` in a new service file (e.g., `backend/services/llm_extractor.py`) <!-- id: 3 -->
+- [ ] Integrate `LocalPayslipExtractor` into the main processing pipeline <!-- id: 4 -->
+- [ ] Verify the implementation (create a test script or update existing tests) <!-- id: 5 -->

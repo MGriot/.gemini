@@ -1,0 +1,42 @@
+# Walkthrough - Local Payslip Extractor Integration
+
+I have successfully integrated the [LocalPayslipExtractor](file:///c:/Users/Admin/Documents/Coding/test/backend/services/local_llm_extractor.py#8-162) into the backend. This allows for structured data extraction from Italian payslips using local LLMs (Qwen-2.5-Coder-14B or Llama-3.1-8B) with strict schema enforcement and number formatting validation.
+
+## Changes
+
+### Backend Services
+- **Created [backend/services/local_llm_extractor.py](file:///c:/Users/Admin/Documents/Coding/test/backend/services/local_llm_extractor.py)**:
+    - Implemented [LocalPayslipExtractor](file:///c:/Users/Admin/Documents/Coding/test/backend/services/local_llm_extractor.py#8-162) class.
+    - Uses `pymupdf4llm` for high-quality PDF-to-Markdown conversion.
+    - Uses `ollama` to interface with local models.
+    - Includes [clean_italian_number](file:///c:/Users/Admin/Documents/Coding/test/backend/services/local_llm_extractor.py#12-29) logic to handle `1.000,00` vs `1000.00` conversion.
+    - Enforces JSON schema in the prompt and validates the output.
+
+- **Modified [backend/main.py](file:///c:/Users/Admin/Documents/Coding/test/backend/main.py)**:
+    - Added `local_llm` as a method in the `/upload` endpoint.
+    - Handles temporary file creation for `pymupdf4llm` processing.
+
+- **Updated [backend/requirements.txt](file:///c:/Users/Admin/Documents/Coding/test/backend/requirements.txt)**:
+    - Added `pymupdf4llm` and `ollama`.
+
+## Verification Results
+
+### Automated Tests
+I created a mock test script [tests/test_local_extractor_mock.py](file:///c:/Users/Admin/Documents/Coding/test/tests/test_local_extractor_mock.py) to verify the extraction logic without needing the full local LLM stack running.
+
+**Test Execution Output:**
+```
+Ran 3 tests in 0.005s
+
+OK
+```
+- [test_clean_italian_number](file:///c:/Users/Admin/Documents/Coding/test/tests/test_local_extractor_mock.py#31-38): Verified number parsing logic.
+- [test_extract_success](file:///c:/Users/Admin/Documents/Coding/test/tests/test_local_extractor_mock.py#39-79): Verified JSON parsing and schema mapping.
+- [test_extract_llm_failure](file:///c:/Users/Admin/Documents/Coding/test/tests/test_local_extractor_mock.py#80-89): Verified error handling for invalid JSON.
+
+### Manual Verification Steps
+To fully verify with a real PDF and local model:
+1.  Ensure Ollama is running: `ollama serve`
+2.  Pull the model: `ollama pull qwen2.5-coder:14b`
+3.  Start the backend: `uvicorn main:app --reload`
+4.  Upload a PDF using the `/upload` endpoint with `method="local_llm"`.

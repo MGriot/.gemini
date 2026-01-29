@@ -1,0 +1,6 @@
+# Task: Resolve Numpy Conflict & Run Application
+
+- [x] Downgrade numpy to < 2.0 for compatibility <!-- id: 0 -->
+- [x] Start backend server <!-- id: 1 -->
+- [x] Start frontend server <!-- id: 2 -->
+- [/] Verify application is accessible <!-- id: 3 -->

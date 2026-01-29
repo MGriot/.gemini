@@ -1,0 +1,21 @@
+# Fix Color Correction Attribute Error
+
+## Problem Description
+The [ColorCorrector](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/color_correction/corrector.py#8-241) class in [src/color_correction/corrector.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/color_correction/corrector.py) attempts to access a `.colors` attribute on [DetectionResult](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/color_correction/settings.py#88-104) objects. However, the [DetectionResult](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/color_correction/settings.py#88-104) dataclass (defined in [src/color_correction/settings.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/color_correction/settings.py)) labels this attribute as `patch_colors_rgb`. This results in an `AttributeError` during analysis, causing the system to fall back to a default (identity) correction matrix.
+
+## Proposed Changes
+
+### Color Correction
+
+#### [MODIFY] [corrector.py](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/color_correction/corrector.py)
+- Update all occurrences of `source_result.colors` to `source_result.patch_colors_rgb`.
+- Update all occurrences of `ref_result.colors` to `ref_result.patch_colors_rgb`.
+
+## Verification Plan
+
+### Automated Tests
+- I will run a reproduction script that calls [calculate_correction_from_images](file:///c:/Users/Admin/Documents/Coding/QualiaQC/src/color_correction/corrector.py#21-73) to ensure it completes successfully without an `AttributeError`.
+
+### Manual Verification
+- The user can verify that the log "[DEBUG] Failed to calculate specific correction..." no longer appears when using project-specific or image-specific color checkers.
+- The analysis results should show a correctly calculated color alignment matrix if debug mode is enabled.

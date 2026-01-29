@@ -1,0 +1,41 @@
+# Implementation Plan - Payroll Data Extraction App
+
+# Goal Description
+Create a full-stack application (React + Python FastAPI) to upload payroll PDFs, extract data using a multi-modal LLM, and store it in a database with duplicate detection.
+
+## User Review Required
+> [!IMPORTANT]
+> **LLM Provider**: The user requested a **Local LLM**. We will use **LangChain** to interface with a local provider (likely **Ollama** or similar, compatible with OpenAI API format or direct local integration). The system will be designed to easily swap models.
+> **Database**: Using SQLite for simplicity.
+
+## Proposed Changes
+
+### Backend (Python/FastAPI)
+#### [NEW] `backend/`
+- `main.py`: Entry point.
+- `models.py`: SQLAlchemy database models (PayrollEntry, UploadLog).
+- `schemas.py`: Pydantic models for API request/response.
+- `services/llm_service.py`: Logic to call Local LLM via LangChain.
+- `services/pdf_service.py`: Logic to convert PDF to images (for vision models) or text (for text models).
+- `database.py`: DB connection.
+
+### Frontend (React/Vite)
+#### [NEW] `frontend/`
+- `src/App.jsx`: Main routing.
+- `src/components/Dashboard.jsx`: Summary view.
+- `src/components/UploadFlow.jsx`: Handle file drop, progress, and review.
+- `src/api.js`: Axios setup for backend communication.
+
+## Verification Plan
+
+### Automated Tests
+- Backend unit tests for duplicate detection logic.
+
+### Manual Verification
+- Start backend server.
+- Start frontend server.
+- Upload the provided sample PDF `Invio Cedolino ITT ITALIA S.r.l. Ottobre 2025 (1).PDF`.
+- Verify data is extracted (simulated or real).
+- Confirm "Review" screen appears.
+- Save data.
+- Try uploading the same file again -> Expect duplicate error/warning.

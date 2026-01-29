@@ -1,0 +1,24 @@
+- [x] Investigate DB initialization and seeding <!-- id: 0 -->
+    - [x] Read [backend/init_admin.py](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/init_admin.py) <!-- id: 1 -->
+    - [x] Read [backend/main.py](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/main.py) <!-- id: 2 -->
+    - [x] Read [docker-compose.yml](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/docker-compose.yml) <!-- id: 3 -->
+- [x] Verify User Creation Logic <!-- id: 4 -->
+    - [x] Check how passwords are hashed in [init_admin.py](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/init_admin.py) <!-- id: 5 -->
+    - [x] Check how passwords are verified in the login flow <!-- id: 6 -->
+- [x] Debug Login Failure <!-- id: 7 -->
+    - [x] Check logs if possible (via `docker logs` if I can run commands, or user feedback) <!-- id: 8 -->
+    - [x] Propose a fix <!-- id: 9 -->
+- [x] Run and Verify Application <!-- id: 10 -->
+    - [x] Restart Docker containers (`docker-compose down -v` && `up --build`) <!-- id: 11 -->
+    - [x] Verify admin user creation in logs <!-- id: 12 -->
+    - [x] Verify login via Browser <!-- id: 13 -->
+- [ ] Implement User Selection in Forms <!-- id: 14 -->
+    - [ ] Analyze Data Models <!-- id: 15 -->
+        - [ ] Check `Task` model (promoter, assignees/owner) <!-- id: 16 -->
+        - [ ] Check `Subtask` model (owner) <!-- id: 17 -->
+        - [ ] Check [User](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/models/user.py#6-22) router for list endpoint <!-- id: 18 -->
+    - [ ] Update Frontend Components <!-- id: 19 -->
+        - [ ] `CreateTaskModal` <!-- id: 20 -->
+        - [ ] `EditTaskModal` <!-- id: 21 -->
+        - [ ] Subtask modals (Find location) <!-- id: 22 -->
+    - [ ] Verify functionality <!-- id: 23 -->

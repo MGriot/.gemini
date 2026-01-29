@@ -1,0 +1,6 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_TASK",
+  "summary":  "Task list for debugging and fixing the pipeline failure caused by cross-platform path issues in QualiaQC.",
+  "updatedAt":  "2025-12-29T13:26:10.820090700Z",
+  "version":  "3"
+}

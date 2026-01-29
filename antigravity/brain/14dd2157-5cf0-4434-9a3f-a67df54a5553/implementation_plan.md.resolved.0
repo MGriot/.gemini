@@ -1,0 +1,34 @@
+# Fix Login Failure and User Creation
+
+The admin login fails because the user creation process is broken. [init_admin.py](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/init_admin.py) calls [create_user](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/crud/user.py#15-28) which crashes due to a missing `security` import. Additionally, [auth.py](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/debug_auth.py) calls [create_user](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/crud/user.py#15-28) with an argument that [create_user](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/crud/user.py#15-28) does not accept.
+
+## User Review Required
+> [!IMPORTANT]
+> This change modifies how users are created and passwords are hashed. It centralizes password logic in [utils/security.py](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/utils/security.py).
+
+## Proposed Changes
+
+### Backend
+
+#### [MODIFY] [security.py](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/utils/security.py)
+- Add [get_password_hash(password)](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/routers/auth.py#26-28) and [verify_password(plain_password, hashed_password)](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/routers/auth.py#20-25) functions.
+
+#### [MODIFY] [user.py](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/crud/user.py)
+- Import `security` from `utils`.
+- Update [create_user](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/crud/user.py#15-28) signature to accept an optional `hashed_password`.
+- Use the provided `hashed_password` or generate one using `security.get_password_hash`.
+
+#### [MODIFY] [auth.py](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/routers/auth.py)
+- Remove local definitions of [get_password_hash](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/routers/auth.py#26-28) and [verify_password](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/routers/auth.py#20-25).
+- Import them from `utils.security`.
+
+## Verification Plan
+
+### Automated Tests
+- Run `python backend/init_admin.py` (requires DB connection, might depend on environment).
+- Run a small script to verify imports and [create_user](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/crud/user.py#15-28) function signature.
+
+### Manual Verification
+- User should rebuild/restart docker containers: `docker-compose up --build`.
+- User should verify that [init_admin.py](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/init_admin.py) runs successfully (admin user created).
+- User should verify login with `admin@synapseplan.com` / [admin](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/backend/init_admin.py#10-46).

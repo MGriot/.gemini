@@ -1,0 +1,21 @@
+{
+  "ide": {
+    "hasSeenNudge": true,
+    "enabled": true
+  },
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  },
+  "ui": {
+    "theme": "Default"
+  },
+  "general": {
+    "previewFeatures": true,
+    "preferredEditor": "vscode"
+  },
+  "experimental": {
+    "skills": true
+  }
+}

@@ -1,0 +1,79 @@
+[
+  {
+    "sessionId": "2cfdb3fa-3f43-49c1-91f3-ce1fb5688daa",
+    "messageId": 0,
+    "type": "user",
+    "message": "analyze the @README.md  and tell me, based on the already plugin for github profile what i can use or update for my gitub readme document that is the one showed in my profile",
+    "timestamp": "2026-01-06T20:49:44.516Z"
+  },
+  {
+    "sessionId": "2cfdb3fa-3f43-49c1-91f3-ce1fb5688daa",
+    "messageId": 1,
+    "type": "user",
+    "message": "yes",
+    "timestamp": "2026-01-06T20:52:04.177Z"
+  },
+  {
+    "sessionId": "2cfdb3fa-3f43-49c1-91f3-ce1fb5688daa",
+    "messageId": 2,
+    "type": "user",
+    "message": "make the commit for me with also the comment",
+    "timestamp": "2026-01-06T20:53:20.995Z"
+  },
+  {
+    "sessionId": "512a3c85-9bbc-4a5a-87dc-ce5e6305e81d",
+    "messageId": 0,
+    "type": "user",
+    "message": "analyze this repo, search on internet and fix the links for github because now are not working correctly",
+    "timestamp": "2026-01-11T13:30:13.542Z"
+  },
+  {
+    "sessionId": "512a3c85-9bbc-4a5a-87dc-ce5e6305e81d",
+    "messageId": 1,
+    "type": "user",
+    "message": "analyze this repo, search on internet and fix the links for github because now are not working correctly",
+    "timestamp": "2026-01-11T13:30:39.773Z"
+  },
+  {
+    "sessionId": "512a3c85-9bbc-4a5a-87dc-ce5e6305e81d",
+    "messageId": 2,
+    "type": "user",
+    "message": "│ ⊷  Shell curl -I \"https://github-profile-trophy.vercel.app/?username=MGri… (ctrl+f to focus) │\n│                                                                                              │\n│                                                                                              │\n│ cmdlet Invoke-WebRequest at command pipeline position 1                                      │\n│ Supply values for the following parameters:                                                  │\n│ Uri:",
+    "timestamp": "2026-01-11T13:32:46.824Z"
+  },
+  {
+    "sessionId": "512a3c85-9bbc-4a5a-87dc-ce5e6305e81d",
+    "messageId": 3,
+    "type": "user",
+    "message": "no you boken also https://github.com/DenverCoder1/github-readme-streak-stats, use links and internet for understand correctly how to write them",
+    "timestamp": "2026-01-11T13:45:23.308Z"
+  },
+  {
+    "sessionId": "512a3c85-9bbc-4a5a-87dc-ce5e6305e81d",
+    "messageId": 4,
+    "type": "user",
+    "message": "continue to fix",
+    "timestamp": "2026-01-11T14:02:40.922Z"
+  },
+  {
+    "sessionId": "512a3c85-9bbc-4a5a-87dc-ce5e6305e81d",
+    "messageId": 5,
+    "type": "user",
+    "message": "sure you modify @README.md ?",
+    "timestamp": "2026-01-11T14:06:55.914Z"
+  },
+  {
+    "sessionId": "512a3c85-9bbc-4a5a-87dc-ce5e6305e81d",
+    "messageId": 6,
+    "type": "user",
+    "message": "nedd only to fix more re https://github.com/DenverCoder1/github-readme-streak-statsin @README.md",
+    "timestamp": "2026-01-11T14:08:51.761Z"
+  },
+  {
+    "sessionId": "512a3c85-9bbc-4a5a-87dc-ce5e6305e81d",
+    "messageId": 7,
+    "type": "user",
+    "message": "/quit",
+    "timestamp": "2026-01-11T15:41:41.723Z"
+  }
+]

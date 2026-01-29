@@ -1,0 +1,5 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary":  "Revised implementation plan to refactor the QualiaQC system's calibration logic. This plan focuses on renaming \"training images\" to \"calibration images,\" implementing \"Calibration Groups\" by allowing specific calibration images to be linked to individual color checkers in the database, and maintaining the efficient filesystem-based managed storage model while achieving cross-GUI parity and system-wide terminology consistency.",
+  "updatedAt":  "2025-12-28T17:46:15.748804800Z"
+}

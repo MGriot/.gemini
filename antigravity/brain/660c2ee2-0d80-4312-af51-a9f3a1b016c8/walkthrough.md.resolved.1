@@ -1,0 +1,46 @@
+# Walkthrough - Management Features Enhancement
+
+I have successfully enhanced the Dashboard, Project Project, and Task pages to support full management capabilities. This allows users to create projects directly from the dashboard, edit project details, and fully manage task properties.
+
+## Changes
+
+### Dashboard
+-   **Create Project:** Added a "New Project" button to the dashboard header.
+-   **Integration:** Reuses [CreateProjectModal](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/frontend/src/components/projects/CreateProjectModal.tsx#20-93) for a consistent experience.
+-   **Stats:** Connected Stats widgets to real data (though velocity/heatmap are still mocked or simple calculations).
+
+### Project Management (`ProjectDetailPage.tsx`)
+-   **Edit Project:** Added an "Edit" mode to modify the Project Name and Description.
+-   **Delete Project:** Added a "Delete" button with a confirmation dialog.
+-   **Task Creation:** Added an "Add Task" button directly to the project detail view.
+-   **Task List:** Improved list item display to show status and description snippet.
+-   **Refactor:** Updated to use correct TanStack Query v5 patterns (removed [onSuccess](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/frontend/src/pages/projectDetailPage.tsx#89-92) from `useQuery`, used `useEffect` for syncing state).
+
+### Task Management ([TaskDetailModal.tsx](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/frontend/src/components/tasks/TaskDetailModal.tsx))
+-   **Editable Fields:** Converted Description, Priority, and Due Date into editable inputs.
+-   **Save & Update:** Implemented [updateTask](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/frontend/src/services/tasks.ts#29-33) service integration in the "Save Changes" button.
+-   **Subtasks:** Kept existing subtask creation/toggling functionality working alongside main task edits.
+-   **Cleanup:** Removed unused UI imports.
+
+### Services ([projects.ts](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/frontend/src/services/projects.ts), [tasks.ts](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/frontend/src/services/tasks.ts))
+-   Added [updateProject](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/frontend/src/services/projects.ts#33-42) and [deleteProject](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/frontend/src/services/projects.ts#43-52) API wrappers.
+-   Verified [updateTask](file:///c:/Users/Admin/Documents/Coding/SynapsePlan/frontend/src/services/tasks.ts#29-33) availability.
+
+## Verification results
+
+### Automated Build
+-   `npm run build` passed successfully.
+
+### Manual Verification Flow (Verified via Browser Agent)
+1.  **Dashboard Create:** "New Project" button appears and functions.
+2.  **Project Edit:** Renaming a project and updating its description works and persists.
+3.  **Task Edit:** Changing task priority, due date, and description saves correctly to the backend.
+
+## Screenshots
+_Screenshots were captured during verification._
+
+### Dashboard with "New Project" Button
+*(See browser recording)*
+
+### Editable Project Page
+*(See browser recording)*

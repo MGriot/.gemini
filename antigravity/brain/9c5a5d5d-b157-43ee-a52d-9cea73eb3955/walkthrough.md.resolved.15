@@ -1,0 +1,114 @@
+# Walkthrough: Persistence Layer Overhaul
+
+I have successfully replaced the legacy `pickle`-based persistence with a robust, modular, and production-ready database system using SQLite and SQLAlchemy.
+
+## Key Accomplishments
+
+### 1. Structured Database Schema
+Introduced a new `src/db` package with the following models:
+- **`AnalysisSession`**: Tracks every run, including configuration snapshots, pipeline arguments, and final result snapshots.
+- **`AnalysisAsset`**: Links database records to physically archived files (original images, intermediate steps).
+- **`AnalysisMetric`**: Stores structured results (e.g., matched percentages) for fast querying and history views.
+- **`ProjectAsset`**: Tracks user-uploaded project files like color checkers and technical drawings.
+
+### 2. Automated Asset Archiving
+The `Pipeline` now automatically archives the original source image to a structured directory:
+`data/history/[YEAR]/[MONTH]/[SESSION_ID]/assets/`
+This ensures full auditability and the ability to regenerate reports even if the original input file is moved or deleted.
+
+### 3. Faithful Report Regeneration
+- Refactored `ReportingPipeline` with a `run_from_session` method.
+- This method rehydrates the analysis state from the database's `results_snapshot`.
+- It retrieves archived assets (like masked images) to rebuild the report with 100% fidelity.
+
+### 4. Database-Driven History API
+- Optimized the `/api/history` endpoint to query the SQLite database instead of scanning the filesystem for `.gri` files.
+- Added a new `/api/history/{session_id}/regenerate` endpoint for instant report recreation.
+
+### 5. Dependency Management
+- **API**: Updated `/api/history` to query database and provide report regeneration links.
+- **Reporting**: Enabled full report regeneration from database snapshots.
+
+## Web GUI Debugging (Final Phase)
+The following issues were resolved to ensure the production-readiness of the Web interface:
+
+### 1. Layout & Responsiveness
+- Removed hardcoded width limits (`1280px`) and centering in `App.css` and `index.css`.
+- Updated `App.tsx` layout structure to allow full-width occupation for the analysis dashboard and history tables.
+
+### 2. History Retrieval Resilience
+- **Database Migration**: Implemented automatic schema migration in the backend to ensure columns like `metadata_info` and `results_snapshot` are created if missing.
+- **Legacy Fallback**: Enhanced the History API to scan for legacy `.gri` (Pickle) files alongside database records, ensuring old data remains accessible.
+- **Improved Logging**: Added detailed backend logging to aid in future debugging of containerized environments.
+
+## Verification Results
+- **Data Integrity**: Confirmed sessions are correctly stored in `qualia_qc.db`.
+- **UI Render**: Verified history records (including legacy) load correctly in the Web GUI.
+- **Regeneration**: Tested report regeneration from database snapshots via API.
+
+## Verification
+I created and executed a comprehensive verification script `scripts/verify_persistence.py` which validated the entire lifecycle:
+1. **Asset Upload**: Verified that project assets are recorded in the DB.
+2. **Session Creation**: Confirmed that running a pipeline creates a valid `AnalysisSession`.
+3. **Image Archiving**: Verified that the input image is physically copied to the history folder and linked in the DB.
+4. **Metric Persistence**: Confirmed that analysis results are correctly stored as metrics and JSON snapshots.
+
+---
+
+### Verification Output
+```text
+--- Starting Persistence Layer Verification ---
+[SUCCESS] ProjectAsset recorded: test_checker.png
+[SUCCESS] AnalysisSession created: 869e48de-7248-42af-ba28-2864da37505b
+[SUCCESS] AnalysisAsset archived: .../data/history/2025/12/869e48de.../assets/source_test_sample.png
+   - Physical file exists in History archive.
+[SUCCESS] Metric recorded: matched_percentage = 100.0
+[SUCCESS] Session status: COMPLETED
+--- Verification Finished ---
+
+---
+
+# Walkthrough: Project Data Reorganization (Managed Storage)
+
+I have transitioned the project management system from a simple filesystem-based layout to a professional, database-driven managed storage model.
+
+## Key Accomplishments
+
+### 1. New `AnalysisProject` Database Model
+The database now explicitly tracks projects with their full configurations:
+- **`config`**: Stores the primary project settings (color correction, alignment, masking).
+- **`dataset_processing_config`**: Stores point-selection data for training images.
+- **`ProjectAsset` Integration**: All project-level files (checkers, drawings, training images) are now tracked as relational assets.
+
+### 2. Automatic Legacy Synchronization
+The `ProjectManager` now automatically scans the legacy `data/projects` directory on startup:
+- Imports project metadata and configurations into the database.
+- Migrates physical files to a new **Managed Storage** location.
+- Updates database records to point to these controlled locations.
+
+### 3. Managed Storage Architecture
+Project files are no longer stored in a user-accessible named directory. Instead, they are moved to:
+`data/storage/projects/[PROJECT_UUID]/`
+This prevents accidental modification or deletion by users through direct filesystem manipulation.
+
+### 4. Database-Backed Path Resolution
+The `Pipeline` and `ReportingPipeline` no longer assume fixed paths relative to `data/projects`.
+They now query the `ProjectManager`, which resolves asset locations dynamically using the database. This allows for future flexibility in moving or distributing storage.
+
+### 5. Cross-GUI Parity (Web & Tkinter)
+The reorganization is now fully consistent across the entire application:
+- **Unified Creation**: Project creation logic is centralized in `ProjectManager.create_project`, ensuring that projects created via either GUI are correctly registered in the DB and scaffolded in managed storage.
+- **Tkinter History**: Updated the Tkinter `HistoryTab` to query the database, bringing it into parity with the Web API history view.
+- **Tkinter Regeneration**: Enhanced the Tkinter GUI to support report regeneration from database-backed sessions.
+
+## Verification
+I verified the reorganization by:
+1. **Sync Verification**: Rebuilt the Docker container and checked logs to confirm all existing projects (Benagol, test_project, etc.) were correctly detected and imported.
+2. **Tkinter Parity Test**: Ran a dedicated verification script (`scripts/verify_tkinter_parity.py`) inside the container to ensure project creation results in both DB records and managed filesystem assets.
+3. **Storage Verification**: Inspected the filesystem to confirm that `data/storage/projects/` contains UUID-named folders with the correct internal structure (`assets`, `drawing_layers`, `training_images`).
+4. **API Integrity**: Verified that the `/api/projects` endpoint continues to serve the correct data to the Web GUI, ensuring seamless compatibility.
+
+## Final Conclusion: "Safe to Delete" Verified
+With cross-GUI parity achieved:
+> [!IMPORTANT]
+> The legacy `data/projects` folder is now officially redundant for **both** the Web and Tkinter GUIs. All project metadata and assets are resolves through the Database and Managed Storage structure.

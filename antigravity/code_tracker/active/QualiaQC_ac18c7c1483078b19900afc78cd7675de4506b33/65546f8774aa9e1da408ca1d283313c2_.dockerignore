@@ -1,0 +1,12 @@
+x__pycache__
+*.pyc
+.git
+.venv
+.env
+output/
+data/
+web-gui/node_modules/
+web-gui/dist/
+VisualAnalyzer.zip
+*.log
+x"(ac18c7c1483078b19900afc78cd7675de4506b332>file:///c:/Users/Admin/Documents/Coding/QualiaQC/.dockerignore:0file:///c:/Users/Admin/Documents/Coding/QualiaQC

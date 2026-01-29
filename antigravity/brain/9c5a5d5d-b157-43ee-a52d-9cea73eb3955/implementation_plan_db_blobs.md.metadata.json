@@ -1,0 +1,5 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary":  "Implementation plan to transition the QualiaQC system to a pure database-backed storage model using SQLite BLOBs, eliminating filesystem dependencies for project and analysis assets. The plan also includes refactoring \"training images\" to \"calibration images\" and implementing a pairwise association system that allows specific calibration images to be linked to individual color checkers, improving the flexibility and auditability of the color correction process.",
+  "updatedAt":  "2025-12-28T17:44:16.713849300Z"
+}
