@@ -1,6 +1,6 @@
 ---
 name: ui-ux-pro-max
-description: "UI/UX design intelligence. 50 styles, 21 palettes, 50 font pairings, 20 charts, 9 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui). Actions: plan, build, create, design, implement, review, fix, improve, optimize, enhance, refactor, check UI/UX code. Projects: website, landing page, dashboard, admin panel, e-commerce, SaaS, portfolio, blog, mobile app, .html, .tsx, .vue, .svelte. Elements: button, modal, navbar, sidebar, card, table, form, chart. Styles: glassmorphism, claymorphism, minimalism, brutalism, neumorphism, bento grid, dark mode, responsive, skeuomorphism, flat design. Topics: color palette, accessibility, animation, layout, typography, font pairing, spacing, hover, shadow, gradient. Integrations: shadcn/ui MCP for component search and examples."
+description: "UI/UX design intelligence and auditing. 50 styles, 21 palettes, 50 font pairings, 20 charts, 9 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui). Actions: plan, build, create, design, implement, review, fix, improve, optimize, enhance, refactor, check UI/UX code. Use when asked to 'review my UI', 'check accessibility', 'audit design', 'review UX', or 'check my site against best practices' using Web Interface Guidelines."
 ---
 
 # UI/UX Pro Max - Design Intelligence
@@ -347,6 +347,16 @@ These are frequently overlooked issues that make UI look unprofessional:
 | **Floating navbar** | Add `top-4 left-4 right-4` spacing | Stick navbar to `top-0 left-0 right-0` |
 | **Content padding** | Account for fixed navbar height | Let content hide behind fixed elements |
 | **Consistent max-width** | Use same `max-w-6xl` or `max-w-7xl` | Mix different container widths |
+
+## Auditing & Compliance (Web Interface Guidelines)
+
+Use this capability when asked to "review my UI", "check accessibility", "audit design", "review UX", or "check my site against best practices".
+
+### How It Works
+1.  **Fetch fresh guidelines**: Before each review, fetch the latest rules from: `https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/main/command.md`
+2.  **Read Target Files**: Identify the UI components or pages to review.
+3.  **Check Compliance**: Apply all rules from the fetched guidelines to the target code.
+4.  **Output Findings**: Use the terse `file:line: issue` format for reporting.
 
 ---
 

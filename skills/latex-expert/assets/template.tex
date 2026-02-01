@@ -1,0 +1,57 @@
+\documentclass[a4paper,12pt]{article}
+
+% --- Language and Encoding ---
+\usepackage[utf8]{inputenc} % Not needed for LuaLaTeX/XeLaTeX
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+
+% --- Math ---
+\usepackage{mathtools} % Loads amsmath
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% --- Typography & Formatting ---
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{siunitx}
+
+% --- Bibliography ---
+\usepackage[style=authoryear,backend=biber]{biblatex}
+\addbibresource{references.bib}
+
+% --- Graphics & Colors ---
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% --- Navigation (Load Last) ---
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+% --- Metadata ---
+\title{Document Title}
+\author{Author Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Your abstract goes here.
+\end{abstract}
+
+\section{Introduction}
+Introduction text. Reference an equation \cref{eq:euler}.
+
+\begin{equation} \label{eq:euler}
+    e^{i\pi} + 1 = 0
+\end{equation}
+
+\section{Conclusion}
+Conclusion text.
+
+\printbibliography
+
+\end{document}
