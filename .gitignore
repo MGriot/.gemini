@@ -67,3 +67,5 @@ yarn-error.log*
 # Internal Data & Temporary Files
 /antigravity/
 /tmp/
+
+.agent/

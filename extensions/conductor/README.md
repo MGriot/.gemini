@@ -33,6 +33,10 @@ Conductor is designed to manage the entire lifecycle of your development tasks.
 
 **Note on Token Consumption:** Conductor's context-driven approach involves reading and analyzing your project's context, specifications, and plans. This can lead to increased token consumption, especially in larger projects or during extensive planning and implementation phases. You can check the token consumption in the current session by running `/stats model`.
 
+> [!WARNING]
+> **Disable Gemini CLI's built-in Plan Mode for Conductor**
+> Conductor manages its own planning lifecycle. Gemini CLI's built-in Plan Mode will conflict with Conductor's state management. For the best Conductor experience, please disable Gemini CLI's built-in Plan Mode in your environment.
+
 ### 1. Set Up the Project (Run Once)
 
 When you run `/conductor:setup`, Conductor helps you define the core components of your project context. This context is then used for building new components or features by you or anyone on your team.
@@ -102,6 +106,11 @@ During implementation, you can also:
   /conductor:revert
   ```
 
+- **Review work**: Review completed work against guidelines and the plan.
+  ```bash
+  /conductor:review
+  ```
+
 ## Commands Reference
 
 | Command | Description | Artifacts |
@@ -111,6 +120,7 @@ During implementation, you can also:
 | `/conductor:implement` | Executes the tasks defined in the current track's plan. | `conductor/tracks.md`<br>`conductor/tracks/<id>/plan.md` |
 | `/conductor:status` | Displays the current progress of the tracks file and active tracks. | Reads `conductor/tracks.md` |
 | `/conductor:revert` | Reverts a track, phase, or task by analyzing git history. | Reverts git history |
+| `/conductor:review` | Reviews completed work against guidelines and the plan. | Reads `plan.md`, `product-guidelines.md` |
 
 ## Resources
 
