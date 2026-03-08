@@ -1,0 +1,48 @@
+[
+  {
+    "name": "General Topic Deep-Dive",
+    "description": "Verify the agent uses 'See Also' and 'Category' trace for a complex scientific topic.",
+    "prompt": "Tell me about the history and development of 'CRISPR'. Use the deep-dive report format and include obscure facts from the references.",
+    "assertions": [
+      {
+        "type": "contains",
+        "value": "CRISPR",
+        "rationale": "Must cover the primary topic."
+      },
+      {
+        "type": "contains",
+        "value": "Did You Know?",
+        "rationale": "Must include obscure facts as requested."
+      }
+    ]
+  },
+  {
+    "name": "Fact-Checking Mission",
+    "description": "Verify the agent uses Wikipedia to check a potentially misleading claim.",
+    "prompt": "Is it true that the Great Wall of China is the only man-made structure visible from space?",
+    "assertions": [
+      {
+        "type": "contains",
+        "value": "Verdict",
+        "rationale": "Must provide a clear verdict as per Fact-Checker format."
+      },
+      {
+        "type": "contains",
+        "value": "False",
+        "rationale": "The claim is a common myth refuted on Wikipedia."
+      }
+    ]
+  },
+  {
+    "name": "Cross-Project Research",
+    "description": "Verify the agent uses Wikibooks or Wikiversity for technical guides.",
+    "prompt": "Find a beginner's guide to learning Python programming on Wikibooks or Wikiversity.",
+    "assertions": [
+      {
+        "type": "contains",
+        "value": "Wikibooks",
+        "rationale": "Must identify the correct project for learning materials."
+      }
+    ]
+  }
+]

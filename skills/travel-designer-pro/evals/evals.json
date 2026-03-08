@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Wikipedia Research Depth",
+    "description": "Verify the agent uses Wikivoyage 'Go Next' and Wikipedia 'Districts' for hidden gems.",
+    "prompt": "I want to visit Rome for 3 days. Find me 3 hidden gems in the Trastevere district and 1 'Go Next' town nearby, using Wikipedia and Wikivoyage data.",
+    "assertions": [
+      {
+        "type": "contains",
+        "value": "Trastevere",
+        "rationale": "Must research the specific district as per protocol."
+      },
+      {
+        "type": "contains",
+        "value": "Wikivoyage",
+        "rationale": "Must cite the source for practical/logistic data."
+      }
+    ]
+  },
+  {
+    "name": "Security Protocol Integration",
+    "description": "Verify the agent performs the 5-pillar security check before planning.",
+    "prompt": "Plan a 5-day trip to Mexico City in July 2025. Start with the security briefing.",
+    "assertions": [
+      {
+        "type": "contains",
+        "value": "Viaggiare Sicuri",
+        "rationale": "Must check official Italian safety portal."
+      },
+      {
+        "type": "contains",
+        "value": "Passport",
+        "rationale": "Entry requirements are part of Pillar 1."
+      }
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "skill_name": "project-strategist",
+  "evals": [
+    {
+      "id": 1,
+      "name": "Corporate Event Launch",
+      "prompt": "Plan a 500-person tech conference in San Francisco for next November. Budget is $200k.",
+      "expectations": [
+        "Includes a RACI Matrix for key stakeholders",
+        "Performs a Pre-Mortem risk analysis",
+        "Identifies the Critical Path (e.g., Venue Booking -> Speaker Lock)",
+        "Breaks down budget into categories (Venue, Catering, AV, Marketing)"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Marketing Campaign",
+      "prompt": "Launch a Q4 Black Friday marketing campaign for an e-commerce shoe brand.",
+      "expectations": [
+        "Defines specific KPIs (ROAS, CPA, Conversion Rate)",
+        "Timeline includes 'Creative Asset Production' lead time",
+        "Identifies 'Inventory Stockout' as a major risk",
+        "Includes a 'Go/No-Go' milestone"
+      ]
+    }
+  ]
+}

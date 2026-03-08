@@ -1,0 +1,28 @@
+{
+  "skill_name": "prd-architect",
+  "evals": [
+    {
+      "id": 1,
+      "name": "SaaS Platform PRD",
+      "prompt": "I want to build a SaaS platform for freelance graphic designers to manage invoices and client feedback. It needs a dashboard, PDF generation, and Stripe integration.",
+      "expectations": [
+        "Identifies missing user personas (e.g., 'The Client' who pays)",
+        "Suggests specific tech stack (e.g., 'Next.js + Postgres + Stripe Connect')",
+        "Includes a rough API sketch (e.g., 'POST /invoices', 'GET /invoices/:id')",
+        "Defines a Data Model with relationships (Designer -> Invoices -> Items)",
+        "Includes Success Metrics/KPIs"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Mobile App MVP",
+      "prompt": "Build a tinder-like app for adopting shelter dogs.",
+      "expectations": [
+        "Challenges the scope if 'chat' is requested for MVP (suggests external link instead)",
+        "Defines 'Dog' and 'Shelter' entities",
+        "Includes 'Swipe Logic' in Functional Requirements",
+        "Addresses Edge Cases (e.g., 'Dog already adopted')"
+      ]
+    }
+  ]
+}

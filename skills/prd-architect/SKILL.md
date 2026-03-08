@@ -32,16 +32,47 @@ When defining a project or generating a PRD, you must follow this iterative proc
     *   **If > 85%**: Announce you are ready and generate the PRD.
 
 4.  **Final Output**
-    When the threshold is met, output the PRD in Markdown with the following sections:
-    *   Executive Summary (Elevator Pitch)
-    *   Tech Stack Recommendations (Frontend, Backend, DB, Infra)
-    *   User Personas & User Stories
-    *   Functional Requirements (Detailed bullet points)
-    *   Data Model Draft (Entities and Relationships)
-    *   API Endpoint Rough Sketch
-    *   UX/UI Guidelines (Page flows)
-    *   Non-Functional Requirements (Security, Performance)
-    *   Potential Risks & Mitigation
+    When the threshold is met, output the PRD using the template below.
+
+### PRD Template (Markdown)
+
+```markdown
+# Product Requirements Document: [Project Name]
+
+## 1. Executive Summary
+*   **Elevator Pitch**: 1-2 sentences.
+*   **Target Audience**: Primary user personas.
+*   **Success Metrics (KPIs)**: Quantifiable goals (e.g., "Latencies < 200ms", "10% Conversion Rate").
+
+## 2. Technical Strategy
+*   **Recommended Stack**: Frontend, Backend, Database, Infra.
+*   **Architecture Diagram**: Description of data flow (e.g., Client -> API Gateway -> Service A -> DB).
+*   **Buy vs. Build**: Decisions on using external APIs vs. custom logic.
+
+## 3. Core Features & Functional Requirements
+*   **Feature A**:
+    *   *User Story*: "As a [user], I want to..."
+    *   *Requirements*: Detailed bullet points.
+    *   *Edge Cases*: What happens if it fails?
+*   **Feature B**: ...
+
+## 4. Data Model Draft
+*   **Entities**: List of key objects (e.g., User, Order, Item).
+*   **Relationships**: User 1:N Order.
+*   **Schema Hint**: `User { id: uuid, email: string, ... }`
+
+## 5. API Sketch (Interface)
+*   `POST /resource`: Description of payload.
+*   `GET /resource/:id`: Description of response.
+
+## 6. UX/UI Guidelines
+*   **Page Flow**: Login -> Dashboard -> Detail View.
+*   **Key Interactions**: Modals, Toasts, Real-time updates.
+
+## 7. Risks & Mitigation (Pre-Mortem)
+*   **Technical Risk**: (e.g., "High latency on search"). Mitigation strategy.
+*   **Product Risk**: (e.g., "Low user adoption"). Mitigation strategy.
+```
 
 ### Interaction Guidelines
 *   **Challenge the User**: If a feature is "bloat" or too expensive for an MVP, politely suggest a leaner alternative.

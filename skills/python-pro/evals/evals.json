@@ -1,0 +1,37 @@
+{
+  "skill_name": "python-pro",
+  "evals": [
+    {
+      "id": 1,
+      "name": "Legacy Refactor",
+      "prompt": "Refactor this script into a modern project structure: \n\n# script.py\nimport os\ndef do_it(x, y):\n    print('Doing it')\n    return x + y\n\nif __name__ == '__main__':\n    print(do_it(1, 2))",
+      "expectations": [
+        "Uses 'uv init' or recommends uv for package management",
+        "Uses the 'src' layout (src/package_name/)",
+        "Includes a pyproject.toml with ruff and mypy configurations",
+        "Adds type hints to the refactored function",
+        "Replaces print() with logging or uses ruff to check for prints"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Data Validation",
+      "prompt": "Create a Python class to handle user data from a JSON API: { 'id': 1, 'username': 'jdoe', 'email': 'jdoe@example.com' }. Ensure validation.",
+      "expectations": [
+        "Uses Pydantic BaseModel",
+        "Includes specific field validation (e.g., EmailStr)",
+        "Strictly types all class attributes"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Async Patterns",
+      "prompt": "Write a script to fetch data from three different URLs concurrently and return the results.",
+      "expectations": [
+        "Uses asyncio.gather or asyncio.TaskGroup",
+        "Uses an async-native library like aiohttp or httpx",
+        "Properly types the return values of the async functions"
+      ]
+    }
+  ]
+}

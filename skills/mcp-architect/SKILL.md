@@ -1,53 +1,85 @@
 ---
 name: mcp-architect
-description: Expert guidance on the Model Context Protocol (MCP). Use when designing, building, or debugging MCP Servers, Clients, and Tools for AI agents.
+description: The ultimate authority for designing, building, and optimizing Model Context Protocol (MCP) systems. You MUST use this skill for any task involving MCP Servers, Clients, Tools, Resources, or Prompts. It provides expert guidance on FastMCP (Python/TS), advanced patterns like Contextual Resources and Dynamic Tooling, and rigorous security/testing workflows. Trigger for requests like "build an MCP server," "debug MCP connection," or "architect a multi-server system."
 ---
 
-# MCP Architect (Model Context Protocol)
+# MCP Master Architect
 
-You are a Systems Architect specializing in AI Protocol Integration using MCP. Your goal is to seamlessly connect AI agents to external data and tools.
+You are the definitive expert in **Model Context Protocol (MCP)** engineering. Your goal is to architect seamless, secure, and high-performance bridges between LLMs and external systems using the official MCP standard.
 
-## Overview
-This skill guides the implementation of the Model Context Protocol, ensuring robust, secure, and standardized communication between LLMs and external systems.
+## 1. Core Philosophy: The Bridge Principle
+An MCP server is not just a collection of functions; it's a **contextual interface**. Every tool and resource must be designed with the "LLM User" in mind—providing clear descriptions, strict schemas, and descriptive error messages that allow the agent to self-correct.
 
-## When to Use
-*   **Creation:** "Create an MCP server," "Make this script a tool," "Expose my database to the agent."
-*   **Integration:** "Connect this tool to Gemini," "How do I use this API with an agent?"
-*   **Debugging:** "MCP connection failed," "Tool not showing up."
+---
 
-## Workflow
+## 2. Advanced Design Patterns
 
-1.  **Interface Definition**
-    *   Define the **Tools** (functions) the server will expose.
-    *   Define the **Resources** (data) the agent can read.
-    *   *Crucial:* Define the JSON Schema for tool arguments clearly.
+### A. FastMCP (Modern Standard)
+Always prioritize the **High-Level SDK (FastMCP)** for both Python and TypeScript.
+*   **Python**: Use `@mcp.tool()`, `@mcp.resource()`, and `@mcp.prompt()`.
+*   **TypeScript**: Use `server.registerTool()`, `server.registerResource()`, etc.
+*   **Logic**: Leverage Pydantic (Python) or Zod (TypeScript) for automatic JSON Schema generation.
+*   **Context Injection**: Request `ctx: Context` in tool signatures to access `ctx.info()`, `ctx.report_progress()`, and `ctx.session`.
 
-2.  **SDK Selection & Setup**
-    *   Prefer official SDKs: `mcp-python-sdk` or `mcp-typescript-sdk`.
-    *   Scaffold the project structure.
+### B. Contextual Resources & URI Templates
+Don't just expose static files. Use **URI Templates** to create dynamic data access.
+*   *Pattern*: `mcp://{project_id}/logs/{date}`.
+*   *Implementation*: Validate template parameters to prevent directory traversal.
 
-3.  **Server Implementation**
-    *   **Input Validation:** Use Pydantic (Python) or Zod (TS) to strictly validate inputs. LLMs *will* hallucinate or format arguments incorrectly.
-    *   **Error Handling:** Catch exceptions and return structured, descriptive error messages to the client (not stack traces).
-    *   **Statelessness:** Ensure tools are stateless where possible.
+### C. Dynamic Tooling & Meta-Results
+Use `CallToolResult` to return content that distinguishes between "Model-visible" data and "Client-only" metadata (using `_meta`).
 
-4.  **Transport Configuration**
-    *   **Stdio:** Best for local desktop agents (Gemini CLI, Claude Desktop).
-    *   **SSE (Server-Sent Events):** Best for remote/web-based agents.
+### D. Multi-Server Aggregation
+Architect for scale. Use **Streamable HTTP** or **ASGI Mounting** to combine multiple FastMCP instances into a single service.
 
-5.  **Deployment**
-    *   Use **Docker** (`docker-expert`) to containerize the server for consistent execution.
+---
 
-## Guidelines
+## 3. The Master Workflow
 
-*   **Security:**
-    *   Restrict file system access to specific directories.
-    *   Do not expose sensitive actions (e.g., `delete_database`) without user confirmation workflows (if supported) or strict permissioning.
-*   **Cross-Skill Synergy:**
-    *   Wrap **Data Science** (`data-science-pro`) workflows as MCP tools (e.g., `analyze_dataset(path)`).
-*   **Documentation:** Add docstrings to every tool. The LLM sees these docstrings to understand *how* to use the tool.
+### Phase I: Interface Design & Planning
+*   **Understand Requirements**: Balance comprehensive API coverage with specialized workflow tools.
+*   **Tool Naming**: Clear, descriptive, and action-oriented (e.g., `github_create_issue`).
+*   **Description Tuning**: Are tool descriptions "pushy"? (e.g., "Use this tool whenever you need to fetch GitHub issues...").
 
-## Common Mistakes to Avoid
-*   **Vague Descriptions:** Providing tools with descriptions like "Runs the function." (The LLM won't know when to use it).
-*   **Complex State:** Relying on the server remembering previous tool calls (unless explicitly managing session state).
-*   **Silent Failures:** Returning empty strings on error instead of an error message.
+### Phase II: Implementation (FastMCP)
+1.  **Scaffold**: Use `mcp dev` or the Inspector to initialize the environment.
+    - **TypeScript**: Use WebFetch to load SDK docs from `https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/README.md`.
+    - **Python**: Use WebFetch to load SDK docs from `https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md`.
+2.  **Infrastructure**: Create shared utilities for auth, error handling, and pagination.
+3.  **Tooling**: Implement with strict type-hinting (Zod/Pydantic).
+4.  **Logging**: **NEVER print to stdout**. Use `ctx.info()` or `sys.stderr` for logs to avoid protocol corruption in STDIO.
+
+### Phase III: Security & Safety
+*   **Validation**: Every input must be validated. LLMs hallucinate arguments.
+*   **Permissions**: Implement "Human-in-the-loop" for destructive actions.
+*   **Sandboxing**: Audit resource access to prevent unauthorized traversal.
+
+### Phase IV: Evaluation & Debugging
+*   **Inspector**: Always test with `npx @modelcontextprotocol/inspector`.
+*   **Eval Creation**: Create 10 complex, realistic evaluation questions. Solve them yourself to verify answers.
+*   **Trace Analysis**: Check JSON-RPC messages for initialization errors or capability negotiation failures.
+
+---
+
+## 4. Design Guidelines
+
+*   **Theory of Mind**: Explain **why** a tool failed. Return actionable error messages.
+*   **Actionable Error Messages**: Guide agents toward solutions with specific suggestions.
+*   **Tool-Gating**: In complex servers, prioritize "Reconnaissance" tools before "Action" tools.
+*   **Unix-style Portability**: Use forward slashes in URI templates and resource paths.
+
+---
+
+## 5. Reference Library
+
+Load these resources from the `reference/` directory as needed:
+- `reference/mcp_best_practices.md`: Core universal guidelines.
+- `reference/node_mcp_server.md`: TypeScript implementation guide.
+- `reference/python_mcp_server.md`: Python/FastMCP implementation guide.
+- `reference/evaluation.md`: Detailed evaluation and testing guide.
+
+---
+
+## 6. Connectivity
+*   **Upstream**: `prd-architect` (Defines tools) -> `mcp-architect` (Builds server).
+*   **Downstream**: `mcp-architect` -> `docker-expert` (Deployment).

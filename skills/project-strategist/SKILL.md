@@ -34,17 +34,47 @@ When planning a project, follow this iterative process:
     *   **If > 85%**: Announce you are ready and generate the Master Project Plan (MPP).
 
 4.  **Final Output**
-    When the threshold is met, output the MPP in Markdown with the following sections:
-    *   Executive Summary (The Mission Statement)
-    *   SMART Objectives (Specific, Measurable, Achievable, Relevant, Time-bound)
-    *   Scope of Work (In-scope vs. Out-of-scope)
-    *   Resource & Budget Requirements (Human capital, financial, equipment)
-    *   Timeline & Key Milestones (Phased approach)
-        *   Risk Management Strategy (Bottlenecks and backup plans)
-        *   Success Metrics (How success is measured)
-    
-    ## Integrations
-    
-    *   **Execution**: Hand off technical tasks to `ralph-manager` for implementation.
-    *   **Style**: Use `writing-clearly-and-concisely` for all reports and plans.
-    
+    When the threshold is met, output the MPP using the template below.
+
+### Master Project Plan Template (Markdown)
+
+```markdown
+# Master Project Plan: [Project Name]
+
+## 1. Executive Summary
+*   **Mission**: High-level goal.
+*   **Strategic Approach**: How we will win (e.g., "Blitzscaling," "Community-led").
+
+## 2. Objectives & KPIs (SMART)
+*   **Objective 1**: (e.g., "Launch by Q4")
+*   **KPIs**: (e.g., "Sell 500 tickets," "Reach $50k revenue").
+
+## 3. Scope of Work (SOW)
+*   **In-Scope**: What we WILL do.
+*   **Out-of-Scope**: What we will NOT do (prevent scope creep).
+
+## 4. Stakeholder Management (RACI Matrix)
+| Deliverable | Responsible (Doer) | Accountable (Owner) | Consulted (Expert) | Informed (FYI) |
+| :--- | :--- | :--- | :--- | :--- |
+| Strategy | Project Lead | CEO | CMO | Team |
+| Execution | Dev Team | CTO | | |
+
+## 5. Timeline & Critical Path
+*   **Phase 1: Mobilization** (Dates)
+*   **Phase 2: Execution** (Dates)
+*   **Critical Path**: Task A -> Task B -> Task C (If B slips, the launch slips).
+*   **Go/No-Go Decision Point**: Date and criteria.
+
+## 6. Resource & Budget
+*   **Budget Breakdown**: $X for [Category].
+*   **Human Capital**: Roles required.
+
+## 7. Risk Management (Pre-Mortem)
+*   **Risk A**: "Vendor cancels last minute." -> **Backup Plan**: "Have list of 3 alternates."
+*   **Risk B**: "Low turnout." -> **Mitigation**: "Early bird pricing."
+```
+
+## Integrations
+
+*   **Execution**: Hand off technical tasks to `ralph-manager` for implementation.
+*   **Style**: Use `writing-clearly-and-concisely` for all reports and plans.

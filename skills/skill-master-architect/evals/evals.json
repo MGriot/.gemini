@@ -1,0 +1,105 @@
+{
+  "skill_name": "skill-master-architect",
+  "evals": [
+    {
+      "id": 1,
+      "query": "I want to create a new skill for handling complex medical records. What should the SKILL.md look like?",
+      "should_trigger": true
+    },
+    {
+      "id": 2,
+      "query": "Can you help me optimize my existing 'pdf' skill's description? It's not triggering when I mention scanned documents.",
+      "should_trigger": true
+    },
+    {
+      "id": 3,
+      "query": "I need to set up a benchmark for my new 'git-pro' skill to see how it compares to the baseline.",
+      "should_trigger": true
+    },
+    {
+      "id": 4,
+      "query": "How do I implement 'Dynamic Context Injection' in my custom skill to keep file lists fresh?",
+      "should_trigger": true
+    },
+    {
+      "id": 5,
+      "query": "I'm building a specialized agentic workflow for a law firm. I need the most rigorous framework for intent capture.",
+      "should_trigger": true
+    },
+    {
+      "id": 6,
+      "query": "My skill for 'xlsx' optimization is under-triggering. Can you run 20 queries and generate a confusion matrix?",
+      "should_trigger": true
+    },
+    {
+      "id": 7,
+      "query": "How do I use 'Grader-Analyst Loops' to improve my skill's logic after a benchmark run?",
+      "should_trigger": true
+    },
+    {
+      "id": 8,
+      "query": "Explain 'Progressive Disclosure' and how it should be applied to a tiered filesystem structure for skills.",
+      "should_trigger": true
+    },
+    {
+      "id": 9,
+      "query": "I want to package a skill that handles deterministic logic with scripts instead of just prompts.",
+      "should_trigger": true
+    },
+    {
+      "id": 10,
+      "query": "What are the common mistakes when designing 'Low Freedom' tasks in a skill?",
+      "should_trigger": true
+    },
+    {
+      "id": 11,
+      "query": "I need help writing a Python script to scrape a website using BeautifulSoup.",
+      "should_trigger": false
+    },
+    {
+      "id": 12,
+      "query": "Can you explain how to set up a React project using Vite and Tailwind CSS?",
+      "should_trigger": false
+    },
+    {
+      "id": 13,
+      "query": "I have a PDF file that I want to extract tables from. Can you help me with that?",
+      "should_trigger": false
+    },
+    {
+      "id": 14,
+      "query": "How do I fix a 'Connection Timeout' error in my local MCP server?",
+      "should_trigger": false
+    },
+    {
+      "id": 15,
+      "query": "What is the best way to structure a large SQL database for a healthcare application?",
+      "should_trigger": false
+    },
+    {
+      "id": 16,
+      "query": "I want to automate my GitHub commits with a personalized message based on my code changes.",
+      "should_trigger": false
+    },
+    {
+      "id": 17,
+      "query": "Explain the difference between 'async' and 'await' in modern Python development.",
+      "should_trigger": false
+    },
+    {
+      "id": 18,
+      "query": "How do I create a pivot table in Excel to summarize my sales data by region?",
+      "should_trigger": false
+    },
+    {
+      "id": 19,
+      "query": "Can you review my UI/UX design and suggest improvements for better accessibility?",
+      "should_trigger": false
+    },
+    {
+      "id": 20,
+      "query": "I need to set up a Docker container for a simple Node.js application.",
+      "should_trigger": false
+    }
+  ]
+}
