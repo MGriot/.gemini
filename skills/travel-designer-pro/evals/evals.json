@@ -1,35 +1,27 @@
 [
   {
-    "name": "Wikipedia Research Depth",
-    "description": "Verify the agent uses Wikivoyage 'Go Next' and Wikipedia 'Districts' for hidden gems.",
-    "prompt": "I want to visit Rome for 3 days. Find me 3 hidden gems in the Trastevere district and 1 'Go Next' town nearby, using Wikipedia and Wikivoyage data.",
+    "name": "Japan Cultural & Nature Explorer",
+    "prompt": "Create a 7-day traveler profile for 2 people visiting Japan (Tokyo and Kyoto). Budget is $5000. Interest in history, food, and a specific 1-day hiking track in Hakone. Ensure you generate a GPX track for the Hakone hike. I need all info in one responsive HTML file and separate CSV/GeoJSON blocks. Include valid references for all suggestions.",
     "assertions": [
       {
         "type": "contains",
-        "value": "Trastevere",
-        "rationale": "Must research the specific district as per protocol."
+        "value": "File 1: Places (CSV)"
       },
       {
         "type": "contains",
-        "value": "Wikivoyage",
-        "rationale": "Must cite the source for practical/logistic data."
-      }
-    ]
-  },
-  {
-    "name": "Security Protocol Integration",
-    "description": "Verify the agent performs the 5-pillar security check before planning.",
-    "prompt": "Plan a 5-day trip to Mexico City in July 2025. Start with the security briefing.",
-    "assertions": [
-      {
-        "type": "contains",
-        "value": "Viaggiare Sicuri",
-        "rationale": "Must check official Italian safety portal."
+        "value": "File 2: Tracks (GeoJSON/GPX Source)"
       },
       {
         "type": "contains",
-        "value": "Passport",
-        "rationale": "Entry requirements are part of Pillar 1."
+        "value": "trip_hub.html"
+      },
+      {
+        "type": "contains",
+        "value": "REFERENCES & CITATIONS"
+      },
+      {
+        "type": "contains",
+        "value": "LineString"
       }
     ]
   }

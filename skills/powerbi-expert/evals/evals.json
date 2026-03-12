@@ -1,0 +1,114 @@
+{
+  "skill_name": "powerbi-expert",
+  "version": "2.0",
+  "description": "Evaluation suite for the Power BI Expert skill covering modeling, DAX, design, themes, and Power Query.",
+  "evals": [
+    {
+      "id": 1,
+      "category": "Modeling",
+      "prompt": "My Power BI dashboard loads very slowly. I have 15 KPI cards, a snowflake schema with 6 dimension tables, and bi-directional relationships everywhere. How do I fix this?",
+      "expected_output": "The agent recommends: (1) Star Schema, (2) reduce to 5-10 visuals/5 KPIs, (3) remove bi-directional relationships, (4) use Import Mode, (5) KPIs with actionable TVGT framework.",
+      "assertions": [
+        "Recommends transitioning to a Star Schema",
+        "Recommends reducing visuals to 8 or fewer per page",
+        "Recommends reducing KPIs to 5 or fewer per page",
+        "Warns against bi-directional relationships and gives alternative",
+        "Mentions Import Mode or VertiPaq compression",
+        "Mentions the TVGT KPI framework (Target, Value, Gap, Trend) or equivalent"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "DAX",
+      "prompt": "Here is my DAX measure: `Profit Margin = (SUM(Sales[Amount]) - SUM(Costs[Amount])) / SUM(Sales[Amount])`. Is this correct? Can you improve it?",
+      "expected_output": "Agent identifies '/' operator risk, rewrites using DIVIDE() and VAR variables.",
+      "assertions": [
+        "Identifies the '/' division operator as problematic",
+        "Rewrites using DIVIDE() function",
+        "Introduces VAR variables for sub-expressions",
+        "Handles the case where Sales is zero (returns BLANK or 0)",
+        "Provides a complete, corrected DAX code block"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "Themes",
+      "prompt": "Generate a complete Power BI report theme JSON for a finance company. It should use a dark navy blue and gold palette, bold headers, and word wrap for tables.",
+      "expected_output": "Valid JSON with name, dataColors (navy/gold palette), textClasses, visualStyles including tableEx wordWrap.",
+      "assertions": [
+        "Output is valid JSON",
+        "Contains a 'name' property",
+        "Contains a 'dataColors' array with at least 6 colors",
+        "Contains 'textClasses' with title and header definitions",
+        "Contains 'visualStyles' with tableEx wordWrap set to true",
+        "Colors reflect navy/dark blue and gold tones"
+      ]
+    },
+    {
+      "id": 4,
+      "category": "Power Query",
+      "prompt": "My Power Query refresh takes 45 minutes. I have a custom column step at the top of my pipeline that runs Text.Upper() on a status column, then I filter for the current year. How can I speed this up?",
+      "expected_output": "Agent explains query folding, identifies custom column as folding-breaking step, recommends reordering to filter first, then add custom column.",
+      "assertions": [
+        "Explains query folding concept",
+        "Identifies Text.Upper() as a folding-breaking operation",
+        "Recommends moving the filter step BEFORE the custom column step",
+        "Mentions 'View Native Query' to verify folding",
+        "Suggests transforming Status at the data source level if possible"
+      ]
+    },
+    {
+      "id": 5,
+      "category": "KPI Design",
+      "prompt": "I want to design a sales KPI card for my CEO dashboard. What should it show and how should I design it?",
+      "expected_output": "Agent describes TVGT framework: actual value, target, gap (absolute and %), trend sparkline. Recommends accessible colors and certified visuals.",
+      "assertions": [
+        "Mentions showing the actual (current) value",
+        "Mentions showing a target or budget figure",
+        "Mentions showing the variance/gap in both absolute and percentage terms",
+        "Mentions a trend indicator (sparkline, moving average, or arrow)",
+        "Recommends accessible color palette (not red/green for variance)",
+        "Recommends a certified visual (native KPI, new Card, or Deneb)"
+      ]
+    },
+    {
+      "id": 6,
+      "category": "RLS",
+      "prompt": "I need to implement row-level security so each regional manager only sees their own region's data. How do I do this in Power BI?",
+      "expected_output": "Agent describes static vs dynamic RLS, gives DAX filter expression, recommends filtering on dimension table (not fact table), mentions testing with 'View as Role'.",
+      "assertions": [
+        "Explains difference between static and dynamic RLS",
+        "Provides DAX expression using USERPRINCIPALNAME()",
+        "Recommends applying filter on dimension table (not fact table)",
+        "Mentions testing with 'View as Role' in Power BI Desktop",
+        "Mentions publishing to Power BI Service requirement for RLS enforcement"
+      ]
+    },
+    {
+      "id": 7,
+      "category": "Time Intelligence",
+      "prompt": "How do I calculate Year-over-Year sales growth percentage in DAX? I want to show it on a line chart by month.",
+      "expected_output": "Agent provides YoY% measure using SAMEPERIODLASTYEAR, with VAR pattern, confirms Date table requirement.",
+      "assertions": [
+        "Provides complete DAX measure using SAMEPERIODLASTYEAR or DATEADD",
+        "Uses DIVIDE() to compute the growth percentage",
+        "Uses VAR for current period and prior period sub-expressions",
+        "Mentions requirement for a marked Date table",
+        "Suggests formatting the measure as a percentage"
+      ]
+    },
+    {
+      "id": 8,
+      "category": "PBIP",
+      "prompt": "I'm using Power BI Desktop Projects (.pbip). Which files are safe to edit in Git and which should I never touch manually?",
+      "expected_output": "Agent explains safe files (model.bim, theme.json) vs dangerous files (report.json, diagramLayout.json) and what to add to .gitignore.",
+      "assertions": [
+        "Identifies model.bim as safe to edit manually",
+        "Identifies report.json and diagramLayout.json as dangerous to hand-edit",
+        "Recommends adding .pbi/localSettings.json to .gitignore",
+        "Mentions Tabular Editor or ALM Toolkit for programmatic model changes",
+        "Identifies theme.json in StaticResources as safe to edit"
+      ]
+    }
+  ]
+}
