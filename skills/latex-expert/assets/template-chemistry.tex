@@ -1,0 +1,92 @@
+\documentclass[a4paper,12pt]{article}
+
+% --- Encoding (remove for LuaLaTeX/XeLaTeX) ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+
+% --- Math ---
+\usepackage{mathtools}
+\usepackage{amssymb}
+
+% --- Chemistry ---
+\usepackage[version=4]{mhchem}       % \ce{} for inline formulas and equations
+\usepackage{chemfig}                 % structural drawings
+\usepackage{chemmacros}              % macros, oxidation, thermodynamics
+% \chemsetup{modules=all}            % uncomment to load all chemmacros modules
+
+% --- Units ---
+\usepackage{siunitx}                 % \qty{25}{\degreeCelsius}
+
+% --- Typography ---
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{microtype}
+\usepackage{booktabs}                % professional tables
+
+% --- Graphics ---
+\usepackage[dvipsnames,svgnames]{xcolor}  % load xcolor BEFORE tikz/chemfig
+\usepackage{graphicx}
+
+% --- ChemFig Global Settings ---
+\setatomsep{1.8em}
+\setbondstyle{semithick}
+\renewcommand*\printatom[1]{\ensuremath{\mathsf{#1}}} % sans-serif atom labels
+
+% --- Bibliography ---
+\usepackage[style=chem-acs,backend=biber]{biblatex}   % ACS chemistry style
+% Other chemistry styles: chem-rsc, chem-angew
+\addbibresource{references.bib}
+
+% --- Navigation (Load Last) ---
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+% --- Metadata ---
+\title{Chemistry Document Title}
+\author{Author Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  Abstract text here.
+\end{abstract}
+
+\section{Introduction}
+
+Water (\ce{H2O}) is the solvent of life. The reaction of hydrogen and oxygen:
+%
+\begin{equation}
+  \ce{2H2_{(g)} + O2_{(g)} -> 2H2O_{(l)}} \qquad \Delta H^\circ = \qty{-572}{\kilo\joule\per\mole}
+\end{equation}
+
+\section{Structural Formulas}
+
+Ethanol drawn with \texttt{chemfig}:
+%
+\begin{center}
+  \chemfig{H-C(-[2]H)(-[6]H)-C(-[2]H)(-[6]H)-O-H}
+\end{center}
+
+Benzene ring:
+%
+\begin{center}
+  \chemfig{*6(-=-=-=)}
+\end{center}
+
+\section{Reaction Scheme}
+
+\schemestart
+  \chemfig{CH4}
+  \arrow{->[\ce{Cl2}][$h\nu$]}
+  \chemfig{CH3Cl}
+  \+
+  \chemfig{HCl}
+\schemestop
+
+\printbibliography
+
+\end{document}
