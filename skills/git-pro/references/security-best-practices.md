@@ -1,42 +1,151 @@
 # Git Security & Data Protection
 
-Protecting credentials, keys, and personal data is a critical responsibility. Once pushed, a secret is **compromised** and must be rotated.
+A secret committed to a repository is **immediately compromised** — even if you delete it in the next commit. History is permanent until actively rewritten.
 
-## 1. Prevention (First Line of Defense)
+---
 
-### Automated Scanning
-Use modern tools to prevent secrets from ever being committed:
-- **Gitleaks**: The industry standard for speed and accuracy. Run `gitleaks protect --staged` locally.
-- **TruffleHog (v3)**: Highly effective for deep scanning and key verification.
-- **pre-commit hooks**: Automate these checks with a `.pre-commit-config.yaml` file.
+## 1. Prevention — First Line of Defense
 
-### Environment Files
-Always exclude sensitive config files in `.gitignore`:
-- `.env`, `.env.*`, `config/secrets.yml`
-- `*.pem`, `*.key`, `*.crt` (Certificates/Keys)
-- `node_modules/`, `venv/`, `__pycache__/`
-- `credentials.json`, `auth.json`, `token.json`
+### Automated Pre-Commit Scanning
 
-## 2. Privacy & Identity
-- **Private Email**: Use the GitHub "private email" (`ID+username@users.noreply.github.com`) to prevent scraping.
-  - `git config --global user.email "your-id+username@users.noreply.github.com"`
-- **Commit Signing**: Sign commits using SSH or GPG to prevent identity spoofing.
-  - `git config --global commit.gpgsign true`
-- **Global Ignore**: Set a global ignore file for OS/IDE junk.
-  - `git config --global core.excludesfile ~/.gitignore_global`
+Install at least one of these tools:
 
-## 3. Remediation (When a Secret Leaks)
+```bash
+# Gitleaks — industry standard; fast, accurate
+brew install gitleaks                   # macOS
+# or: https://github.com/gitleaks/gitleaks/releases
 
-If you accidentally commit a secret:
-1. **ROTATE IMMEDIATELY**: The secret is compromised. Revoke it and generate a new one.
-2. **REWRITE HISTORY**: Use **`git-filter-repo`** (modern replacement for BFG/filter-branch) to scrub the secret from all branches/tags.
-   - `git filter-repo --path sensitive-file --invert-paths`
-3. **DO NOT** just "add to .gitignore" after the fact; it's still in the history.
+gitleaks protect --staged              # Scan staged files before commit
+gitleaks detect --source .             # Full repo scan
 
-## 4. Sensitivity Checklist
-Before every `git push`, ask:
-- [ ] Are there any hardcoded API keys or passwords?
-- [ ] Are there any unencrypted `.env` files?
-- [ ] Is my real email address exposed in the logs?
-- [ ] Have I included personal names/emails of clients/users?
-- [ ] Are there large data files (CSV/JSON) that should stay local?
+# TruffleHog v3 — deep scan with live key verification
+pip install trufflehog
+trufflehog git file://. --only-verified
+```
+
+**Automate via pre-commit hooks (`.pre-commit-config.yaml`):**
+```yaml
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.2      # pin to a specific version
+    hooks:
+      - id: gitleaks
+```
+```bash
+pip install pre-commit && pre-commit install   # Install hooks into this repo
+```
+
+---
+
+## 2. `.gitignore` — What to Always Exclude
+
+Add these patterns to every project's `.gitignore`:
+
+```gitignore
+# Secrets & credentials
+.env
+.env.*
+!.env.example          # Allow the example/template
+config/secrets.yml
+credentials.json
+auth.json
+token.json
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Dependency caches
+node_modules/
+venv/
+.venv/
+__pycache__/
+.mypy_cache/
+
+# Build output
+dist/
+build/
+*.egg-info/
+
+# OS / IDE junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/settings.json   # Allow .vscode/ but ignore personal settings
+```
+
+**Set a global ignore file:**
+```bash
+git config --global core.excludesfile ~/.gitignore_global
+# Add OS/IDE patterns there so you never need to add them per-repo
+```
+
+---
+
+## 3. Privacy & Identity
+
+```bash
+# Use GitHub's private no-reply email (prevents address scraping from git log)
+git config --global user.email "123456+username@users.noreply.github.com"
+# Find your ID at: https://github.com/settings/emails
+
+# Sign commits with SSH (simpler than GPG, equally secure)
+git config --global gpg.format ssh
+git config --global user.signingkey ~/.ssh/id_ed25519.pub
+git config --global commit.gpgsign true
+
+# Verify a signed commit
+git log --show-signature -1
+```
+
+---
+
+## 4. Remediation — When a Secret Leaks
+
+> **Act in this exact order. Speed matters.**
+
+### Step 1 — Rotate the secret immediately
+Revoke the leaked key/token/password in the relevant service dashboard *before* anything else. Assume it has already been scraped.
+
+### Step 2 — Rewrite history with `git-filter-repo`
+`git-filter-repo` is the official, modern replacement for BFG and `git filter-branch`.
+
+```bash
+pip install git-filter-repo
+
+# Remove a specific file from all history
+git filter-repo --path secrets.env --invert-paths
+
+# Remove a specific string pattern from all files in history
+git filter-repo --replace-text <(echo 'ACTUAL_SECRET_VALUE==>REDACTED')
+
+# After rewriting, force-push all branches
+git push origin --force --all
+git push origin --force --tags
+```
+
+> ⚠️ All collaborators must re-clone or re-fetch after a force-push to rewritten history.
+
+### Step 3 — Rotate again
+After the history is clean, rotate a second time in case the first rotation was compromised.
+
+### Common Mistakes to Avoid
+| ❌ Wrong | ✅ Right |
+|---|---|
+| Add the file to `.gitignore` after the commit | Rewrite history with `git-filter-repo` |
+| `git rm --cached` the file and commit | Same — the old commit still has it |
+| Assume a private repo is safe | Rotate anyway; access control can change |
+
+---
+
+## 5. Pre-Push Checklist
+
+Run through this before every `git push`:
+
+- [ ] `git diff origin/main..HEAD` — scan the diff for hardcoded values
+- [ ] No `.env` or secret files appear in `git status`
+- [ ] `gitleaks protect --staged` (or equivalent) passed
+- [ ] No real email in `git log --format="%ae" -5`
+- [ ] No PII (client names, emails, addresses) in large data files being pushed
+- [ ] Any large CSV/JSON files that should stay local are in `.gitignore`

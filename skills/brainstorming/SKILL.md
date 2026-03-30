@@ -1,58 +1,142 @@
 ---
 name: brainstorming
-description: "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation."
+description: "Use this skill when the user wants to design, plan, or think through a non-trivial feature, component, system, or behavior change before writing code. Trigger on phrases like 'I want to build', 'let's add', 'how should I design', 'help me think through', 'I'm thinking of adding', or whenever a request involves enough unknowns that jumping straight to implementation would be premature. Skip for obvious one-liner fixes or purely mechanical tasks."
 ---
 
 # Brainstorming Ideas Into Designs
 
-## Overview
+Turn vague ideas into validated, documented designs through structured collaborative dialogue — before a single line of code is written.
 
-Help turn ideas into fully formed designs and specs through natural collaborative dialogue.
+---
 
-Start by understanding the current project context, then ask questions one at a time to refine the idea. Once you understand what you're building, present the design in small sections (200-300 words), checking after each section whether it looks right so far.
+## Phase 0 — Read Context First (Silent Step)
 
-## The Process
+Before asking anything, orient yourself:
 
-**Understanding the idea:**
-- Check out the current project state first (files, docs, recent commits)
-- Ask questions one at a time to refine the idea
-- Prefer multiple choice questions when possible, but open-ended is fine too
-- Only one question per message - if a topic needs more exploration, break it into multiple questions
-- Focus on understanding: purpose, constraints, success criteria
+```
+Read in this order:
+1. README or docs/README — understand the project's purpose and tech stack
+2. docs/plans/ or docs/architecture/ — any prior design decisions
+3. Recent git log (last 5–10 commits) — understand current momentum
+4. The file(s) most likely affected by the proposed change
+```
 
-**Exploring approaches:**
-- Propose 2-3 different approaches with trade-offs
-- Present options conversationally with your recommendation and reasoning
-- Lead with your recommended option and explain why
+Extract from this reading:
+- **Tech stack** (language, framework, DB, infra)
+- **Existing patterns** (how similar features are currently built)
+- **Constraints** (anything that narrows the solution space)
 
-**Presenting the design:**
-- Once you believe you understand what you're building, present the design
-- Break it into sections of 200-300 words
-- Ask after each section whether it looks right so far
-- Cover: architecture, components, data flow, error handling, testing
-- Be ready to go back and clarify if something doesn't make sense
+Do not summarize this to the user. Use it silently to ask better questions.
 
-## After the Design
+---
 
-**Documentation:**
-- Write the validated design to `docs/plans/YYYY-MM-DD-<topic>-design.md`
-- Use elements-of-style:writing-clearly-and-concisely skill if available
-- Commit the design document to git
+## Phase 1 — Understand the Idea
 
-**Implementation (if continuing):**
-- Ask: "Ready to set up for implementation?"
-- Use superpowers:using-git-worktrees to create isolated workspace
-- Use superpowers:writing-plans to create detailed implementation plan
+Ask one question per message. Wait for the answer before asking the next.
+
+**Question order (adapt as needed):**
+
+1. **Purpose** — Why does this need to exist? What problem does it solve for which user?
+2. **Success criteria** — How will you know when this is done and working correctly?
+3. **Scope boundaries** — What is explicitly out of scope for this version?
+4. **Constraints** — Any performance, security, backwards-compatibility, or deadline requirements?
+5. **Edge cases** — What are the failure modes? What happens when inputs are invalid or the network is down?
+
+**Question style:**
+- Prefer multiple-choice when the answer space is bounded:
+  > "Should this be synchronous (user waits) or asynchronous (job runs in background)?"
+  > a) Synchronous — simpler, but blocks the UI
+  > b) Asynchronous — better UX, more infrastructure
+  > c) Not sure — let's discuss
+- Use open-ended only when the answer is genuinely unconstrained.
+
+**When to stop questioning:** Move to Phase 2 when you can answer all of these:
+- [ ] What is being built and why
+- [ ] Who uses it and how
+- [ ] What the happy path looks like end-to-end
+- [ ] At least one non-obvious failure mode
+- [ ] What is explicitly not included
+
+---
+
+## Phase 2 — Explore Approaches
+
+Propose exactly **2–3 approaches**. No more.
+
+For each approach, state:
+- **Name** (one short label, e.g. "Polling", "Webhooks", "Event Bus")
+- **How it works** (2–3 sentences)
+- **Tradeoffs** across these dimensions:
+  - Complexity (implementation effort, operational burden)
+  - Performance / scalability
+  - Maintainability
+  - Time to ship
+
+Then give your **recommendation** and the single most important reason for it.
+
+> ✅ Lead with your recommendation: "I'd go with Option B because..."  
+> ❌ Don't present all options neutrally and make the user choose blindly.
+
+**YAGNI checkpoint:** Before finalizing approaches, explicitly ask:
+> "Is there anything in this design we're adding 'just in case' that we don't need for this version?"
+Remove anything that doesn't serve the stated success criteria.
+
+---
+
+## Phase 3 — Present the Design
+
+Present the design in sections of **200–300 words each**, in this order:
+
+1. **Summary** — One paragraph: what this is, what it does, what it does not do.
+2. **Architecture / Component Overview** — How the pieces fit together. Include a simple text diagram if helpful.
+3. **Data Model / API Contract** — Key data structures, schemas, or API endpoints. Concrete field names and types.
+4. **Control Flow** — Step-by-step description of the happy path, then the primary error path.
+5. **Error Handling & Edge Cases** — What can fail, how it's detected, and how it recovers.
+6. **Testing Strategy** — Unit, integration, and/or E2E tests. What the test inputs and expected outputs look like.
+
+After each section, ask:
+> "Does this section look right, or do you want to adjust anything before I continue?"
+
+**Scope creep rule:** If the user adds new requirements during design, pause and say:
+> "That sounds useful — should we add it to this design, or log it as a follow-up so we don't expand scope right now?"
+
+---
+
+## Phase 4 — Document and Hand Off
+
+### Write the design document
+
+```
+docs/plans/YYYY-MM-DD-<topic>-design.md
+```
+
+Structure it exactly as the sections above. Write in clear prose — no bullet soup.
+
+Commit the file:
+```bash
+git add docs/plans/YYYY-MM-DD-<topic>-design.md
+git commit -m "docs(plans): add design for <topic>"
+```
+
+### Hand off to implementation
+
+Ask the user:
+> "Ready to move to implementation? I can set up a structured implementation plan."
+
+If they say yes:
+- Check if a `writing-plans` or `prd-architect` skill is available and invoke it
+- If not, create a `docs/plans/YYYY-MM-DD-<topic>-plan.md` with ordered implementation tasks, each scoped to a single, testable unit of work
+
+---
 
 ## Key Principles
 
-- **One question at a time** - Don't overwhelm with multiple questions
-- **Multiple choice preferred** - Easier to answer than open-ended when possible
-- **YAGNI ruthlessly** - Remove unnecessary features from all designs
-- **Explore alternatives** - Always propose 2-3 approaches before settling
-- **Incremental validation** - Present design in sections, validate each
-- **Be flexible** - Go back and clarify when something doesn't make sense
-
-## Next Steps
-
-Once the idea is validated and the design is documented, activate `prd-architect` to formalize these ideas into a concrete Product Requirements Document (PRD).
+| Principle | What it means in practice |
+|---|---|
+| **One question at a time** | Never ask two questions in one message, even if they're related |
+| **Multiple choice preferred** | Bounded options are faster to answer than blank fields |
+| **YAGNI ruthlessly** | Before finalizing the design, explicitly cut anything not needed for this version |
+| **Explore before deciding** | Always surface 2–3 approaches; never jump to implementation of the first idea |
+| **Validate incrementally** | Present design in sections; don't dump the entire spec at once |
+| **Control scope creep** | Name it explicitly when it happens; give the user a clear choice to include or defer |
+| **Silent context read** | Gather project context before asking anything; don't make the user repeat themselves |

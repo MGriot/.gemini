@@ -1,18 +1,45 @@
-# Current Stage
+# Stage · Current Execution Snapshot
 
-**Last Sync:** {{DATE}}
+**Last Sync:** {{DATE}} at {{TIME}}
 
-## 🧪 Quality Gate (Current Status)
-*(Options: "IDLE", "IMPLEMENTING", "VERIFYING - Waiting for Test Result")*
+---
 
-## 🔬 Active Atomic Focus
-**Task ID:** {{TASK_ID}}
-**Target File:** `{{TARGET_FILE}}`
-**Verification Method:** `{{TEST_COMMAND}}`
+## 🚦 Quality Gate
+> Status: **{{GATE_STATUS}}**
+> *(IDLE | IMPLEMENTING | VERIFYING | BLOCKED — reason)*
+
+---
+
+## ⚙️ Active Atomic Focus
+
+| Field | Value |
+|---|---|
+| **Task ID** | `{{TASK_ID}}` |
+| **Title** | {{TASK_TITLE}} |
+| **Target Files** | `{{TARGET_FILES}}` |
+| **Verify With** | `{{VERIFICATION_METHOD}}` |
+| **Started** | {{START_TIME}} |
+
+---
 
 ## ⏭️ On Deck
-1. {{NEXT_TASK_1}}
-2. {{NEXT_TASK_2}}
+
+1. `{{NEXT_TASK_ID}}` · {{NEXT_TASK_TITLE}}
+2. `{{NEXT_TASK_ID_2}}` · {{NEXT_TASK_TITLE_2}}
+3. `{{NEXT_TASK_ID_3}}` · {{NEXT_TASK_TITLE_3}}
+
+---
 
 ## 📉 Recent History
-- (Agent: Insert recently completed atomic tasks here)
+
+| Task ID | Title | Completed At | Verdict |
+|---|---|---|---|
+| — | — | — | — |
+
+---
+
+## 🚧 Blockers / Known Issues
+
+*(Ralph appends here when a task is blocked or a side-effect is discovered)*
+
+- None

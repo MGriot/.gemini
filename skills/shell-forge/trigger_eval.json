@@ -1,0 +1,92 @@
+[
+  {
+    "query": "Write a bash script to back up a directory to S3 every night",
+    "should_trigger": true,
+    "reason": "Script creation request — core shell-forge use case."
+  },
+  {
+    "query": "Make a shell one-liner to find and delete files older than 30 days",
+    "should_trigger": true,
+    "reason": "Shell one-liner request — explicit trigger phrase."
+  },
+  {
+    "query": "Fix my bash script, it crashes when filenames have spaces",
+    "should_trigger": true,
+    "reason": "Script debugging/fix request."
+  },
+  {
+    "query": "Review this shell script for security issues",
+    "should_trigger": true,
+    "reason": "Script audit request — maps to §6 checklist."
+  },
+  {
+    "query": "I need a cron job that checks disk usage and sends a Slack alert",
+    "should_trigger": true,
+    "reason": "'cron job' trigger phrase + uses patterns from patterns.md."
+  },
+  {
+    "query": "How do I make this script work on both macOS and Linux?",
+    "should_trigger": true,
+    "reason": "Portability request — maps to §5 and references/portability.md."
+  },
+  {
+    "query": "Create a deploy script with rollback support",
+    "should_trigger": true,
+    "reason": "Deploy script request — template available in assets/."
+  },
+  {
+    "query": "Write a script that reads a .env file and exports variables",
+    "should_trigger": true,
+    "reason": "Script + env management — pattern in references/patterns.md §7."
+  },
+  {
+    "query": "Make a bash script that retries a curl command on failure",
+    "should_trigger": true,
+    "reason": "Script with retry logic — pattern directly available."
+  },
+  {
+    "query": "How do I add argument parsing to my shell script?",
+    "should_trigger": true,
+    "reason": "Shell scripting how-to — arg parsing is in §4 template."
+  },
+  {
+    "query": "Write a dotfile installer script",
+    "should_trigger": true,
+    "reason": "'dotfiles' is an explicit trigger phrase in the description."
+  },
+  {
+    "query": "What is the difference between $@ and $*?",
+    "should_trigger": true,
+    "reason": "Shell-specific knowledge question — skill has relevant context."
+  },
+  {
+    "query": "How do I write a Python script?",
+    "should_trigger": false,
+    "reason": "Python, not shell — different language entirely."
+  },
+  {
+    "query": "How do I set up a CI/CD pipeline in GitHub Actions?",
+    "should_trigger": false,
+    "reason": "CI/CD platform configuration — not a shell scripting task."
+  },
+  {
+    "query": "Explain what Docker is",
+    "should_trigger": false,
+    "reason": "General explanation — no shell scripting involved."
+  },
+  {
+    "query": "What is the best database for a high-traffic web app?",
+    "should_trigger": false,
+    "reason": "Architecture question — unrelated to shell scripting."
+  },
+  {
+    "query": "How do I sort a list in JavaScript?",
+    "should_trigger": false,
+    "reason": "JavaScript question — different language."
+  },
+  {
+    "query": "Write a SQL query to find duplicate rows",
+    "should_trigger": false,
+    "reason": "SQL, not shell."
+  }
+]

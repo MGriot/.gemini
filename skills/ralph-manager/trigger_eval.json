@@ -1,0 +1,102 @@
+[
+  {
+    "query": "Status of the project",
+    "should_trigger": true,
+    "reason": "Direct project state request — Boot Sequence trigger."
+  },
+  {
+    "query": "Resume",
+    "should_trigger": true,
+    "reason": "Resume keyword explicitly mapped to Boot Sequence."
+  },
+  {
+    "query": "Execute next task",
+    "should_trigger": true,
+    "reason": "Execution loop trigger phrase."
+  },
+  {
+    "query": "Go",
+    "should_trigger": true,
+    "reason": "Short-form execution trigger."
+  },
+  {
+    "query": "Next",
+    "should_trigger": true,
+    "reason": "Primary execution trigger word."
+  },
+  {
+    "query": "What's the plan?",
+    "should_trigger": true,
+    "reason": "Equivalent to Status — requests project overview."
+  },
+  {
+    "query": "What are we working on right now?",
+    "should_trigger": true,
+    "reason": "Asking about current task state — Boot Sequence."
+  },
+  {
+    "query": "Break down the checkout flow into atomic tasks",
+    "should_trigger": true,
+    "reason": "Explicit Decomposition Protocol trigger."
+  },
+  {
+    "query": "Plan the authentication feature",
+    "should_trigger": true,
+    "reason": "'Plan [feature]' maps to Decomposition Protocol."
+  },
+  {
+    "query": "What was changed last?",
+    "should_trigger": true,
+    "reason": "Request for changelog — Ralph manages changelogs."
+  },
+  {
+    "query": "What time was the last commit?",
+    "should_trigger": true,
+    "reason": "Timestamped commit retrieval — Ralph Cascade output."
+  },
+  {
+    "query": "Skip this task",
+    "should_trigger": true,
+    "reason": "Task deferral — Ralph handles status transitions."
+  },
+  {
+    "query": "I want to set up a new project with tasks and sprints",
+    "should_trigger": true,
+    "reason": "Project bootstrap with task management — Ralph's domain."
+  },
+  {
+    "query": "Mark AUTH-01 as done",
+    "should_trigger": true,
+    "reason": "Explicit task state mutation — Ralph manages tasks.json."
+  },
+  {
+    "query": "How do I use git?",
+    "should_trigger": false,
+    "reason": "General Git knowledge question — unrelated to project state."
+  },
+  {
+    "query": "What time is it in Tokyo?",
+    "should_trigger": false,
+    "reason": "General knowledge — no project context."
+  },
+  {
+    "query": "Explain the difference between REST and GraphQL",
+    "should_trigger": false,
+    "reason": "Technical education question — not a project management task."
+  },
+  {
+    "query": "Fix this Python syntax error",
+    "should_trigger": false,
+    "reason": "One-off code fix request — not a Ralph orchestration task."
+  },
+  {
+    "query": "Write a unit test for this function",
+    "should_trigger": false,
+    "reason": "Direct code request without project task context."
+  },
+  {
+    "query": "Summarize this document",
+    "should_trigger": false,
+    "reason": "Content task — not related to project management."
+  }
+]

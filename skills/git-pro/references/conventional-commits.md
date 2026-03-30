@@ -1,28 +1,72 @@
 # Conventional Commits
 
-Enforce this structure for all commit messages:
-`<type>(<scope>): <description>`
+All commit messages must follow this structure:
+
+```
+<type>(<scope>): <description>
+
+[optional body]
+
+[optional footer: BREAKING CHANGE: ..., Closes #123]
+```
+
+---
 
 ## Types
-- **feat**: A new feature
-- **fix**: A bug fix
-- **docs**: Documentation only changes
-- **style**: Changes that do not affect the meaning of the code (white-space, formatting, etc)
-- **refactor**: A code change that neither fixes a bug nor adds a feature
-- **perf**: A code change that improves performance
-- **test**: Adding missing tests or correcting existing tests
-- **build**: Changes that affect the build system or external dependencies
-- **ci**: Changes to CI configuration files and scripts
-- **chore**: Other changes that don't modify src or test files
-- **revert**: Reverts a previous commit
+
+| Type | When to use |
+|---|---|
+| `feat` | A new feature visible to the end user |
+| `fix` | A bug fix |
+| `docs` | Documentation only (README, comments, JSDoc) |
+| `style` | Formatting, whitespace — no logic change |
+| `refactor` | Code restructure that neither fixes a bug nor adds a feature |
+| `perf` | A performance improvement |
+| `test` | Adding or correcting tests |
+| `build` | Build system or external dependency changes (webpack, npm, pip) |
+| `ci` | CI/CD configuration (GitHub Actions, CircleCI, etc.) |
+| `chore` | Maintenance tasks that don't touch src or test files |
+| `revert` | Reverts a previous commit (`revert: feat(auth): add jwt validation`) |
+
+---
 
 ## Rules
-- **Imperative Mood**: Use "add" instead of "added" or "adds".
-- **Lowercase**: The description should be lowercase and not end with a period.
-- **Scope**: (Optional) The module or file affected (e.g., `auth`, `ui`, `api`).
+
+- **Imperative mood** — `add`, not `added` or `adds`
+- **Lowercase** — description is lowercase; no trailing period
+- **Scope is optional** — use the module, file, or domain affected (`auth`, `ui`, `api`, `db`)
+- **Breaking changes** — add `!` after the type/scope and a `BREAKING CHANGE:` footer:
+  ```
+  feat(api)!: remove deprecated /v1/users endpoint
+
+  BREAKING CHANGE: clients must migrate to /v2/users
+  ```
+
+---
 
 ## Examples
-- `feat(auth): add jwt token validation`
-- `fix(ui): resolve alignment issue on mobile`
-- `docs: update readme with installation steps`
-- `refactor: simplify database connection logic`
+
+```bash
+git commit -m "feat(auth): add jwt token validation"
+git commit -m "fix(ui): resolve alignment issue on mobile"
+git commit -m "docs: update readme with installation steps"
+git commit -m "refactor: simplify database connection logic"
+git commit -m "perf(query): add index on users.email column"
+git commit -m "test(auth): add coverage for token expiry edge case"
+git commit -m "ci: add caching for node_modules in workflow"
+git commit -m "chore: bump eslint to v9"
+git commit -m "revert: feat(auth): add jwt token validation"
+```
+
+---
+
+## Multi-line Commit (Body + Footer)
+
+```bash
+git commit -m "fix(payments): handle stripe webhook timeout
+
+Stripe webhooks can arrive out of order when the handler is slow.
+Added idempotency key validation to prevent double-processing.
+
+Closes #412"
+```
