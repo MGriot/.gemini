@@ -1,9 +1,6 @@
 ---
 name: latex-expert
-description: >
-  Expert guidance on LaTeX document preparation, formatting, mathematical
-  typesetting, bibliography management, TikZ graphics, chemistry, and Python
-  integration. Use for creating, debugging, or extending any LaTeX document.
+description: "Author, debug, and extend LaTeX documents: document classes and page geometry, mathematical typesetting (amsmath, mathtools), tables and figures, bibliographies with BibTeX/BibLaTeX, cross-referencing, TikZ and PGFPlots graphics, chemistry (mhchem, chemfig), and Python integration via PythonTeX. Also diagnoses compilation failures, package clashes, and Overfull hbox warnings, and enforces correct package load order. Use when the user is writing a paper, thesis, report, or CV in LaTeX, asks how to typeset a formula or diagram, hits a compile error, or wants a .tex file created or fixed. Trigger on any mention of LaTeX, .tex, TikZ, BibTeX, Overleaf, or 'typeset this equation'."
 ---
 
 # LaTeX Expert — Main Agent

@@ -1,12 +1,17 @@
 ---
 name: stitch-loop
-description: Teaches agents to iteratively build websites using Stitch with an autonomous baton-passing loop pattern
+description: "Autonomous baton-passing loop for building a complete multi-page website with Google Stitch, one screen at a time. Maintains a SITE.md plan and a next-prompt.md baton so work continues across iterations without losing context. Use when the user wants a whole site or a sequence of screens rather than a single design — 'build me a site with Stitch', 'generate all the pages', 'keep going until the site is done', 'iterate on this until it's finished'. For one screen or a single edit, use stitch-design instead."
 allowed-tools:
   - "stitch*:*"
   - "chrome*:*"
   - "Read"
   - "Write"
   - "Bash"
+  - "mcp__stitch*"
+  - "Edit"
+  - "Glob"
+  - "Grep"
+  - "WebFetch"
 ---
 
 # Stitch Build Loop
@@ -26,7 +31,7 @@ The Build Loop pattern enables continuous, autonomous website development throug
 **Required:**
 - Access to the Stitch MCP Server
 - A Stitch project (existing or will be created)
-- A `.stitch/DESIGN.md` file (generate one using the `design-md` skill if needed)
+- A `.stitch/DESIGN.md` file (generate one with the `stitch-design` skill if needed)
 - A `.stitch/SITE.md` file documenting the site vision and roadmap
 
 **Optional:**
@@ -157,7 +162,7 @@ A competitive achievements page showing developer badges and milestones.
 project/
 ├── .stitch/
 │   ├── metadata.json   # Stitch project & screen IDs (persist this!)
-│   ├── DESIGN.md       # Visual design system (from design-md skill)
+│   ├── DESIGN.md       # Visual design system (from stitch-design skill)
 │   ├── SITE.md         # Site vision, sitemap, roadmap
 │   ├── next-prompt.md  # The baton — current task
 │   └── designs/        # Staging area for Stitch output
@@ -239,9 +244,9 @@ The skill is orchestration-agnostic — focus on the pattern, not the trigger me
 
 ## Design System Integration
 
-This skill works best with the `design-md` skill:
+This skill works best with the `stitch-design` skill:
 
-1. **First time setup**: Generate `.stitch/DESIGN.md` using the `design-md` skill from an existing Stitch screen
+1. **First time setup**: Generate `.stitch/DESIGN.md` with the `stitch-design` skill from an existing Stitch screen
 2. **Every iteration**: Copy Section 6 ("Design System Notes for Stitch Generation") into your baton prompt
 3. **Consistency**: All generated pages will share the same visual language
 

@@ -20,7 +20,7 @@ Enables continuous, autonomous website development through a "baton" system:
 ## Prerequisites
 
 - Stitch MCP Server access
-- A `DESIGN.md` file (generate with the `design-md` skill)
+- A `DESIGN.md` file (generate with the `stitch-design` skill)
 - A `SITE.md` file for project context
 
 ## Example Prompt
@@ -45,7 +45,7 @@ stitch-loop/
 
 ## Works With
 
-- **`design-md` skill**: Generate `DESIGN.md` from existing Stitch screens
+- **`stitch-design` skill**: Generate `DESIGN.md` from existing Stitch screens (generate-design-md workflow)
 - **CI/CD**: GitHub Actions can trigger new iterations on push
 - **Agent chains**: Dispatch to other agents (Jules, etc.)
 

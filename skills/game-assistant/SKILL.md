@@ -45,7 +45,7 @@ When multiple modes are needed, state the plan up front: *"I'll run RESEARCH fir
    - `"[Game Name] strategy tips BGG"` — community tips (BoardGameGeek preferred)
    - `"[Game Name] components materials"` — physical components list
    - `"[Game Name] FAQ errata"` — official clarifications
-3. **Fetch full pages** with `web_fetch` for sources that look authoritative (publisher site, BGG wiki, rulebook PDFs).
+3. **Fetch full pages** with `WebFetch` for sources that look authoritative (publisher site, BGG wiki, rulebook PDFs).
 4. **Synthesize into sections:**
    - 🎲 **Overview** — what it is, players, duration, age, complexity rating (BGG weight)
    - 📜 **History & Origin** — designer, publisher, year, story behind the game
@@ -205,7 +205,7 @@ Example for a fantasy eurogame cover:
 2. **Search for official sources:**
    - Publisher FAQ / errata: `web_search "[Game Name] official FAQ errata [publisher]"`
    - BGG rules forum: `web_search "[Game Name] rules question BGG forum [keyword]"`
-   - Rulebook text: `web_fetch` rulebook PDF if available
+   - Rulebook text: `WebFetch` rulebook PDF if available
 3. **Issue the ruling:**
    ```
    ⚖️ RULING: [Game Name] — [Short description]
@@ -291,3 +291,13 @@ RESEARCH → SOLO ADVISOR → CARD (Solo variant summary)
 - Prefer BoardGameGeek, publisher official sites, and peer-reviewed rulebook PDFs over secondary sources
 - Be precise with edition differences — rules between editions can differ significantly
 - Respect copyright: summarize and paraphrase rulebooks, never reproduce verbatim at length
+
+---
+
+## References
+
+- **`references/translate-guide.md`** — translating cards, rulebooks, and components between
+  languages. Covers the functional-over-literary priority order, keyword glossary discipline,
+  and how to handle terms with no target-language equivalent. Read it for any translation task.
+- **`references/imagegen-providers.md`** — image generation providers, API shapes, and costs
+  for thematic art in guides and player aids.

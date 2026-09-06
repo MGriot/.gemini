@@ -16,9 +16,13 @@ def check_mcp_server(file_path):
     if "print(" in content and "sys.stderr" not in content:
         issues.append("[CRITICAL] Uses 'print()'. This will corrupt MCP STDIO transport. Use 'sys.stderr.write()' or 'ctx.info()'.")
 
-    # Check for FastMCP usage
-    if "FastMCP" not in content:
-        issues.append("[INFO] Consider using 'FastMCP' from mcp.server.fastmcp for a cleaner API.")
+    # Check for the high-level server class (renamed from FastMCP in mcp 2.x)
+    if "MCPServer" not in content and "FastMCP" not in content:
+        issues.append("[INFO] Consider using 'MCPServer' from mcp.server.mcpserver for a cleaner API.")
+
+    # Flag the v1 import, which raises ModuleNotFoundError on mcp 2.x
+    if "mcp.server.fastmcp" in content:
+        issues.append("[CRITICAL] Imports 'mcp.server.fastmcp', removed in mcp 2.x. Use 'from mcp.server.mcpserver import MCPServer' (or pin 'mcp<2').")
 
     # Check for Pydantic/Validation
     if "pydantic" not in content.lower() and "mcp.tool" in content:

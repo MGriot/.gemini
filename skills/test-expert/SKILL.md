@@ -1,6 +1,6 @@
 ---
 name: test-expert
-description: Expert guidance for generating high-quality test code. Use when adding unit/integration tests or setting up test suites. Specialized knowledge for Python (pytest), TS/JS (Vitest/Jest), and Go.
+description: "Generate idiomatic, high-quality tests and place them where the project's conventions expect. Specialized for Python (pytest — fixtures, parametrize, monkeypatch, mocking), TypeScript/JavaScript (Vitest/Jest — spies, async, fake timers), and Go (table-driven tests, subtests, t.Cleanup). Use when the user asks to add tests, write a unit or integration test, improve coverage, set up a test suite, mock an external dependency, or turn a bug into a failing test. Trigger on 'write tests for', 'add test coverage', 'how do I test this', 'set up pytest/vitest/jest', or 'reproduce this bug as a test'."
 ---
 
 # Test Expert
@@ -106,3 +106,58 @@ describe('UserService', () => {
 - [ ] **Imports**: Are source modules imported correctly?
 - [ ] **Style**: snake_case for Python tests, camelCase for JS/TS tests.
 - [ ] **Behavior**: Does it test behavior, not implementation details?
+
+---
+
+## Deep Dive: Go
+
+Go has no assertion library in the standard library and does not need one. Use table-driven
+tests with subtests — they give you one failure per case, run in parallel, and name themselves.
+
+```go
+func TestParseDuration(t *testing.T) {
+    tests := []struct {
+        name    string
+        input   string
+        want    time.Duration
+        wantErr bool
+    }{
+        {name: "seconds", input: "30s", want: 30 * time.Second},
+        {name: "minutes", input: "5m", want: 5 * time.Minute},
+        {name: "empty", input: "", wantErr: true},
+        {name: "garbage", input: "abc", wantErr: true},
+    }
+
+    for _, tt := range tests {
+        t.Run(tt.name, func(t *testing.T) {
+            t.Parallel()
+            got, err := ParseDuration(tt.input)
+            if (err != nil) != tt.wantErr {
+                t.Fatalf("ParseDuration(%q) error = %v, wantErr %v", tt.input, err, tt.wantErr)
+            }
+            if err == nil && got != tt.want {
+                t.Errorf("ParseDuration(%q) = %v, want %v", tt.input, got, tt.want)
+            }
+        })
+    }
+}
+```
+
+- **Naming**: `*_test.go`, collocated with the code under test. `TestXxx(t *testing.T)`.
+- **Cleanup**: prefer `t.Cleanup(func(){ ... })` over `defer` — it runs even when a subtest
+  calls `t.Fatal`, and it composes with helpers.
+- **Helpers**: call `t.Helper()` first so failures report the caller's line, not the helper's.
+- **Fatal vs Error**: `t.Fatal` stops the subtest (use when later assertions would panic);
+  `t.Error` keeps going (use to report several independent mismatches at once).
+- **Fakes over mocks**: accept an interface, pass a small struct that implements it. Go has
+  no mocking framework in the stdlib and rarely needs one.
+- **Golden files**: for large output, compare against `testdata/*.golden` behind a `-update`
+  flag rather than embedding the expected text in the test.
+
+---
+
+## References
+
+- **`references/testing-best-practices.md`** — language-specific conventions (naming, layout,
+  coverage targets) and the general principles behind them. Read it when setting up a suite
+  from scratch or when a project's existing conventions are unclear.

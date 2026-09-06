@@ -1,9 +1,6 @@
 ---
 name: project-strategist
-description:
-  Expertise in general project management, strategic planning, and logistics.
-  Use when the user wants to plan an event, launch a business, manage a
-  marketing campaign, or structure a complex initiative.
+description: "Structure a non-software project into an executable plan: objectives with SMART KPIs, explicit in-scope and out-of-scope boundaries, a RACI matrix, a timeline with critical path and go/no-go gates, budget and resourcing, and a pre-mortem risk register with mitigations. Asks targeted consultant-style questions until the project is ~85% understood before writing the plan. Use for events, business and product launches, marketing campaigns, hiring pushes, relocations, conferences, or any complex initiative that is not primarily code. Trigger on 'help me plan', 'organize this launch', 'I'm running an event', 'build me a project plan', or 'how should I structure this campaign'. For software specs use prd-architect; for executing coding tasks use ralph-manager."
 ---
 
 # Master Project Strategist

@@ -217,7 +217,7 @@ try {
   return { content: [{ type: "text", text: result }] };
 } catch (error) {
   return {
-    isError: true,
+    is_error: true,
     content: [{
       type: "text",
       text: `Error: ${error.message}. Try using filter='active_only' to reduce results.`

@@ -1,6 +1,6 @@
 ---
 name: surgical-editor
-description: Expert for high-precision, low-impact code modifications using the Ralph Verification Loop to ensure zero collateral damage.
+description: "High-precision, minimal-diff code changes with a verification gate and zero collateral damage. Maps every call site before editing, names the exact test command before implementing, and halts on any failed check rather than pressing on. Use when a change is risky, touches shared or legacy code, or must not disturb anything nearby — 'change X without touching Y', 'apply this surgically', 'keep the diff minimal', 'this is production code, be careful', 'fix only this one thing'. Prefer it over an ordinary edit whenever blast radius matters more than speed."
 ---
 
 # Surgical Editor 🩺
@@ -16,12 +16,12 @@ Use this skill when you need to make atomic, high-risk, or precise changes to a 
 1. **Minimal Surface Area**: Change only what is strictly necessary.
 2. **Zero Collateral Damage**: Never refactor unrelated code or fix unrelated "style" issues.
 3. **Atomic Verifiability**: Every surgical change must be testable in isolation.
-4. **The Scalpel over the Sledgehammer**: Prefer `replace` over `write_file`.
+4. **The Scalpel over the Sledgehammer**: Prefer `Edit` over `Write`.
 
 ## The Surgical Workflow (Ralph-Integrated)
 
 ### 1. The Recon Phase (Targeting)
-- Use `grep_search` to map all dependencies and call sites.
+- Use `Grep` (and `Glob` for file discovery) to map all dependencies and call sites.
 - Identify the **Surgical Boundary**: the exact lines that will change.
 - Identify **Protected Zones**: adjacent logic that must remain untouched.
 
@@ -31,9 +31,9 @@ Use this skill when you need to make atomic, high-risk, or precise changes to a 
 - **Verification Method**: Define a specific test command (e.g., `npm test tests/surgical_fix.test.ts`) BEFORE implementation.
 
 ### 3. Implementation (The Scalpel)
-- **Primary Tool**: Use `replace` whenever possible.
-- **Context Locking**: Include at least 3 lines of context in `old_string` to ensure the correct location is targeted.
-- **Precision**: If you must use `write_file`, read the existing file first and ensure 1:1 mapping of all unrelated sections.
+- **Primary Tool**: Use `Edit` whenever possible.
+- **Context Locking**: Include at least 3 lines of surrounding context in `old_string` so the edit anchors to exactly one location. If it matches more than once, widen the context rather than using `replace_all`.
+- **Precision**: If you must use `Write`, `Read` the existing file first and ensure a 1:1 mapping of all unrelated sections.
 
 ### 4. The Ralph Quality Gate (Verification)
 - **Step 1: Implementation Check**: Run a linter or compiler (e.g., `tsc`, `ruff`, `eslint`) on the modified file only.
@@ -46,7 +46,16 @@ Use this skill when you need to make atomic, high-risk, or precise changes to a 
 - Avoid descriptive prose; focus on the impact area and the verification result.
 
 ## Preferred Tools
-- `replace`: The primary scalpel.
-- `grep_search`: For mapping the surgical field.
-- `read_file`: For deep inspection before the first cut.
-- `run_shell_command`: For the Quality Gate (tests/lint).
+- `Edit`: The primary scalpel — exact-match, single-site replacement.
+- `Grep` / `Glob`: For mapping the surgical field before cutting.
+- `Read`: For deep inspection before the first cut (required before any `Edit`).
+- `Bash`: For the Quality Gate (tests, linters, compilers).
+- `Write`: Last resort only, and only on a file already read in full.
+
+---
+
+## References
+
+- **`references/manifesto.md`** — the reasoning behind the rules above: locality, respecting
+  the original author's style, and why a "while I was in there" fix is a defect. Read it when
+  you are tempted to widen the diff.

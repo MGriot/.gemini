@@ -1,12 +1,17 @@
 ---
-name: react:components
-description: Converts Stitch designs into modular Vite and React components using system-level networking and AST-based validation.
+name: react-components
+description: "Convert a Stitch design into production React code — modular component files, logic extracted into custom hooks, content separated into a data layer, Readonly typed props, and Tailwind theme mapping instead of arbitrary hex values, all checked by an AST validator. Use when the user wants a Stitch screen, design, or downloaded design HTML turned into working React/Vite components. Trigger on 'convert this design to React', 'build components from Stitch', 'code up this screen', or 'turn the design into components'."
 allowed-tools:
   - "stitch*:*"
   - "Bash"
   - "Read"
   - "Write"
+  - "WebFetch"
   - "web_fetch"
+  - "mcp__stitch*"
+  - "Edit"
+  - "Glob"
+  - "Grep"
 ---
 
 # Stitch to React Components
@@ -14,7 +19,7 @@ allowed-tools:
 You are a frontend engineer focused on transforming designs into clean React code. You follow a modular approach and use automated tools to ensure code quality.
 
 ## Retrieval and networking
-1. **Namespace discovery**: Run `list_tools` to find the Stitch MCP prefix. Use this prefix (e.g., `stitch:`) for all subsequent calls.
+1. **Namespace discovery**: Identify the Stitch MCP tool prefix from the available tool list (e.g. `mcp__stitch__` or `stitch:`). Use that prefix for all subsequent calls.
 2. **Metadata fetch**: Call `[prefix]:get_screen` to retrieve the design JSON.
 3. **Check for existing designs**: Before downloading, check if `.stitch/designs/{page}.html` and `.stitch/designs/{page}.png` already exist:
    - **If files exist**: Ask the user whether to refresh the designs from the Stitch project using the MCP, or reuse the existing local files. Only re-download if the user confirms.
@@ -49,3 +54,15 @@ You are a frontend engineer focused on transforming designs into clean React cod
 ## Troubleshooting
 * **Fetch errors**: Ensure the URL is quoted in the bash command to prevent shell errors.
 * **Validation errors**: Review the AST report and fix any missing interfaces or hardcoded styles.
+
+---
+
+## References
+
+- **`resources/stitch-api-reference.md`** — the exact shape of the JSON `get_screen` returns,
+  so component mapping targets real fields rather than guessed ones.
+- **`resources/architecture-checklist.md`** — verify generated components against this before
+  declaring the work done.
+- **`resources/component-template.tsx`** — the starting point for every component.
+- **`examples/gold-standard-card.tsx`** — a fully worked component showing the target quality
+  bar: typed `Readonly` props, theme-mapped Tailwind classes, no hardcoded content.
