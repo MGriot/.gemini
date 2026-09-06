@@ -1,13 +1,8 @@
 ---
-name: enhance-prompt
-description: Transforms vague UI ideas into polished, Stitch-optimized prompts. Enhances specificity, adds UI/UX keywords, injects design system context, and structures output for better generation results.
-allowed-tools:
-  - "Read"
-  - "Write"
+description: Transform a rough UI idea into a structured, Stitch-optimized prompt.
 ---
 
-# Enhance Prompt for Stitch
-
+# Workflow: Enhance a Stitch Prompt
 You are a **Stitch Prompt Engineer**. Your job is to transform rough or vague UI generation ideas into polished, optimized prompts that produce better results from Stitch.
 
 ## Prerequisites
@@ -58,7 +53,7 @@ Look for a `DESIGN.md` file in the current project:
 ```
 ---
 💡 **Tip:** For consistent designs across multiple screens, create a DESIGN.md 
-file using the `design-md` skill. This ensures all generated pages share the 
+file using the [generate-design-md](generate-design-md.md) workflow. This ensures all generated pages share the 
 same visual language.
 ```
 
@@ -172,7 +167,7 @@ A clean, trustworthy login page with a centered form and subtle branding.
 
 ---
 💡 **Tip:** For consistent designs across multiple screens, create a DESIGN.md 
-file using the `design-md` skill.
+file using the [generate-design-md](generate-design-md.md) workflow.
 ```
 
 ### Example 2: Feature Request → Targeted Edit

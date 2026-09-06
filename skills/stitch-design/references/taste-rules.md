@@ -1,34 +1,15 @@
----
-name: taste-design
-description: Semantic Design System Skill for Google Stitch. Generates agent-friendly DESIGN.md files that enforce premium, anti-generic UI standards — strict typography, calibrated color, asymmetric layouts, perpetual micro-motion, and hardware-accelerated performance.
-allowed-tools:
-  - "StitchMCP"
-  - "Read"
-  - "Write"
----
+# Design Taste Rules — Anti-Generic UI Standards
 
-# Stitch Design Taste — Semantic Design System Skill
+Opinionated, non-neutral ruleset for premium interfaces. Apply these when synthesizing a
+`.stitch/DESIGN.md` or enhancing a prompt where the user wants a distinctive, non-AI-looking
+result. Stitch interprets design through **"Visual Descriptions"** supported by precise values,
+so every rule below is phrased as natural language paired with an exact token.
 
-## Overview
-This skill generates `DESIGN.md` files optimized for Google Stitch screen generation. It translates the battle-tested anti-slop frontend engineering directives into Stitch's native semantic design language — descriptive, natural-language rules paired with precise values that Stitch's AI agent can interpret to produce premium, non-generic interfaces.
+Encode the resulting `DESIGN.md` with all seven axes: visual atmosphere, color calibration,
+typographic architecture, component behaviors, layout principles, motion philosophy, and an
+explicit anti-pattern list.
 
-The generated `DESIGN.md` serves as the **single source of truth** for prompting Stitch to generate new screens that align with a curated, high-agency design language. Stitch interprets design through **"Visual Descriptions"** supported by specific color values, typography specs, and component behaviors.
-
-## Prerequisites
-- Access to Google Stitch via [labs.google.com/stitch](https://labs.google.com/stitch)
-- Optionally: Stitch MCP Server for programmatic integration with Cursor, Antigravity, or Gemini CLI
-
-## The Goal
-Generate a `DESIGN.md` file that encodes:
-1. **Visual atmosphere** — the mood, density, and design philosophy
-2. **Color calibration** — neutrals, accents, and banned patterns with hex codes
-3. **Typographic architecture** — font stacks, scale hierarchy, and anti-patterns
-4. **Component behaviors** — buttons, cards, inputs with interaction states
-5. **Layout principles** — grid systems, spacing philosophy, responsive strategy
-6. **Motion philosophy** — animation engine specs, spring physics, perpetual micro-interactions
-7. **Anti-patterns** — explicit list of banned AI design clichés
-
-## Analysis & Synthesis Instructions
+## Synthesis Rules
 
 ### 1. Define the Atmosphere
 Evaluate the target project's intent. Use evocative adjectives from the taste spectrum:

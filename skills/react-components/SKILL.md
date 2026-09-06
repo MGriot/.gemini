@@ -1,12 +1,17 @@
 ---
-name: react:components
+name: react-components
 description: Converts Stitch designs into modular Vite and React components using system-level networking and AST-based validation.
 allowed-tools:
   - "stitch*:*"
   - "Bash"
   - "Read"
   - "Write"
+  - "WebFetch"
   - "web_fetch"
+  - "mcp__stitch*"
+  - "Edit"
+  - "Glob"
+  - "Grep"
 ---
 
 # Stitch to React Components
@@ -14,7 +19,7 @@ allowed-tools:
 You are a frontend engineer focused on transforming designs into clean React code. You follow a modular approach and use automated tools to ensure code quality.
 
 ## Retrieval and networking
-1. **Namespace discovery**: Run `list_tools` to find the Stitch MCP prefix. Use this prefix (e.g., `stitch:`) for all subsequent calls.
+1. **Namespace discovery**: Identify the Stitch MCP tool prefix from the available tool list (e.g. `mcp__stitch__` or `stitch:`). Use that prefix for all subsequent calls.
 2. **Metadata fetch**: Call `[prefix]:get_screen` to retrieve the design JSON.
 3. **Check for existing designs**: Before downloading, check if `.stitch/designs/{page}.html` and `.stitch/designs/{page}.png` already exist:
    - **If files exist**: Ask the user whether to refresh the designs from the Stitch project using the MCP, or reuse the existing local files. Only re-download if the user confirms.

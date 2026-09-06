@@ -7,7 +7,12 @@ allowed-tools:
   - "Read"
   - "Write"
   - "Bash"
+  - "WebFetch"
   - "web_fetch"
+  - "mcp__shadcn*"
+  - "Edit"
+  - "Glob"
+  - "Grep"
 ---
 
 # shadcn/ui Component Integration

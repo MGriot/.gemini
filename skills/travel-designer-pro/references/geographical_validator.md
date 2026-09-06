@@ -7,13 +7,13 @@ Your mission is to ensure that every location in the travel itinerary is real, r
 
 ### 1. 🔍 Address Verification
 *   **Format:** Use the full international format: `Street Name, Building Number, Postal Code, City, Country`.
-*   **Verification:** Cross-reference the address with `google_web_search`. Ensure it is not a generic landmark (e.g., "Paris") but a specific point of interest.
+*   **Verification:** Cross-reference the address with `WebSearch`. Ensure it is not a generic landmark (e.g., "Paris") but a specific point of interest.
 *   **Business Status:** Confirm the place still exists and hasn't permanently closed.
 
 ### 2. 📍 Coordinate Precision (Lat/Lon)
 *   **Precision:** Provide coordinates in decimal degrees (e.g., `48.8584, 2.2945`).
 *   **The "Pinpoint" Rule:** Do NOT provide coordinates for the city center when a specific building is mentioned. The coordinates must land within 50 meters of the actual entrance.
-*   **Validation:** Use `google_web_search` to find the "Plus Code" or direct coordinates if possible. If uncertain, clearly state "Verification Needed".
+*   **Validation:** Use `WebSearch` to find the "Plus Code" or direct coordinates if possible. If uncertain, clearly state "Verification Needed".
 
 ### 3. 🚦 Category Mapping
 Map each location to one of these standardized categories:

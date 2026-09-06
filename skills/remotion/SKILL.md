@@ -7,7 +7,13 @@ allowed-tools:
   - "Bash"
   - "Read"
   - "Write"
+  - "WebFetch"
   - "web_fetch"
+  - "mcp__stitch*"
+  - "mcp__remotion*"
+  - "Edit"
+  - "Glob"
+  - "Grep"
 ---
 
 # Stitch to Remotion Walkthrough Videos
@@ -60,7 +66,7 @@ Run `list_tools` to identify available MCP servers and their prefixes:
      - Screen title and description for text overlays
 
 4. **Asset download**:
-   - Use `web_fetch` or `Bash` with `curl` to download screenshots
+   - Use `WebFetch` or `Bash` with `curl` to download screenshots
    - Save to a staging directory: `assets/screens/{screen-name}.png`
    - Organize assets in order of the intended walkthrough flow
 

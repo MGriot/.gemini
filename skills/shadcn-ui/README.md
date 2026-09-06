@@ -241,8 +241,8 @@ Check your `tsconfig.json` includes path aliases:
 
 ## Contributing
 
-Contributions to improve this skill are welcome! See the root [CONTRIBUTING.md](../../CONTRIBUTING.md) for guidelines.
+Contributions to improve this skill are welcome — edit the files under `shadcn-ui/` directly.
 
 ## License
 
-See [LICENSE](../../LICENSE) in the repository root.
+MIT, following the upstream shadcn/ui project.

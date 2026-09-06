@@ -93,7 +93,7 @@ project/
 
 ## Related Skills
 
-- **design-md**: Extract design system from Stitch projects (useful for consistent branding in videos)
+- **stitch-design**: Extract a design system from Stitch projects (useful for consistent branding in videos)
 - **react-components**: Convert Stitch designs to React (if you want interactive demos instead of videos)
 
 ## Learn More
