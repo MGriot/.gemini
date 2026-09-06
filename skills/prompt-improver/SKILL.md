@@ -129,7 +129,7 @@ For complex or production prompts, offer 2 variants:
 | `references/techniques.md` | Step 3 — select techniques |
 | `references/scoring-rubric.md` | Step 2 — score original prompt |
 | `references/model-notes.md` | Step 5 — model-specific tips |
-| `references/templates/` | Building a prompt from scratch |
+| `references/templates.md` | Building a prompt from scratch |
 | `scripts/improve_prompt.py` | Batch/programmatic improvement |
 | `scripts/score_prompt.py` | Standalone scoring |
 

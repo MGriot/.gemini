@@ -1,6 +1,6 @@
 ---
 name: repo-doc-expert
-description: Expert guidance on project documentation structure, best practices, and platform-specific implementations (GitHub/GitLab). Use when creating or improving READMEs, contribution guides, or full project documentation.
+description: "Structure and write project documentation using the Diátaxis framework (tutorials, how-to guides, reference, explanation). Covers the essential repo files — README, CONTRIBUTING, CODE_OF_CONDUCT, CHANGELOG, SECURITY, LICENSE — plus issue and PR templates, docs-site tooling (MkDocs, Docusaurus, Sphinx), CI doc linting, and GitHub vs GitLab differences. Use when the user wants to write or improve a README, set up contributor guidelines, organize a docs/ folder, add issue templates, or make a repo approachable to newcomers. Trigger on 'write a README', 'document this project', 'set up CONTRIBUTING', 'add a changelog', or 'my docs are a mess'."
 ---
 
 # Repo Documentation Expert

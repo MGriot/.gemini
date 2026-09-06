@@ -1,6 +1,6 @@
 ---
 name: remotion
-description: Generate walkthrough videos from Stitch projects using Remotion with smooth transitions, zooming, and text overlays
+description: "Generate a walkthrough or demo video from Stitch screens using Remotion, with smooth transitions, Ken Burns zooming, and timed text overlays. Use when the user wants a video, demo reel, product walkthrough, launch clip, or animated presentation built from designs or screenshots. Trigger on 'make a video of', 'create a walkthrough', 'animate these screens', 'turn these designs into a demo', or any mention of Remotion."
 allowed-tools:
   - "stitch*:*"
   - "remotion*:*"
@@ -397,3 +397,12 @@ that shows a walkthrough of the screens.
 - **Remotion Skills**: https://www.remotion.dev/docs/ai/skills
 - **Remotion MCP**: https://www.remotion.dev/docs/ai/mcp
 - **Remotion Transitions**: https://www.remotion.dev/docs/transitions
+
+---
+
+## Scripts
+
+- **`scripts/download-stitch-asset.sh <url> <output-path>`** — downloads a Stitch screenshot or
+  HTML asset. Google Cloud Storage URLs redirect in ways the built-in fetch tools mishandle;
+  this script follows them correctly. Append `=w{width}` to a screenshot URL first, or the CDN
+  serves a low-resolution thumbnail.

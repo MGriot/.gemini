@@ -257,3 +257,11 @@ project-root/
 - **Testing**: Delegate to `test-expert` skill if available
 - **Git**: Delegate to `git-pro` skill if available
 - **Timestamps**: Always use current local time — never approximate or omit
+
+---
+
+## References
+
+- **`references/ralph_manifesto.md`** — the principles behind the protocol: verify rather than
+  guess, step rather than run, ship rather than promise. Read it when deciding whether a
+  shortcut is acceptable. It is not.

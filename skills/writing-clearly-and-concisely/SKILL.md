@@ -1,6 +1,6 @@
 ---
 name: writing-clearly-and-concisely
-description: Use when writing prose humans will read—documentation, commit messages, error messages, explanations, reports, or UI text. Applies Strunk's timeless rules for clearer, stronger, more professional writing.
+description: "Tighten prose that humans will read — documentation, READMEs, commit messages, error messages, release notes, UI copy, reports, and explanations. Applies Strunk's rules (omit needless words, active voice, concrete nouns, parallel construction) and strips the tells of AI writing: hedging, throat-clearing openers, 'delve/leverage/robust/seamless', rule-of-three padding, and empty restating summaries. Use when asked to edit, tighten, proofread, or fix the tone of any text, when writing user-facing copy, or when a draft reads as bloated, vague, or obviously AI-generated."
 ---
 
 # Writing Clearly and Concisely

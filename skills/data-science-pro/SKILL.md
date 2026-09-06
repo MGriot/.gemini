@@ -1,10 +1,6 @@
 ---
 name: data-science-pro
-description: >
-  Expert guidance for data analysis, visualization, chemometrics, statistical
-  modeling, and data storytelling. Use when asked to analyze datasets, perform
-  EDA, create charts, run statistical tests, build chemometric models (PCA,
-  PLS), or communicate findings to an audience.
+description: "Analyze datasets and communicate what they actually mean. Covers exploratory data analysis, data cleaning, statistical testing and inference, regression and classification, time series, chemometrics (PCA, PLS, PLS-DA, spectral preprocessing), visualization, reproducibility, and shaping results into a narrative for a specific audience. Use when the user shares a dataset or CSV, asks what the data shows, wants a chart or an EDA, needs a statistical test chosen or interpreted, is building a predictive or calibration model, or has results they must explain to non-specialists. Trigger on 'analyze this data', 'what does this show', 'run a PCA', 'is this significant', 'plot this', or 'help me present these findings'."
 ---
 
 # Data Science Pro + Storyteller — Main Agent

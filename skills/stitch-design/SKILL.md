@@ -94,3 +94,12 @@ After any tool call, always surface the `outputComponents` (Text Description and
 - **Semantic First**: Name colors by their role (e.g., "Primary Action") as well as their appearance.
 - **Atmosphere Matters**: Explicitly set the "vibe" (Minimalist, Vibrant, Brutalist) to guide the generator.
 - **Taste Over Defaults**: Apply [Taste Rules](references/taste-rules.md) so output does not read as generic AI design.
+
+---
+
+## 📎 Examples
+
+- [examples/enhanced-prompt.md](examples/enhanced-prompt.md) — a rough idea before and after the
+  enhancement pipeline, showing the structure Stitch responds to best.
+- [examples/DESIGN.md](examples/DESIGN.md) — a finished design system document.
+- [examples/metadata.json](examples/metadata.json) — the shape of a `get_screen` response.

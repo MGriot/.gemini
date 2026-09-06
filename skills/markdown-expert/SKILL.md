@@ -1,6 +1,6 @@
 ---
 name: markdown-expert
-description: Expert guidance on Markdown syntax, flavors (GFM, CommonMark), and advanced features (tables, diagrams, frontmatter). Use when writing or formatting Markdown documents.
+description: "Write, format, lint, and debug Markdown across flavors — GitHub Flavored Markdown, CommonMark, and Pandoc. Covers tables, task lists, footnotes, math, YAML frontmatter, Mermaid diagrams, reference links, and collapsible sections, plus prettier and markdownlint configuration. Use when the user asks how to do something in Markdown, why their Markdown renders wrong, or wants a document formatted, linted, or converted between flavors. Trigger on 'markdown table', 'mermaid diagram', 'why isn't this rendering', 'format this README', 'add a table of contents', or any .md syntax question."
 ---
 
 # Markdown Expert

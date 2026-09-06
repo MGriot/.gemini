@@ -1,6 +1,6 @@
 ---
 name: python-pro
-description: Expert guidance on Modern Python Development. Covers tooling (uv, ruff), strict typing (mypy), project structure (src-layout), modern idioms (pydantic, asyncio), and CI/CD best practices. Use when creating new Python projects, refactoring legacy code, or setting up automation.
+description: "Modern Python development to 2024+ standards. Covers tooling (uv for environments and dependencies, ruff for lint and format, mypy strict), src-layout structure with pyproject.toml, typing (generics, protocols, TypedDict), pydantic v2, asyncio patterns, pathlib and contextlib resource management, advanced pytest, and GitHub Actions CI. Also migrates legacy projects off requirements.txt, setup.py, pip, black, flake8, and isort. Use when starting a Python project, modernizing or refactoring existing Python, setting up packaging or CI, adding type hints, or choosing between Python tools. Trigger on 'new Python project', 'set up uv/ruff/mypy', 'is this Pythonic', 'add type hints', or 'modernize this code'."
 ---
 
 # Python Pro: Modern Development
@@ -155,3 +155,15 @@ jobs:
 3.  **Formatting**: `uv run ruff format .` applied.
 4.  **Testing**: Minimum 80% coverage recommended.
 5.  **Logging**: Use `logging.getLogger(__name__)`.
+
+---
+
+## Scripts
+
+- **`scripts/verify_health.py`** — audits a uv-managed project: src-layout, `pyproject.toml`
+  configuration, and whether `uv.lock` is in sync. Run it after scaffolding a new project or
+  before opening a PR that touches packaging.
+
+  ```bash
+  uv run scripts/verify_health.py
+  ```

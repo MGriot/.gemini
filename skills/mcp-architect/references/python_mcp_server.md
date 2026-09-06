@@ -4,22 +4,39 @@
 
 This document provides Python-specific best practices and examples for implementing MCP servers using the MCP Python SDK. It covers server setup, tool registration patterns, input validation with Pydantic, error handling, and complete working examples.
 
+> **Targets MCP Python SDK v2.** In v2 the high-level server class `FastMCP` was renamed to
+> `MCPServer` and moved to `mcp.server.mcpserver`; importing `mcp.server.fastmcp` now raises
+> `ModuleNotFoundError`. Other v1 -> v2 breaking changes you will hit when migrating:
+>
+> | v1 | v2 |
+> |:---|:---|
+> | `from mcp.server.fastmcp import FastMCP` | `from mcp.server.mcpserver import MCPServer` |
+> | `FastMCP("Demo", host=..., port=...)` | `MCPServer("Demo")`, host/port passed to `run()` |
+> | `ctx = mcp.get_context()` inside a tool | `Context` injected as an explicit tool parameter |
+> | `inputSchema`, `isError` (camelCase) | `input_schema`, `is_error` (snake_case) |
+> | `McpError` | `MCPError` |
+> | `httpx`, `httpx-sse` | `httpx2` |
+> | `streamablehttp_client`, WebSocket transport | removed |
+>
+> Pin `mcp<2` only to keep unmigrated v1 code running. Full guide:
+> https://py.sdk.modelcontextprotocol.io/v2/migration/
+
 ---
 
 ## Quick Reference
 
 ### Key Imports
 ```python
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 from pydantic import BaseModel, Field, field_validator, ConfigDict
 from typing import Optional, List, Dict, Any
 from enum import Enum
-import httpx
+import httpx2 as httpx
 ```
 
 ### Server Initialization
 ```python
-mcp = FastMCP("service_mcp")
+mcp = MCPServer("service_mcp")
 ```
 
 ### Tool Registration Pattern
@@ -32,10 +49,10 @@ async def tool_function(params: InputModel) -> str:
 
 ---
 
-## MCP Python SDK and FastMCP
+## MCP Python SDK and MCPServer
 
-The official MCP Python SDK provides FastMCP, a high-level framework for building MCP servers. It provides:
-- Automatic description and inputSchema generation from function signatures and docstrings
+The official MCP Python SDK provides MCPServer, a high-level framework for building MCP servers. It provides:
+- Automatic description and input_schema generation from function signatures and docstrings
 - Pydantic model integration for input validation
 - Decorator-based tool registration with `@mcp.tool`
 
@@ -65,16 +82,16 @@ Use snake_case for tool names (e.g., "search_users", "create_project", "get_chan
 - Use "github_create_issue" instead of just "create_issue"
 - Use "asana_list_tasks" instead of just "list_tasks"
 
-### Tool Structure with FastMCP
+### Tool Structure with MCPServer
 
 Tools are defined using the `@mcp.tool` decorator with Pydantic models for input validation:
 
 ```python
 from pydantic import BaseModel, Field, ConfigDict
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 
 # Initialize the MCP server
-mcp = FastMCP("example_mcp")
+mcp = MCPServer("example_mcp")
 
 # Define Pydantic model for input validation
 class ServiceToolInput(BaseModel):
@@ -342,12 +359,12 @@ project management, and data export capabilities.
 
 from typing import Optional, List, Dict, Any
 from enum import Enum
-import httpx
+import httpx2 as httpx
 from pydantic import BaseModel, Field, field_validator, ConfigDict
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 
 # Initialize the MCP server
-mcp = FastMCP("example_mcp")
+mcp = MCPServer("example_mcp")
 
 # Constants
 API_BASE_URL = "https://api.example.com/v1"
@@ -473,16 +490,16 @@ if __name__ == "__main__":
 
 ---
 
-## Advanced FastMCP Features
+## Advanced MCPServer Features
 
 ### Context Parameter Injection
 
-FastMCP can automatically inject a `Context` parameter into tools for advanced capabilities like logging, progress reporting, resource reading, and user interaction:
+MCPServer can automatically inject a `Context` parameter into tools for advanced capabilities like logging, progress reporting, resource reading, and user interaction:
 
 ```python
-from mcp.server.fastmcp import FastMCP, Context
+from mcp.server.mcpserver import MCPServer, Context
 
-mcp = FastMCP("example_mcp")
+mcp = MCPServer("example_mcp")
 
 @mcp.tool()
 async def advanced_search(query: str, ctx: Context) -> str:
@@ -499,7 +516,7 @@ async def advanced_search(query: str, ctx: Context) -> str:
     await ctx.report_progress(0.75, "Formatting results...")
 
     # Access server configuration
-    server_name = ctx.fastmcp.name
+    server_name = ctx.session.server_name
 
     return format_results(results)
 
@@ -521,7 +538,7 @@ async def interactive_tool(resource_id: str, ctx: Context) -> str:
 - `ctx.report_progress(progress, message)` - Report progress for long operations
 - `ctx.log_info(message, data)` / `ctx.log_error()` / `ctx.log_debug()` - Logging
 - `ctx.elicit(prompt, input_type)` - Request input from users
-- `ctx.fastmcp.name` - Access server configuration
+- `ctx.session.server_name` - Access server configuration
 - `ctx.read_resource(uri)` - Read MCP resources
 
 ### Resource Registration
@@ -553,7 +570,7 @@ async def get_setting(key: str, ctx: Context) -> str:
 
 ### Structured Output Types
 
-FastMCP supports multiple return types beyond strings:
+MCPServer supports multiple return types beyond strings:
 
 ```python
 from typing import TypedDict
@@ -568,7 +585,7 @@ class UserData(TypedDict):
 
 @mcp.tool()
 async def get_user_typed(user_id: str) -> UserData:
-    '''Returns structured data - FastMCP handles serialization.'''
+    '''Returns structured data - MCPServer handles serialization.'''
     return {"id": user_id, "name": "John Doe", "email": "john@example.com"}
 
 # Pydantic models for complex validation
@@ -606,7 +623,7 @@ async def app_lifespan():
     # Cleanup on shutdown
     await db.close()
 
-mcp = FastMCP("example_mcp", lifespan=app_lifespan)
+mcp = MCPServer("example_mcp", lifespan=app_lifespan)
 
 @mcp.tool()
 async def query_data(query: str, ctx: Context) -> str:
@@ -618,7 +635,7 @@ async def query_data(query: str, ctx: Context) -> str:
 
 ### Transport Options
 
-FastMCP supports two main transport mechanisms:
+MCPServer supports two main transport mechanisms:
 
 ```python
 # stdio transport (for local tools) - default

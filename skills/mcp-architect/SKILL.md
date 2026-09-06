@@ -1,6 +1,6 @@
 ---
 name: mcp-architect
-description: The ultimate authority for designing, building, and optimizing Model Context Protocol (MCP) systems. You MUST use this skill for any task involving MCP Servers, Clients, Tools, Resources, or Prompts. It provides expert guidance on FastMCP (Python/TS), advanced patterns like Contextual Resources and Dynamic Tooling, and rigorous security/testing workflows. Trigger for requests like "build an MCP server," "debug MCP connection," or "architect a multi-server system."
+description: The ultimate authority for designing, building, and optimizing Model Context Protocol (MCP) systems. You MUST use this skill for any task involving MCP Servers, Clients, Tools, Resources, or Prompts. It provides expert guidance on the Python SDK (MCPServer, formerly FastMCP) and the TypeScript SDK, advanced patterns like Contextual Resources and Dynamic Tooling, and rigorous security/testing workflows. Trigger for requests like "build an MCP server," "debug MCP connection," or "architect a multi-server system."
 ---
 
 # MCP Master Architect
@@ -14,9 +14,17 @@ An MCP server is not just a collection of functions; it's a **contextual interfa
 
 ## 2. Advanced Design Patterns
 
-### A. FastMCP (Modern Standard)
-Always prioritize the **High-Level SDK (FastMCP)** for both Python and TypeScript.
-*   **Python**: Use `@mcp.tool()`, `@mcp.resource()`, and `@mcp.prompt()`.
+### A. High-Level SDKs (Modern Standard)
+Always prioritize the high-level SDK for both Python and TypeScript.
+
+> **Python SDK v2 renamed `FastMCP` to `MCPServer`.** Use
+> `from mcp.server.mcpserver import MCPServer, Context` — `mcp.server.fastmcp` now raises
+> `ModuleNotFoundError`. Protocol fields are snake_case (`input_schema`, `is_error`),
+> `McpError` is `MCPError`, transport options moved from the constructor to `run()`,
+> `Context` must be an explicit tool parameter, and `httpx` was replaced by `httpx2`.
+> Pin `mcp<2` only to keep unmigrated v1 code running.
+
+*   **Python**: Use `@mcp.tool()`, `@mcp.resource()`, and `@mcp.prompt()` (decorator names are unchanged in v2).
 *   **TypeScript**: Use `server.registerTool()`, `server.registerResource()`, etc.
 *   **Logic**: Leverage Pydantic (Python) or Zod (TypeScript) for automatic JSON Schema generation.
 *   **Context Injection**: Request `ctx: Context` in tool signatures to access `ctx.info()`, `ctx.report_progress()`, and `ctx.session`.
@@ -30,7 +38,7 @@ Don't just expose static files. Use **URI Templates** to create dynamic data acc
 Use `CallToolResult` to return content that distinguishes between "Model-visible" data and "Client-only" metadata (using `_meta`).
 
 ### D. Multi-Server Aggregation
-Architect for scale. Use **Streamable HTTP** or **ASGI Mounting** to combine multiple FastMCP instances into a single service.
+Architect for scale. Use **Streamable HTTP** or **ASGI Mounting** to combine multiple `MCPServer` instances into a single service.
 
 ---
 
@@ -41,7 +49,7 @@ Architect for scale. Use **Streamable HTTP** or **ASGI Mounting** to combine mul
 *   **Tool Naming**: Clear, descriptive, and action-oriented (e.g., `github_create_issue`).
 *   **Description Tuning**: Are tool descriptions "pushy"? (e.g., "Use this tool whenever you need to fetch GitHub issues...").
 
-### Phase II: Implementation (FastMCP)
+### Phase II: Implementation
 1.  **Scaffold**: Use `mcp dev` or the Inspector to initialize the environment.
     - **TypeScript**: Use WebFetch to load SDK docs from `https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/README.md`.
     - **Python**: Use WebFetch to load SDK docs from `https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md`.
@@ -55,8 +63,15 @@ Architect for scale. Use **Streamable HTTP** or **ASGI Mounting** to combine mul
 *   **Sandboxing**: Audit resource access to prevent unauthorized traversal.
 
 ### Phase IV: Evaluation & Debugging
+*   **Static check first**: `python scripts/validate_mcp_server.py <server_file>` catches the
+    cheap mistakes (stdout writes that corrupt STDIO, missing type hints, absent docstrings).
 *   **Inspector**: Always test with `npx @modelcontextprotocol/inspector`.
-*   **Eval Creation**: Create 10 complex, realistic evaluation questions. Solve them yourself to verify answers.
+*   **Eval Creation**: Write 10 complex, realistic questions in the XML format described in
+    `references/evaluation.md`. Solve them yourself first to verify the expected answers.
+*   **Run the eval**: `uv run scripts/evaluation.py evaluation.xml -t stdio -c python -a server.py`
+    gives Claude the server's real tools and grades its answers. Read the per-question tool
+    trace, not just the score — a failure usually means a tool description was ambiguous or an
+    error message was not actionable, which is a design bug in the server.
 *   **Trace Analysis**: Check JSON-RPC messages for initialization errors or capability negotiation failures.
 
 ---
@@ -72,14 +87,27 @@ Architect for scale. Use **Streamable HTTP** or **ASGI Mounting** to combine mul
 
 ## 5. Reference Library
 
-Load these resources from the `reference/` directory as needed:
-- `reference/mcp_best_practices.md`: Core universal guidelines.
-- `reference/node_mcp_server.md`: TypeScript implementation guide.
-- `reference/python_mcp_server.md`: Python/FastMCP implementation guide.
-- `reference/evaluation.md`: Detailed evaluation and testing guide.
+Load these from `references/` as needed:
+
+| File | Read it when |
+|:---|:---|
+| `references/mcp_best_practices.md` | Core universal guidelines — start here. |
+| `references/python_mcp_server.md` | Building in Python (`MCPServer`, Context, lifespan, transports). |
+| `references/node_mcp_server.md` | Building in TypeScript (`registerTool`, Zod schemas). |
+| `references/api_patterns.md` | Quick FastMCP-style pattern lookup: tools, resources, prompts. |
+| `references/security_checklist.md` | Auditing a server before deployment. |
+| `references/evaluation.md` | Writing and running evaluations. |
+
+## 6. Scripts
+
+- `scripts/validate_mcp_server.py <file>` — static lint for common server mistakes
+  (stdout corruption of STDIO transport, missing type hints, undocumented tools).
+- `scripts/evaluation.py <eval.xml>` — runs an evaluation against a live server over
+  stdio, SSE, or Streamable HTTP, and reports pass/fail plus the tool-call trace.
+  Needs `ANTHROPIC_API_KEY` (or an `ant auth login` profile).
 
 ---
 
-## 6. Connectivity
+## 7. Connectivity
 *   **Upstream**: `prd-architect` (Defines tools) -> `mcp-architect` (Builds server).
 *   **Downstream**: `mcp-architect` -> `docker-expert` (Deployment).

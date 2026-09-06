@@ -1,6 +1,6 @@
 ---
 name: stitch-loop
-description: Teaches agents to iteratively build websites using Stitch with an autonomous baton-passing loop pattern
+description: "Autonomous baton-passing loop for building a complete multi-page website with Google Stitch, one screen at a time. Maintains a SITE.md plan and a next-prompt.md baton so work continues across iterations without losing context. Use when the user wants a whole site or a sequence of screens rather than a single design — 'build me a site with Stitch', 'generate all the pages', 'keep going until the site is done', 'iterate on this until it's finished'. For one screen or a single edit, use stitch-design instead."
 allowed-tools:
   - "stitch*:*"
   - "chrome*:*"

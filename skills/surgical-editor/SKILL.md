@@ -1,6 +1,6 @@
 ---
 name: surgical-editor
-description: Expert for high-precision, low-impact code modifications using the Ralph Verification Loop to ensure zero collateral damage.
+description: "High-precision, minimal-diff code changes with a verification gate and zero collateral damage. Maps every call site before editing, names the exact test command before implementing, and halts on any failed check rather than pressing on. Use when a change is risky, touches shared or legacy code, or must not disturb anything nearby — 'change X without touching Y', 'apply this surgically', 'keep the diff minimal', 'this is production code, be careful', 'fix only this one thing'. Prefer it over an ordinary edit whenever blast radius matters more than speed."
 ---
 
 # Surgical Editor 🩺
@@ -51,3 +51,11 @@ Use this skill when you need to make atomic, high-risk, or precise changes to a 
 - `Read`: For deep inspection before the first cut (required before any `Edit`).
 - `Bash`: For the Quality Gate (tests, linters, compilers).
 - `Write`: Last resort only, and only on a file already read in full.
+
+---
+
+## References
+
+- **`references/manifesto.md`** — the reasoning behind the rules above: locality, respecting
+  the original author's style, and why a "while I was in there" fix is a defect. Read it when
+  you are tempted to widen the diff.

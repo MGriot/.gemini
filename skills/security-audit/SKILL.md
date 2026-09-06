@@ -174,3 +174,13 @@ After the audit, always include a **Hardening Roadmap** section covering:
 - **`references/network-security.md`** — Port exposure, firewall rules, Docker networking, reverse proxy config
 - **`references/docker-security.md`** — Non-root users, image scanning, secrets, resource limits
 - **`references/dependency-security.md`** — pip audit, npm audit, SBOM, supply chain hardening
+
+---
+
+## Scripts
+
+- **`scripts/quick_scan.py`** — run this first, before reading any reference file.
+  `python scripts/quick_scan.py` from the project root greps for the cheap red flags
+  (hardcoded secrets, `eval`/`exec`, `shell=True`, debug mode left on, permissive CORS,
+  bound `0.0.0.0` ports) and tells you which reference files the findings point at.
+  It is a pre-scan, not a substitute for `bandit`, `semgrep`, or `pip-audit`.

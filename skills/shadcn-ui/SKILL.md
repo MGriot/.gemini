@@ -1,6 +1,6 @@
 ---
 name: shadcn-ui
-description: Expert guidance for integrating and building applications with shadcn/ui components, including component discovery, installation, customization, and best practices.
+description: "Build with shadcn/ui: component discovery and installation through the CLI, theming with CSS variables, variant customization via cva, form patterns with react-hook-form and zod, data tables, and version migration. Use whenever the user mentions shadcn, shadcn/ui, Radix primitives, or `npx shadcn add`, or asks to add a button, dialog, form, table, sheet, combobox, or toast to a React or Next.js app. Also trigger on 'set up a component library', 'theme my components', or 'why is this component not styled'."
 allowed-tools:
   - "shadcn*:*"
   - "mcp_shadcn*"

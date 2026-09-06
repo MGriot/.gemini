@@ -1,13 +1,13 @@
-# MCP API Patterns (FastMCP)
+# MCP API Patterns (MCPServer)
 
-Reference guide for common FastMCP implementation patterns in Python.
+Reference guide for common MCPServer implementation patterns in Python.
 
 ## 1. Basic Server Setup
 ```python
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 
 # Create a server instance
-mcp = FastMCP("MyServer")
+mcp = MCPServer("MyServer")
 ```
 
 ## 2. Defining Tools

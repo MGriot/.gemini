@@ -291,3 +291,13 @@ RESEARCH → SOLO ADVISOR → CARD (Solo variant summary)
 - Prefer BoardGameGeek, publisher official sites, and peer-reviewed rulebook PDFs over secondary sources
 - Be precise with edition differences — rules between editions can differ significantly
 - Respect copyright: summarize and paraphrase rulebooks, never reproduce verbatim at length
+
+---
+
+## References
+
+- **`references/translate-guide.md`** — translating cards, rulebooks, and components between
+  languages. Covers the functional-over-literary priority order, keyword glossary discipline,
+  and how to handle terms with no target-language equivalent. Read it for any translation task.
+- **`references/imagegen-providers.md`** — image generation providers, API shapes, and costs
+  for thematic art in guides and player aids.
